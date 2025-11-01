@@ -1,0 +1,45 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* Tailwind v4 sources to scan */
+@source "./**/*.{razor,html,cshtml,js,ts}";
+@source "node_modules/flowbite/**/*.js";
+
+/* Flowbite plugin for Tailwind v4 */
+@plugin "flowbite/plugin";
+
+@theme {
+ --color-primary: #2f7d6d;
+ --color-primary-hover: #256e60;
+ --font-poppins: Poppins, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@layer base {
+ body {
+ @apply font-poppins;
+ }
+}
+
+@layer components {
+ .btn {
+ @apply cursor-pointer rounded-md px-4 py-2 font-semibold transition-colors duration-200;
+ }
+
+ .btn-primary {
+ @apply bg-primary text-white hover:bg-primary/90 active:bg-primary/80;
+ }
+
+ .btn-primary-large {
+ @apply w-full cursor-pointer rounded-md bg-primary px-4 py-3 font-semibold text-white transition-colors duration-200 hover:bg-primary/90 active:bg-primary/80;
+ }
+
+ .form-input {
+ @apply w-full rounded-md border border-gray-300 px-4 py-2 transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none;
+ }
+
+ .form-label {
+ @apply mb-1 block text-sm font-medium text-gray-700;
+ }
+
+
+}

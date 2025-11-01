@@ -1,0 +1,16 @@
+{
+  "name": "bzdesktopapp",
+  "private": true,
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "tailwindcss": "^4.1.16",
+    "flowbite": "^2.5.2"
+  },
+  "scripts": {
+    "tailwind:build": "tailwindcss -i ./tailwind.css -o ./wwwroot/app.css --minify",
+    "tailwind:watch": "tailwindcss -i ./tailwind.css -o ./wwwroot/app.css --watch",
+    "copy:flowbite": "node -e \"const fs=require('fs'),path=require('path');const src='node_modules/flowbite/dist/flowbite.min.js';const destDir='wwwroot/lib/flowbite';fs.mkdirSync(destDir,{recursive:true});fs.copyFileSync(src,path.join(destDir,'flowbite.min.js'));console.log('Copied',src,'to',destDir);\"",
+    "build": "npm run tailwind:build && npm run copy:flowbite",
+    "dev": "npm run tailwind:watch"
+  }
+}

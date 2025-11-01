@@ -1,0 +1,49 @@
+﻿@using BZDesktopApp.Services
+@inject AuthenticationService AuthService
+@inject NavigationManager Navigation
+
+@implements IAsyncDisposable
+
+<Router AppAssembly="@typeof(MauiProgram).Assembly">
+    <Found Context="routeData">
+        @if (AuthService.IsLoggedIn)
+        {
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.MainLayout)" />
+        }
+        else
+        {
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.AuthLayout)" />
+        }
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        @{
+            if (!AuthService.IsLoggedIn)
+            {
+                Navigation.NavigateTo("/login", replace: true);
+            }
+            else
+            {
+                Navigation.NavigateTo("/home", replace: true);
+            }
+        }
+    </NotFound>
+</Router>
+
+@code {
+    protected override void OnInitialized()
+    {
+        AuthService.OnAuthenticationChanged += OnAuthStateChanged;
+    }
+
+    private void OnAuthStateChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        AuthService.OnAuthenticationChanged -= OnAuthStateChanged;
+        await ValueTask.CompletedTask;
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BZDesktopApp</title>
+    <base href="/" />
+    <!-- Removed Bootstrap to avoid style conflicts with Tailwind/Flowbite -->
+    <!-- <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" /> -->
+    <!-- Use the built Tailwind CSS output -->
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="BZDesktopApp.styles.css" />
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+ <div class="status-bar-safe-area"></div>
+
+ <div id="app">Loading...</div>
+
+ <!-- Load Flowbite and init after the app content renders -->
+ <script src="lib/flowbite/flowbite.min.js"></script>
+ <script src="js/flowbite-init.js"></script>
+ <script src="_framework/blazor.webview.js" autostart="false"></script>
+
+</body>
+
+</html>
