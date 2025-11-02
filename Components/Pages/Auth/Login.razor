@@ -8,9 +8,8 @@
 
 <PageTitle>Login - BZ IT Solutions</PageTitle>
 
-<div class="relative flex min-h-screen flex-col bg-white">
-    <!-- Optional background image: add wwwroot/img/login/login-bg.jpg and uncomment -->
-    @* style="background: url('/img/login/login-bg.jpg') no-repeat center/cover; background-attachment: scroll;" *@
+<div class="relative flex min-h-screen flex-col bg-white"
+     style="background: url('/images/background/login-bg.jpg') no-repeat center/cover; background-attachment: scroll;">
 
     <!-- Overlay Gradient -->
     <div class="pointer-events-none absolute inset-0"
@@ -162,7 +161,6 @@
                             <!-- Remember Me & Forgot Password -->
                             <div class="mt-4 flex items-center justify-between text-sm">
                                 <label class="flex cursor-pointer items-center gap-2">
-                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300" @bind="rememberMe" />
                                     <span class="text-gray-600">Remember me</span>
                                 </label>
                                 <a href="/forgot-password" class="font-medium text-primary transition-colors hover:text-primary-hover">Forgot Password?</a>
@@ -194,6 +192,10 @@
                 <!-- Company Info -->
                 <div class="col-span-1 text-center md:text-left">
                     <div class="mb-8 flex flex-col items-center gap-4 md:flex-row md:items-start">
+                        <img src="images/logo/bz-logo-green.png"
+                             alt="BZ IT Solutions"
+                             class="h-auto w-auto object-contain flex-shrink-0 ani-fade"
+                             style="--ani-delay:760ms"/>
                         <div>
                             <h5 class="mb-2 text-lg font-semibold text-primary">BZ IT Solutions</h5>
                             <p class="text-sm leading-relaxed text-gray-600">Affordable Computer and CCTV store that caters Mindanao.</p>
@@ -238,7 +240,7 @@
                     <div class="flex flex-wrap justify-center gap-3 md:justify-start">
                         <!-- Facebook -->
                         <a href="#" title="Facebook" class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/30 bg-primary/20 text-primary transition-all duration-300 hover:border-opacity-100 hover:scale-110 hover:bg-primary-hover hover:text-white hover:shadow-lg">
-                            <svg class="h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z" /></svg>
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z" /></svg>
                         </a>
                         <!-- Instagram -->
                         <a href="#" title="Instagram" class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/30 bg-primary/20 text-primary transition-all duration-300 hover:border-opacity-100 hover:scale-110 hover:bg-primary-hover hover:text-white hover:shadow-lg">

@@ -477,7 +477,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\BZDesktopApp.styles.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BZDesktopApp.bundle.scp.css
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-ene017ju0b.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\p0l2xizj9r-04lf0slsn0.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\rqolfhyn8r-e5tk7yf482.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\hqkuxx2lt4-6gzpyzhau4.gz
@@ -498,7 +497,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\staticwebassets\msbuild.buildTransitive.BZDesktopApp.props
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\staticwebassets.pack.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\staticwebassets.upToDateCheck.txt
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-ene017ju0b.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\p0l2xizj9r-04lf0slsn0.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\rqolfhyn8r-e5tk7yf482.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\hqkuxx2lt4-6gzpyzhau4.br
@@ -607,3 +605,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\BZDesktopApp.sourcelink.json
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-0ecdonpjsc.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-0ecdonpjsc.br
