@@ -274,7 +274,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\scopedcss\bundle\BZDesktopApp.styles.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\scopedcss\projectbundle\BZDesktopApp.bundle.scp.css
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\npqi1ox1ie-ene017ju0b.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\p0l2xizj9r-04lf0slsn0.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\rqolfhyn8r-e5tk7yf482.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\hqkuxx2lt4-6gzpyzhau4.gz
@@ -282,8 +281,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\bmhqyc36o1-nzw87rgyyq.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\6wgnfsr21f-p7z3q0kh2l.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\4eu5zzuviq-f84hs44zi6.gz
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\vtihzii4a9-ecfrz9qhrp.gz
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\53l2j1xrdb-ecfrz9qhrp.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\staticwebassets.build.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\staticwebassets.build.json.cache
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\staticwebassets.development.json
@@ -295,7 +292,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\staticwebassets\msbuild.buildTransitive.BZDesktopApp.props
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\staticwebassets.pack.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\staticwebassets.upToDateCheck.txt
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\npqi1ox1ie-ene017ju0b.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\p0l2xizj9r-04lf0slsn0.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\rqolfhyn8r-e5tk7yf482.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\hqkuxx2lt4-6gzpyzhau4.br
@@ -303,8 +299,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\bmhqyc36o1-nzw87rgyyq.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\6wgnfsr21f-p7z3q0kh2l.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\4eu5zzuviq-f84hs44zi6.br
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\vtihzii4a9-ecfrz9qhrp.br
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\53l2j1xrdb-ecfrz9qhrp.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\staticwebassets.publish.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\staticwebassets.publish.endpoints.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.inputs
@@ -354,3 +348,10 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BZDesktopApp.pdb
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BZDesktopApp.genruntimeconfig.cache
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\BZDesktopApp.dll
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BZDesktopApp.sourcelink.json
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\vtihzii4a9-mco0lh2krp.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\53l2j1xrdb-mco0lh2krp.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\vtihzii4a9-mco0lh2krp.br
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\53l2j1xrdb-mco0lh2krp.br
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\npqi1ox1ie-0on2uj6h7q.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\npqi1ox1ie-0on2uj6h7q.br

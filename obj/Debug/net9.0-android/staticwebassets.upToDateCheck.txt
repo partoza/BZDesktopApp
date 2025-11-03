@@ -1,4 +1,3 @@
-wwwroot\app.css
 wwwroot\AppIcon.ico
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css
@@ -9,11 +8,12 @@ wwwroot\images\logo\bz-logo-white.png
 wwwroot\index.html
 wwwroot\js\flowbite-init.js
 wwwroot\lib\flowbite\flowbite.min.js
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\app.css
+wwwroot\app.css
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\AppIcon.ico
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\css\app.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\css\bootstrap\bootstrap.min.css
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\lib\flowbite\flowbite.min.js
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\css\bootstrap\bootstrap.min.css.map
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\flowbite-init.js
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\index.html
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\AppIcon.ico
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\flowbite-init.js
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\lib\flowbite\flowbite.min.js
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\app.css

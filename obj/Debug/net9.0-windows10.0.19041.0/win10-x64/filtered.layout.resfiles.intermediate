@@ -1,7 +1,7 @@
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
 wwwroot\lib\flowbite\flowbite.min.js.gz
-wwwroot\BZDesktopApp.ecfrz9qhrp.bundle.scp.css.gz
+wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.gz
 wwwroot\js\flowbite-init.js.gz
 wwwroot\index.html.gz
 wwwroot\css\bootstrap\bootstrap.min.css.gz
@@ -9,7 +9,7 @@ wwwroot\css\bootstrap\bootstrap.min.css.map.gz
 wwwroot\app.css.gz
 wwwroot\AppIcon.ico.gz
 wwwroot\lib\flowbite\flowbite.min.js.br
-wwwroot\BZDesktopApp.ecfrz9qhrp.bundle.scp.css.br
+wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.br
 wwwroot\js\flowbite-init.js.br
 wwwroot\index.html.br
 wwwroot\css\bootstrap\bootstrap.min.css.br
@@ -78,7 +78,7 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\BZDesktopApp.styles.css
-wwwroot\BZDesktopApp.ecfrz9qhrp.bundle.scp.css
+wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css
 package-lock.json
 Platforms\Windows\Assets\AppIcon.ico
 AboutAssets.txt

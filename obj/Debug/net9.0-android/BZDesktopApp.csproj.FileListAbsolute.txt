@@ -20,7 +20,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\sco
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\scopedcss\bundle\BZDesktopApp.styles.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\scopedcss\projectbundle\BZDesktopApp.bundle.scp.css
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\npqi1ox1ie-ene017ju0b.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\p0l2xizj9r-04lf0slsn0.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\rqolfhyn8r-e5tk7yf482.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\hqkuxx2lt4-6gzpyzhau4.gz
@@ -28,8 +27,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\com
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\bmhqyc36o1-nzw87rgyyq.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\6wgnfsr21f-p7z3q0kh2l.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\4eu5zzuviq-f84hs44zi6.gz
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\vtihzii4a9-ecfrz9qhrp.gz
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\53l2j1xrdb-ecfrz9qhrp.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\staticwebassets.build.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\staticwebassets.build.json.cache
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\staticwebassets.development.json
@@ -41,7 +38,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\sta
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\staticwebassets\msbuild.buildTransitive.BZDesktopApp.props
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\staticwebassets.pack.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\staticwebassets.upToDateCheck.txt
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\npqi1ox1ie-ene017ju0b.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\p0l2xizj9r-04lf0slsn0.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\rqolfhyn8r-e5tk7yf482.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\hqkuxx2lt4-6gzpyzhau4.br
@@ -49,8 +45,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\com
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\bmhqyc36o1-nzw87rgyyq.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\6wgnfsr21f-p7z3q0kh2l.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\4eu5zzuviq-f84hs44zi6.br
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\vtihzii4a9-ecfrz9qhrp.br
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\53l2j1xrdb-ecfrz9qhrp.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\staticwebassets.publish.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\staticwebassets.publish.endpoints.json
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\_CompileBindingJava.FileList.txt
@@ -1404,7 +1398,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\and
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\android\src\mono\MonoPackageManager_Resources.java
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\AboutAssets.txt
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\lib\flowbite\flowbite.min.js.gz
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\BZDesktopApp.ecfrz9qhrp.bundle.scp.css.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\js\flowbite-init.js.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\index.html.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\css\bootstrap\bootstrap.min.css.gz
@@ -1412,7 +1405,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\ass
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\app.css.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\AppIcon.ico.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\lib\flowbite\flowbite.min.js.br
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\BZDesktopApp.ecfrz9qhrp.bundle.scp.css.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\js\flowbite-init.js.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\index.html.br
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\css\bootstrap\bootstrap.min.css.br
@@ -1424,7 +1416,6 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\ass
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\css\app.css.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\BZDesktopApp.styles.css.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\BZDesktopApp.styles.css
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\BZDesktopApp.ecfrz9qhrp.bundle.scp.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\app.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\AppIcon.ico
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\css\app.css
@@ -1463,3 +1454,13 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\sta
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\BZDesktopApp.sourcelink.json
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\vtihzii4a9-mco0lh2krp.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\53l2j1xrdb-mco0lh2krp.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\vtihzii4a9-mco0lh2krp.br
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\53l2j1xrdb-mco0lh2krp.br
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.br
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\assets\wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\npqi1ox1ie-0on2uj6h7q.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-android\compressed\publish\npqi1ox1ie-0on2uj6h7q.br

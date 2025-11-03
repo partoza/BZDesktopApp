@@ -12,12 +12,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0ecdonpjsc</Fingerprint>
-      <Integrity>+KMo7mWl1bJPdAsiEjF+WMNMs10jFyJ57hi615iWY+I=</Integrity>
+      <Fingerprint>kpwz2uragh</Fingerprint>
+      <Integrity>qMW6YrtgqjGEwz6F7W5n+j1KVhYueAMRHVSLH/uOA7Q=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>54432</FileLength>
-      <LastWriteTime>Sun, 02 Nov 2025 04:24:45 GMT</LastWriteTime>
+      <FileLength>55487</FileLength>
+      <LastWriteTime>Mon, 03 Nov 2025 15:10:32 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AppIcon.ico'))">
@@ -52,12 +52,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>ecfrz9qhrp</Fingerprint>
-      <Integrity>bi1N1Z/A+XUosbPOUSWqflkVFBTCt6W8E15TBTRHyOQ=</Integrity>
+      <Fingerprint>mco0lh2krp</Fingerprint>
+      <Integrity>ukuWA50Z0c/OSYk9zaOmpJNxyysXdkTNrS/nPGNTw4M=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>5481</FileLength>
-      <LastWriteTime>Sat, 01 Nov 2025 15:42:30 GMT</LastWriteTime>
+      <FileLength>1847</FileLength>
+      <LastWriteTime>Mon, 03 Nov 2025 13:15:17 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BZDesktopApp.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\app.css'))">
@@ -197,7 +197,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>1090</FileLength>
-      <LastWriteTime>Sat, 01 Nov 2025 11:18:42 GMT</LastWriteTime>
+      <LastWriteTime>Mon, 03 Nov 2025 14:58:14 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\flowbite-init.js'))">
