@@ -606,5 +606,5 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\bmhqyc36o1-nzw87rgyyq.gz
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\bmhqyc36o1-nzw87rgyyq.br
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-kpwz2uragh.gz
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-kpwz2uragh.br
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-36u0otlmig.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-36u0otlmig.br

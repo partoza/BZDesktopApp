@@ -12,12 +12,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>kpwz2uragh</Fingerprint>
-      <Integrity>qMW6YrtgqjGEwz6F7W5n+j1KVhYueAMRHVSLH/uOA7Q=</Integrity>
+      <Fingerprint>36u0otlmig</Fingerprint>
+      <Integrity>RetLphC9fLTGJ4D0zoBukFGQ0IOtYkTDCPywkKnWQ7A=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>55487</FileLength>
-      <LastWriteTime>Mon, 03 Nov 2025 15:10:32 GMT</LastWriteTime>
+      <FileLength>76582</FileLength>
+      <LastWriteTime>Tue, 04 Nov 2025 04:13:10 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AppIcon.ico'))">
