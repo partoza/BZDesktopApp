@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BA230A67-1E21-4F30-90E8-4A5F1C04E78D}|BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BA230A67-1E21-4F30-90E8-4A5F1C04E78D}|BZDesktopApp.Api\\BZDesktopApp.Api.csproj|solutionrelative:bzdesktopapp.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{927DD158-3528-F147-A84E-49357925422B}|BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{927DD158-3528-F147-A84E-49357925422B}|BZDesktopApp.csproj|solutionrelative:bzdesktopapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.ImportWorkloads.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BZDesktopApp.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BZDesktopApp.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-04T10:41:11.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Microsoft.NET.Sdk.ImportWorkloads.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.ImportWorkloads.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.ImportWorkloads.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.ImportWorkloads.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.ImportWorkloads.targets",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-11-04T10:08:37.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BZDesktopApp.csproj",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.csproj",
+              "RelativeDocumentMoniker": "BZDesktopApp.csproj",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.csproj",
+              "RelativeToolTip": "BZDesktopApp.csproj",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-04T09:59:10.117Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
