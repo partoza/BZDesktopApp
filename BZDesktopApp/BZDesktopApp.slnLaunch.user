@@ -8,7 +8,7 @@
         "DebugTarget": "Windows Machine"
       },
       {
-        "Path": "BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
+        "Path": "..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
         "Action": "Start",
         "DebugTarget": "https"
       }

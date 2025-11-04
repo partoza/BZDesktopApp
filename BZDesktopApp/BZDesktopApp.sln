@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZDesktopApp", "BZDesktopApp.csproj", "{927DD158-3528-F147-A84E-49357925422B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZDesktopApp.Api", "BZDesktopApp.Api\BZDesktopApp.Api.csproj", "{BA230A67-1E21-4F30-90E8-4A5F1C04E78D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZDesktopApp.Api", "..\BZDesktopApp.Api\BZDesktopApp.Api.csproj", "{60714C4C-5867-D5F5-D52E-2052E1D5A29B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{927DD158-3528-F147-A84E-49357925422B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{927DD158-3528-F147-A84E-49357925422B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{927DD158-3528-F147-A84E-49357925422B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA230A67-1E21-4F30-90E8-4A5F1C04E78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA230A67-1E21-4F30-90E8-4A5F1C04E78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA230A67-1E21-4F30-90E8-4A5F1C04E78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA230A67-1E21-4F30-90E8-4A5F1C04E78D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60714C4C-5867-D5F5-D52E-2052E1D5A29B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60714C4C-5867-D5F5-D52E-2052E1D5A29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60714C4C-5867-D5F5-D52E-2052E1D5A29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60714C4C-5867-D5F5-D52E-2052E1D5A29B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

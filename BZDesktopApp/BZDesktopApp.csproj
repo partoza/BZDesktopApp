@@ -73,14 +73,20 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
     </ItemGroup>
 
-    <!-- Run npm build before building the .NET app -->
-    <Target Name="RunNpmBuild" BeforeTargets="Build">
-      <!-- Only run if package.json exists in the project folder -->
-      <Message Text="Running 'npm run build' in $(ProjectDir)" Importance="high" Condition="Exists('$(ProjectDir)package.json')" />
-      <!-- Ensure dependencies are installed (safe to re-run) -->
-      <Exec WorkingDirectory="$(ProjectDir)" Command="npm install" Condition="Exists('$(ProjectDir)package.json')" />
-      <!-- Build front-end assets -->
-      <Exec WorkingDirectory="$(ProjectDir)" Command="npm run build" Condition="Exists('$(ProjectDir)package.json')" />
+    <!-- Configure where npm runs from; defaults to project directory -->
+    <PropertyGroup>
+      <NpmWorkingDir>$(ProjectDir)</NpmWorkingDir>
+      <!-- If you keep frontend in a ClientApp folder, this will override automatically -->
+      <NpmWorkingDir Condition="Exists('$(ProjectDir)ClientApp\package.json')">$(ProjectDir)ClientApp\</NpmWorkingDir>
+    </PropertyGroup>
+
+    <!-- Run npm build before building or running the .NET app -->
+    <Target Name="RunNpmBuild" BeforeTargets="Build;Run">
+      <!-- Only run if package.json exists -->
+      <Message Text="Running 'npm ci' in $(NpmWorkingDir)" Importance="high" Condition="Exists('$(NpmWorkingDir)package.json')" />
+      <Exec WorkingDirectory="$(NpmWorkingDir)" Command="npm ci" Condition="Exists('$(NpmWorkingDir)package.json')" />
+      <Message Text="Running 'npm run build' in $(NpmWorkingDir)" Importance="high" Condition="Exists('$(NpmWorkingDir)package.json')" />
+      <Exec WorkingDirectory="$(NpmWorkingDir)" Command="npm run build" Condition="Exists('$(NpmWorkingDir)package.json')" />
     </Target>
 
 </Project>
