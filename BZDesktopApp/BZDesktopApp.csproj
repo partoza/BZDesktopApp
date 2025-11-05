@@ -73,6 +73,10 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BZAppSolution.sln\BZDesktopApp.Shared\BZDesktopApp.Shared.csproj" />
+    </ItemGroup>
+
     <!-- Configure where npm runs from; defaults to project directory -->
     <PropertyGroup>
       <NpmWorkingDir>$(ProjectDir)</NpmWorkingDir>

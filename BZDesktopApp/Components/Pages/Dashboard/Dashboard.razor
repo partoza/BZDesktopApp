@@ -1,14 +1,6 @@
-﻿@page "/home"
-@using BZDesktopApp.Services
-@inject AuthenticationService AuthService
-@inject NavigationManager Navigation
-
-@if (!AuthService.IsLoggedIn)
-{
-    Navigation.NavigateTo("/", replace: true);
-}
-else
-{
+﻿@page "/dashboard"
+@using BZDesktopApp.Components
+<AuthGuard>
     <div class="space-y-6">
         <div>
             <h1 class="text-4xl font-bold text-gray-900">Welcome Back! 👋</h1>
@@ -96,4 +88,4 @@ else
         </div>
 
     </div>
-}
+</AuthGuard>

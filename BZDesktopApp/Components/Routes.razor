@@ -4,6 +4,15 @@
 
 @implements IAsyncDisposable
 
+@if (!string.IsNullOrEmpty(_initError))
+{
+    <div class="p-4 m-4 rounded border border-red-400 bg-red-50 text-red-800">
+        <strong>Initialization error:</strong>
+        <div>@_initError</div>
+        <div class="mt-2 text-xs text-gray-600">Check Visual Studio Output (Debug) for full stack trace.</div>
+    </div>
+}
+
 <Router AppAssembly="@typeof(MauiProgram).Assembly">
     <Found Context="routeData">
         @if (AuthService.IsLoggedIn)
@@ -17,27 +26,48 @@
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
-        @{
-            if (!AuthService.IsLoggedIn)
-            {
-                Navigation.NavigateTo("/login", replace: true);
-            }
-            else
-            {
-                Navigation.NavigateTo("/home", replace: true);
-            }
+        @if (!AuthService.IsLoggedIn)
+        {
+            Navigation.NavigateTo("/login", replace: true);
+        }
+        else
+        {
+            Navigation.NavigateTo("/dashboard", replace: true);
         }
     </NotFound>
 </Router>
 
 @code {
-    protected override void OnInitialized()
+    private bool _initialized = false;
+    private string? _initError;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        AuthService.OnAuthenticationChanged += OnAuthStateChanged;
+        if (firstRender && !_initialized)
+        {
+            _initialized = true;
+
+            try
+            {
+                // initialize but guard any exception
+                await AuthService.InitializeAsync();
+                AuthService.OnAuthenticationChanged += OnAuthStateChanged;
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                // surface in UI and VS Output
+                _initError = $"{ex.GetType().Name}: {ex.Message}";
+                Console.WriteLine($"[App.razor] Init failed: {ex.GetType().Name}: {ex.Message}");
+                Console.WriteLine(ex.StackTrace);
+                StateHasChanged();
+            }
+        }
     }
 
     private void OnAuthStateChanged()
     {
+        // Update UI when auth status changes
         InvokeAsync(StateHasChanged);
     }
 

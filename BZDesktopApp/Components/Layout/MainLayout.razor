@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
-@using BZDesktopApp.Services
 @inject NavigationManager Navigation
+@using BZDesktopApp.Services;
 @inject AuthenticationService AuthService
 
 <div class="flex h-screen bg-gray-50">
@@ -66,7 +66,7 @@
                                     <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
                                 </li>
                                 <li>
-                                    <a href="#" @onclick="HandleLogout" @onclick:preventDefault="true" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                                    <a href="#" @onclick:preventDefault="true" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
                                 </li>
                             </ul>
                         </div>
@@ -82,9 +82,5 @@
 </div>
 
 @code {
-    private void HandleLogout()
-    {
-        AuthService.Logout();
-        Navigation.NavigateTo("/login", replace: true);
-    }
+
 }

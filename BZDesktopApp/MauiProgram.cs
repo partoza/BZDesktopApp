@@ -20,10 +20,16 @@ namespace BZDesktopApp
 
 
             builder.Services.AddMauiBlazorWebView();
-            builder.Services.AddSingleton<BZDesktopApp.Services.AuthenticationService>();
+            builder.Services.AddMauiBlazorWebView();
+
+            // register HttpClient for Blazor code (adjust BaseAddress to your API's address)
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7028/") });
+
+            // auth service must be scoped (so IJSRuntime/HttpClient can be injected safely)
+            builder.Services.AddScoped<BZDesktopApp.Services.AuthenticationService>();
 
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
 

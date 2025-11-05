@@ -1,6 +1,7 @@
 ﻿@page "/login"
 @using Microsoft.AspNetCore.Components.Forms
-@using BZDesktopApp.Services
+@using BZDesktopApp.Services;
+@layout Components.Layout.AuthLayout
 @inject AuthenticationService AuthService
 @inject NavigationManager Navigation
 @implements IDisposable
@@ -323,39 +324,53 @@
 
     private async Task HandleLogin()
     {
+        // reset errors
+        validationErrors.Clear();
         errorMessage = string.Empty;
 
-        if (!ValidateInputs())
-        {
+        // client-side validation
+        if (string.IsNullOrWhiteSpace(username))
+            validationErrors["username"] = "Username is required";
+        if (string.IsNullOrWhiteSpace(password))
+            validationErrors["password"] = "Password is required";
+
+        if (validationErrors.Count > 0)
             return;
-        }
 
         isLoading = true;
 
         try
         {
-            // TODO: Replace with actual authentication service call
-            // Example: await AuthService.LoginAsync(username, password, rememberMe);
+            // call client-side auth service which posts to /api/auth/login
+            var resp = await AuthService.LoginAsync(username, password);
 
-            // For demo purposes, simulate authentication delay
-            await Task.Delay(500);
-
-            // Simulate successful login
-            if (username == "admin" && password == "password123")
-            {
-                errorMessage = string.Empty;
-                // Mark the user as authenticated BEFORE navigating
-                AuthService.Login();
-                Navigation.NavigateTo("/home", replace: true);
-            }
-            else
+            // map response to server LoginResponse DTO (Token, Username, Role, FullName)
+            if (resp == null)
             {
                 errorMessage = "Invalid username or password";
-                ActivateLockout(5); // 5 second lockout after failed attempt
+                return;
             }
+
+            // store token + user
+            await AuthService.StoreAuthDataAsync(resp);
+
+            // redirect based on role (lowercase-normalize)
+            var role = resp.Role?.ToLowerInvariant() ?? string.Empty;
+
+            if (role == "superadmin")
+                Navigation.NavigateTo("/admin/dashboard", true);
+            else if (role == "admin")
+                Navigation.NavigateTo("/admin/dashboard", true);
+            else
+                Navigation.NavigateTo("/home", true);
+        }
+        catch (System.Net.Http.HttpRequestException)
+        {
+            errorMessage = "Unable to reach server. Please check your network.";
         }
         catch (Exception ex)
         {
+            // generic fallback - show friendly message
             errorMessage = $"Login failed: {ex.Message}";
         }
         finally
@@ -363,6 +378,7 @@
             isLoading = false;
         }
     }
+
 
     private void ActivateLockout(int seconds)
     {

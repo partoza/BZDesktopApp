@@ -1,0 +1,36 @@
+﻿@using BZDesktopApp.Services
+
+@if (_initialized)
+{
+    @if (!AuthService.IsLoggedIn)
+    {
+        <p>Redirecting to login...</p>
+    }
+    else
+    {
+        @ChildContent
+    }
+}
+else
+{
+    <p>Loading...</p>
+}
+
+@code {
+    private bool _initialized = false;
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Inject] private AuthenticationService AuthService { get; set; } = default!;
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthService.InitializeAsync();
+        _initialized = true;
+
+        if (!AuthService.IsLoggedIn)
+        {
+            Navigation.NavigateTo("/login", replace: true);
+        }
+    }
+}

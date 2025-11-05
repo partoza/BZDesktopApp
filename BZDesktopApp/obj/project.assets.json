@@ -965,6 +965,16 @@
             "rid": "win-x86"
           }
         }
+      },
+      "BZDesktopApp.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/BZDesktopApp.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BZDesktopApp.Shared.dll": {}
+        }
       }
     },
     "net9.0-windows10.0.19041/win10-x64": {
@@ -1878,6 +1888,16 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "BZDesktopApp.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/BZDesktopApp.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BZDesktopApp.Shared.dll": {}
         }
       }
     }
@@ -4265,34 +4285,40 @@
         "tools/x64/GenXbf.dll",
         "tools/x86/GenXbf.dll"
       ]
+    },
+    "BZDesktopApp.Shared/1.0.0": {
+      "type": "project",
+      "path": "../BZAppSolution.sln/BZDesktopApp.Shared/BZDesktopApp.Shared.csproj",
+      "msbuildProject": "../BZAppSolution.sln/BZDesktopApp.Shared/BZDesktopApp.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0-windows10.0.19041": [
+      "BZDesktopApp.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebView.Maui >= 9.0.111",
       "Microsoft.Extensions.Logging.Debug >= 9.0.8",
       "Microsoft.Maui.Controls >= 9.0.111"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\r3x\\.nuget\\packages\\": {},
+    "C:\\Users\\MYPC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp.csproj",
+      "projectUniqueName": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\BZDesktopApp.csproj",
       "projectName": "BZDesktopApp",
-      "projectPath": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp.csproj",
-      "packagesPath": "C:\\Users\\r3x\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\obj\\",
+      "projectPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\BZDesktopApp.csproj",
+      "packagesPath": "C:\\Users\\MYPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\r3x\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MYPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4307,7 +4333,11 @@
       "frameworks": {
         "net9.0-windows10.0.19041": {
           "targetAlias": "net9.0-windows10.0.19041.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj": {
+              "projectPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
