@@ -18,6 +18,20 @@
  body {
  @apply font-poppins;
  }
+
+    /* Completely hide browser's default password toggle */
+    input[type="password"]::-webkit-credentials-auto-fill-button {
+        display: none !important;
+    }
+
+    input[type="password"]::-moz-credentials-auto-fill-button {
+        display: none !important;
+    }
+
+    input[type="password"]::-ms-reveal {
+        display: none !important;
+    }
+
 }
 
 @layer components {
@@ -40,6 +54,7 @@
  .form-label {
  @apply mb-1 block text-sm font-medium text-gray-700;
  }
+
 
 
 }
