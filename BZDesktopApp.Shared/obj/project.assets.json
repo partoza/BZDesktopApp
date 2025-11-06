@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
       "projectName": "BZDesktopApp.Shared",
-      "projectPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
+      "projectPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
       "packagesPath": "C:\\Users\\MYPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\obj\\",
+      "outputPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
