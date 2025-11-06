@@ -74,7 +74,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BZAppSolution.sln\BZDesktopApp.Shared\BZDesktopApp.Shared.csproj" />
+      <ProjectReference Include="..\BZDesktopApp.Shared\BZDesktopApp.Shared.csproj" />
     </ItemGroup>
 
     <!-- Configure where npm runs from; defaults to project directory -->
