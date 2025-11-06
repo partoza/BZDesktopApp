@@ -26,7 +26,9 @@ namespace BZDesktopApp.Api.Services
 
         public async Task<LoginResponse?> LoginAsync(LoginRequest request)
         {
-            var user = await _context.Employees.FirstOrDefaultAsync(u => u.Username == request.Username);
+            var user = await _context.Employees
+                .FirstOrDefaultAsync(u => u.Username == request.Username);
+
             if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.Password))
                 return null;
 
@@ -37,16 +39,19 @@ namespace BZDesktopApp.Api.Services
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, user.EmployeeId.ToString()),
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Role, user.Role)
-            };
+        new Claim(ClaimTypes.NameIdentifier, user.EmployeeId.ToString()),
+        new Claim(ClaimTypes.Name, user.Username),
+        new Claim(ClaimTypes.Role, user.Role)
+    };
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddHours(4),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature
+                ),
                 Issuer = issuer,
                 Audience = audience
             };
@@ -58,7 +63,9 @@ namespace BZDesktopApp.Api.Services
                 Token = tokenHandler.WriteToken(token),
                 Username = user.Username,
                 Role = user.Role,
-                FullName = $"{user.FirstName} {user.LastName}"
+                FullName = $"{user.FirstName} {user.LastName}",
+                AvatarUrl = user.Avatar,           
+                Email = user.EmailAddress          
             };
         }
     }
