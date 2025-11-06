@@ -4618,8 +4618,8 @@
     },
     "BZDesktopApp.Shared/1.0.0": {
       "type": "project",
-      "path": "../BZAppSolution.sln/BZDesktopApp.Shared/BZDesktopApp.Shared.csproj",
-      "msbuildProject": "../BZAppSolution.sln/BZDesktopApp.Shared/BZDesktopApp.Shared.csproj"
+      "path": "../BZDesktopApp.Shared/BZDesktopApp.Shared.csproj",
+      "msbuildProject": "../BZDesktopApp.Shared/BZDesktopApp.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4666,8 +4666,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj": {
-              "projectPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj"
+            "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj": {
+              "projectPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj"
             }
           }
         }

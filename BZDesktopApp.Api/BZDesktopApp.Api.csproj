@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BZAppSolution.sln\BZDesktopApp.Shared\BZDesktopApp.Shared.csproj" />
+    <ProjectReference Include="..\BZDesktopApp.Shared\BZDesktopApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>
