@@ -9,7 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BZDesktopApp
 build_property.RootNamespace = BZDesktopApp
-build_property.ProjectDir = C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\
+build_property.ProjectDir = C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -23,166 +23,166 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp
+build_property.MSBuildProjectDirectory = C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/App.xaml]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BZDesktopApp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/MainPage.xaml]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BZDesktopApp.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/AuthGuard.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/AuthGuard.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoR3VhcmQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Layout/AuthLayout.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Layout/AuthLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQXV0aExheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Auth/Login.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Auth/Login.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoXExvZ2luLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Cloud/Backup.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Cloud/Backup.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbG91ZFxCYWNrdXAucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Cloud/Sync.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Cloud/Sync.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDbG91ZFxTeW5jLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Dashboard/AdminDashboard.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Dashboard/AdminDashboard.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmRcQWRtaW5EYXNoYm9hcmQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Dashboard/Dashboard.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Dashboard/Dashboard.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmRcRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Employee/Employees.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Employee/Employees.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZVxFbXBsb3llZXMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Employee/Permissions.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Employee/Permissions.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZVxQZXJtaXNzaW9ucy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/History/TransactionHistory.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/History/TransactionHistory.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIaXN0b3J5XFRyYW5zYWN0aW9uSGlzdG9yeS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Inventory/Products.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Inventory/Products.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbnZlbnRvcnlcUHJvZHVjdHMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Inventory/PurchaseOrder.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Inventory/PurchaseOrder.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbnZlbnRvcnlcUHVyY2hhc2VPcmRlci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Inventory/SalesOrder.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Inventory/SalesOrder.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbnZlbnRvcnlcU2FsZXNPcmRlci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Logs/AuditLogs.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Logs/AuditLogs.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dzXEF1ZGl0TG9ncy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Manage/Categories.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Manage/Categories.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VcQ2F0ZWdvcmllcy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Manage/Customers.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Manage/Customers.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VcQ3VzdG9tZXJzLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Pages/Manage/Suppliers.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Pages/Manage/Suppliers.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VcU3VwcGxpZXJzLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Routes.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Routes.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/_Imports.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/_Imports.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Layout/MainLayout.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-n36n42kudk
 
-[C:/Users/MYPC/source/repos/BZAppSolution/BZDesktopApp/Components/Layout/NavMenu.razor]
+[C:/Users/r3x/source/repos/BZDesktopApp/BZDesktopApp/BZDesktopApp/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==

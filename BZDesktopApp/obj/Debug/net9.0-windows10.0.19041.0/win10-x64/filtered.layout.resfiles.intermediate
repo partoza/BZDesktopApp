@@ -4,6 +4,7 @@ wwwroot\lib\flowbite\flowbite.min.js.gz
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.gz
 wwwroot\js\flowbite-init.js.gz
 wwwroot\index.html.gz
+wwwroot\js\navmenu.js.gz
 wwwroot\css\bootstrap\bootstrap.min.css.gz
 wwwroot\css\bootstrap\bootstrap.min.css.map.gz
 wwwroot\app.css.gz
@@ -12,6 +13,7 @@ wwwroot\lib\flowbite\flowbite.min.js.br
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.br
 wwwroot\js\flowbite-init.js.br
 wwwroot\index.html.br
+wwwroot\js\navmenu.js.br
 wwwroot\css\bootstrap\bootstrap.min.css.br
 wwwroot\css\bootstrap\bootstrap.min.css.map.br
 wwwroot\app.css.br
@@ -20,7 +22,6 @@ wwwroot\css\app.css.br
 wwwroot\BZDesktopApp.styles.css.br
 wwwroot\css\app.css.gz
 wwwroot\BZDesktopApp.styles.css.gz
-OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png
 appiconLargeTile.scale-125.png
@@ -72,11 +73,6 @@ dotnet_bot.scale-125.png
 dotnet_bot.scale-150.png
 dotnet_bot.scale-200.png
 dotnet_bot.scale-400.png
-splashSplashScreen.scale-100.png
-splashSplashScreen.scale-125.png
-splashSplashScreen.scale-150.png
-splashSplashScreen.scale-200.png
-splashSplashScreen.scale-400.png
 wwwroot\BZDesktopApp.styles.css
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css
 package-lock.json
@@ -93,4 +89,5 @@ wwwroot\images\logo\bz-logo-green.png
 wwwroot\images\logo\bz-logo-white.png
 wwwroot\index.html
 wwwroot\js\flowbite-init.js
+wwwroot\js\navmenu.js
 wwwroot\lib\flowbite\flowbite.min.js
