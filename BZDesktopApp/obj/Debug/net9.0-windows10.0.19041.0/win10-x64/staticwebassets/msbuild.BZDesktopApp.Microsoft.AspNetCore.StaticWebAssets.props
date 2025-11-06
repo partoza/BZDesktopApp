@@ -237,7 +237,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>135824</FileLength>
-      <LastWriteTime>Wed, 05 Nov 2025 19:26:10 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 06 Nov 2025 10:05:13 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\flowbite\flowbite.min.js'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
