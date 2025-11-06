@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BZDesktopApp.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251104121315_InitialCreate")]
+    [Migration("20251105135435_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -48,10 +48,7 @@ namespace BZDesktopApp.Api.Migrations
             modelBuilder.Entity("BZDesktopApp.Api.Models.Employee", b =>
                 {
                     b.Property<long>("EmployeeId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("EmployeeId"));
 
                     b.Property<bool>("ActiveStatus")
                         .HasColumnType("bit");

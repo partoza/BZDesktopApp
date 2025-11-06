@@ -45,10 +45,7 @@ namespace BZDesktopApp.Api.Migrations
             modelBuilder.Entity("BZDesktopApp.Api.Models.Employee", b =>
                 {
                     b.Property<long>("EmployeeId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("EmployeeId"));
 
                     b.Property<bool>("ActiveStatus")
                         .HasColumnType("bit");

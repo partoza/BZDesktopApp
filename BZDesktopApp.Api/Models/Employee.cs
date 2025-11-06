@@ -1,7 +1,10 @@
-﻿namespace BZDesktopApp.Api.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BZDesktopApp.Api.Models
 {
     public class Employee
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long EmployeeId { get; set; }
         public long BranchId { get; set; }
 
