@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZDesktopApp", "..\BZDesktopApp\BZDesktopApp.csproj", "{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZDesktopApp.Api", "..\BZDesktopApp.Api\BZDesktopApp.Api.csproj", "{60714C4C-5867-D5F5-D52E-2052E1D5A29B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZDesktopApp.Shared", "..\BZDesktopApp.Shared\BZDesktopApp.Shared.csproj", "{52A334E2-79BB-7787-4A34-C09D7FAFABB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{60714C4C-5867-D5F5-D52E-2052E1D5A29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60714C4C-5867-D5F5-D52E-2052E1D5A29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60714C4C-5867-D5F5-D52E-2052E1D5A29B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52A334E2-79BB-7787-4A34-C09D7FAFABB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A334E2-79BB-7787-4A34-C09D7FAFABB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A334E2-79BB-7787-4A34-C09D7FAFABB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A334E2-79BB-7787-4A34-C09D7FAFABB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
