@@ -72,6 +72,22 @@ public class AuthenticationService
         }
     }
 
+    public async Task<LoginResponse?> GetUserAsync()
+    {
+        try
+        {
+            var json = await _js.InvokeAsync<string?>("localStorage.getItem", "bz_user");
+            if (string.IsNullOrEmpty(json)) return null;
+            return JsonSerializer.Deserialize<LoginResponse>(json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[AuthService] GetUserAsync failed: {ex.Message}");
+            return null;
+        }
+    }
+
     public async Task StoreAuthDataAsync(LoginResponse resp)
     {
         if (resp == null) return;

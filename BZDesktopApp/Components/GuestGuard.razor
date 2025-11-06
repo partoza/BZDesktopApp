@@ -1,0 +1,57 @@
+﻿@using BZDesktopApp.Services
+@using BZDesktopApp.Shared.Dtos
+
+@if (_initialized)
+{
+    @if (AuthService.IsLoggedIn)
+    {
+        <p>Redirecting...</p>
+    }
+    else
+    {
+        @ChildContent
+    }
+}
+else
+{
+    <p>Loading...</p>
+}
+
+@code {
+    private bool _initialized = false;
+    private LoginResponse? user;
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Inject] private AuthenticationService AuthService { get; set; } = default!;
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthService.InitializeAsync();
+        _initialized = true;
+
+        if (AuthService.IsLoggedIn)
+        {
+            user = await AuthService.GetUserAsync();
+
+            if (user is not null)
+            {
+                // Role-based redirect
+                if (user.Role.Equals("admin", StringComparison.OrdinalIgnoreCase) ||
+                    user.Role.Equals("superadmin", StringComparison.OrdinalIgnoreCase))
+                {
+                    Navigation.NavigateTo("/admin/dashboard", replace: true);
+                }
+                else
+                {
+                    Navigation.NavigateTo("/dashboard", replace: true);
+                }
+            }
+            else
+            {
+                // fallback if user info isn't found for some reason
+                Navigation.NavigateTo("/dashboard", replace: true);
+            }
+        }
+    }
+}

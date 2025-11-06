@@ -1941,14 +1941,12 @@ C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\BZDesktopApp.styles.css
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BZDesktopApp.bundle.scp.css
-C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-0r5pr1ra44.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\p0l2xizj9r-04lf0slsn0.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\rqolfhyn8r-e5tk7yf482.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\hqkuxx2lt4-6gzpyzhau4.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\muwdvwg4xv-8inm30yfxf.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\bmhqyc36o1-nzw87rgyyq.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\6wgnfsr21f-p7z3q0kh2l.gz
-C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\4eu5zzuviq-f84hs44zi6.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\vtihzii4a9-mco0lh2krp.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\53l2j1xrdb-mco0lh2krp.gz
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\staticwebassets.build.json
@@ -1964,14 +1962,12 @@ C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\staticwebassets.upToDateCheck.txt
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\vtihzii4a9-mco0lh2krp.br
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\53l2j1xrdb-mco0lh2krp.br
-C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-0r5pr1ra44.br
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\p0l2xizj9r-04lf0slsn0.br
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\rqolfhyn8r-e5tk7yf482.br
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\hqkuxx2lt4-6gzpyzhau4.br
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\muwdvwg4xv-8inm30yfxf.br
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\bmhqyc36o1-nzw87rgyyq.br
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\6wgnfsr21f-p7z3q0kh2l.br
-C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\4eu5zzuviq-f84hs44zi6.br
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\staticwebassets.publish.json
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\staticwebassets.publish.endpoints.json
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.inputs
@@ -2440,3 +2436,7 @@ C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-hdtch1vg5u.gz
+C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\4eu5zzuviq-f84hs44zi6.gz
+C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-hdtch1vg5u.br
+C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\4eu5zzuviq-f84hs44zi6.br

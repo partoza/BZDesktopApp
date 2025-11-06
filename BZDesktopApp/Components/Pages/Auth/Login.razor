@@ -8,7 +8,8 @@
 
 <PageTitle>Login - BZ IT Solutions</PageTitle>
 
-<div class="relative flex min-h-screen flex-col bg-white"
+<GuestGuard>
+    <div class="relative flex min-h-screen flex-col bg-white"
      style="background: url('/images/background/login-bg.jpg') no-repeat center/cover; background-attachment: scroll;">
 
     <!-- Overlay Gradient -->
@@ -278,7 +279,7 @@
         </div>
     </footer>
 </div>
-
+</GuestGuard>
 @code {
     private string username = string.Empty;
     private string password = string.Empty;

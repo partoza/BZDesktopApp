@@ -1,6 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using BZDesktopApp.Services
+@using BZDesktopApp.Shared.Dtos
+@inherits LayoutComponentBase
 @inject NavigationManager Navigation
-@using BZDesktopApp.Services;
 @inject AuthenticationService AuthService
 
 <div class="flex h-screen bg-gray-50">
@@ -12,65 +13,64 @@
         <div class="bg-white shadow-sm rounded-lg px-4 py-4 flex items-center m-5">
             <!-- Left group: menu toggle + search -->
             <div class="flex items-center gap-3 flex-1">
-                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-primary rounded-lg sm:hidden hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-                    <span class="sr-only">Open sidebar</span>
-                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-                    </svg>
+                <button class="p-2 text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <!-- Add your menu toggle icon here -->
+                    <i class="fa-solid fa-bars"></i>
                 </button>
 
-
-                <form class="max-w-md mx-2 w-full">
-                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <form class="max-w-md mx-2 w-full" @onsubmit="OnSearch">
                     <div class="relative">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-gray-500">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search About System ..." required />
-                        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-emerald-600 hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary/20 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                        <input @bind="searchQuery"
+                               type="search"
+                               id="default-search"
+                               class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500"
+                               placeholder="Search About System ..." />
+                        <button type="submit"
+                                class="text-white absolute end-2.5 bottom-2.5 bg-emerald-600 hover:bg-emerald-700 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-4 py-1">
+                            Search
+                        </button>
                     </div>
                 </form>
-
             </div>
 
             <!-- Right group: profile info + avatar/dropdown -->
             <div class="flex items-center gap-2">
                 <div class="font-medium dark:text-white text-right">
-                    <div>Jese Leos</div>
-                    <div class="text-xs text-gray-500 dark:text-gray-400">Super Admin</div>
+                    <div>@(user?.FullName ?? "Guest User")</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">@((string.IsNullOrEmpty(user?.Role) ? "Guest" : user!.Role))</div>
                 </div>
-                <div class="flex items-center">
-                    <div class="flex items-center ms-3">
-                        <div>
-                            <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-primary/40 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
-                                <span class="sr-only">Open user menu</span>
-                                <img class="w-10 h-10 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
-                            </button>
-                        </div>
-                        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-sm shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+
+                <div class="flex items-center ms-3 relative">
+                    <button class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-primary/40" @onclick="ToggleDropdown" aria-expanded="@isDropdownOpen">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-10 h-10 rounded-full object-cover" src="@GetAvatar()" alt="user photo" />
+                    </button>
+
+                    @if (isDropdownOpen)
+                    {
+                        <div class="absolute right-0 z-50 mt-3 w-48 text-base list-none bg-white divide-y divide-gray-100 rounded-md shadow-lg dark:bg-gray-700 dark:divide-gray-600">
                             <div class="px-4 py-3" role="none">
-                                <p class="text-sm text-gray-900 dark:text-white" role="none">
-                                    User
-                                </p>
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                                    user@bzdesktopapp.com
-                                </p>
+                                <p class="text-sm text-gray-900 dark:text-white" role="none">@user?.FullName</p>
+                                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">@user?.Email</p>
                             </div>
                             <ul class="py-1" role="none">
                                 <li>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
+                                    <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600" role="menuitem">Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
+                                    <a href="/settings" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600" role="menuitem">Settings</a>
                                 </li>
                                 <li>
-                                    <a href="#" @onclick:preventDefault="true" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                                    <button class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600" @onclick="SignOut">
+                                        Sign out
+                                    </button>
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
@@ -82,5 +82,57 @@
 </div>
 
 @code {
+    private LoginResponse? user;
+    private bool isDropdownOpen = false;
+    private string searchQuery = string.Empty;
 
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthService.InitializeAsync();
+        user = await AuthService.GetUserAsync();
+
+        // subscribe using a void handler that runs async work via InvokeAsync
+        AuthService.OnAuthenticationChanged += HandleAuthChanged;
+    }
+
+    // Matches Action signature (void). Use InvokeAsync to run async code on UI thread.
+    private void HandleAuthChanged()
+    {
+        _ = InvokeAsync(async () =>
+        {
+            user = await AuthService.GetUserAsync();
+            StateHasChanged();
+        });
+    }
+
+    private void ToggleDropdown() => isDropdownOpen = !isDropdownOpen;
+
+    private string GetAvatar()
+    {
+        if (!string.IsNullOrEmpty(user?.AvatarUrl))
+            return user!.AvatarUrl.StartsWith("http") ? user.AvatarUrl : $"{Navigation.BaseUri.TrimEnd('/')}{user.AvatarUrl}";
+
+        return $"https://ui-avatars.com/api/?name={Uri.EscapeDataString(user?.FullName ?? "User")}&background=0D8ABC&color=fff";
+    }
+
+    private async Task SignOut()
+    {
+        await AuthService.LogoutAsync();
+        user = null;
+        Navigation.NavigateTo("/login", forceLoad: true);
+    }
+
+    private Task OnSearch()
+    {
+        if (!string.IsNullOrWhiteSpace(searchQuery))
+            Navigation.NavigateTo($"/search?q={Uri.EscapeDataString(searchQuery)}");
+        return Task.CompletedTask;
+    }
+
+    public void Dispose()
+    {
+        // Unsubscribe the same handler so there are no memory leaks
+        AuthService.OnAuthenticationChanged -= HandleAuthChanged;
+    }
 }
+
