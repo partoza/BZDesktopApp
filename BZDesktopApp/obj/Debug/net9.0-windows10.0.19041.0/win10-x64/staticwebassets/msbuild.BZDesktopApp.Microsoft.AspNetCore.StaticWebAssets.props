@@ -12,12 +12,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>quhix9he5f</Fingerprint>
-      <Integrity>HsA8Gsoa0j/w5WXiHOHhX5LaBhMgH72826yyaG6DJto=</Integrity>
+      <Fingerprint>v9wipz9ve2</Fingerprint>
+      <Integrity>HRdGYUv9Tejyi8XYLEUUzlBf1S0wWj6AozKz10DDmFE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>52549</FileLength>
-      <LastWriteTime>Thu, 06 Nov 2025 13:13:56 GMT</LastWriteTime>
+      <FileLength>72512</FileLength>
+      <LastWriteTime>Thu, 06 Nov 2025 14:02:36 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AppIcon.ico'))">
@@ -237,7 +237,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>3414</FileLength>
-      <LastWriteTime>Thu, 06 Nov 2025 11:57:15 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 06 Nov 2025 13:29:20 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\navmenu.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\flowbite\flowbite.min.js'))">
