@@ -22,3 +22,15 @@ C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp.Shared\obj\Debug\net9.0\BZ
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp.Shared\obj\Debug\net9.0\refint\BZDesktopApp.Shared.dll
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.pdb
 C:\Users\MYPC\source\repos\BZAppSolution\BZDesktopApp.Shared\obj\Debug\net9.0\ref\BZDesktopApp.Shared.dll
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\bin\Debug\net9.0\BZDesktopApp.Shared.deps.json
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\bin\Debug\net9.0\BZDesktopApp.Shared.dll
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\bin\Debug\net9.0\BZDesktopApp.Shared.pdb
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.AssemblyInfoInputs.cache
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.AssemblyInfo.cs
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.sourcelink.json
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.dll
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\refint\BZDesktopApp.Shared.dll
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.pdb
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\ref\BZDesktopApp.Shared.dll
