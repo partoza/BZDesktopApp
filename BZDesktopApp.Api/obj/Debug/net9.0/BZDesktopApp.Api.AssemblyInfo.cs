@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BZDesktopApp.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ace76100a71dc84d15698a325aa0b1be4a6da844")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7a6a54a5244533498c6e44c89273e7a13ecc5ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("BZDesktopApp.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BZDesktopApp.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

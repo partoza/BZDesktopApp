@@ -2,6 +2,7 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\lib\flo
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\js\flowbite-init.js
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\index.html
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\js\navmenu.js
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\js\EmployeeRecords.js
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\css\bootstrap\bootstrap.min.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\css\bootstrap\bootstrap.min.css.map
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\app.css
@@ -16,6 +17,7 @@ wwwroot\images\background\login-bg.jpg
 wwwroot\images\logo\bz-logo-green.png
 wwwroot\images\logo\bz-logo-white.png
 wwwroot\index.html
+wwwroot\js\EmployeeRecords.js
 wwwroot\js\flowbite-init.js
 wwwroot\js\navmenu.js
 wwwroot\lib\flowbite\flowbite.min.js

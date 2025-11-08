@@ -19,6 +19,10 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
         <Nullable>enable</Nullable>
+        
+        <!-- Enable Hot Reload -->
+        <UseHotReload>true</UseHotReload>
+        <HotReloadEnabled>true</HotReloadEnabled>
 
         <!-- Display name -->
         <ApplicationTitle>BZDesktopApp</ApplicationTitle>
