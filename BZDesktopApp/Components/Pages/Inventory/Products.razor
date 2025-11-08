@@ -1,10 +1,600 @@
-﻿@page "/auditlogs"
-@using BZDesktopApp.Components
+﻿@page "/products"
+@using System.Globalization
+
 <AuthGuard>
-    <div class="space-y-6">
-        <div>
-            <h1 class="text-4xl font-bold text-gray-900">Audit Logs 👋</h1>
-            <p class="text-gray-600 mt-2">Placeholder page for audit logs</p>
+    <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3 mb-3">
+        <!-- Total Products Card -->
+        <div class="bg-white rounded-xl shadow-sm p-5 border border-gray-200">
+            <div class="flex items-center gap-3 mb-1">
+                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div class="w-8 h-8 bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center"
+                         style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                             class="size-4 text-white">
+                            <path fill-rule="evenodd"
+                                  d="M1.5 9.832v1.793c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875V9.832a3 3 0 0 0-.722-1.952l-3.285-3.832A3 3 0 0 0 16.215 3h-8.43a3 3 0 0 0-2.278 1.048L2.222 7.88A3 3 0 0 0 1.5 9.832ZM7.785 4.5a1.5 1.5 0 0 0-1.139.524L3.881 8.25h3.165a3 3 0 0 1 2.496 1.336l.164.246a1.5 1.5 0 0 0 1.248.668h2.092a1.5 1.5 0 0 0 1.248-.668l.164-.246a3 3 0 0 1 2.496-1.336h3.165l-2.765-3.226a1.5 1.5 0 0 0-1.139-.524h-8.43Z"
+                                  clip-rule="evenodd" />
+                            <path d="M2.813 15c-.725 0-1.313.588-1.313 1.313V18a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-1.688c0-.724-.588-1.312-1.313-1.312h-4.233a3 3 0 0 0-2.496 1.336l-.164.246a1.5 1.5 0 0 1-1.248.668h-2.092a1.5 1.5 0 0 1-1.248-.668l-.164-.246A3 3 0 0 0 7.046 15H2.812Z" />
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-base font-medium text-gray-700">Total Products</h2>
+            </div>
+            <div class="ps-14">
+                <h3 class="text-2xl font-semibold text-gray-900">@totalProducts</h3>
+                <p class="text-xs text-gray-500 mt-1">Real Time Total</p>
+                <div class="flex items-center gap-2 mt-2">
+                    @{
+                        var activeProductPercentage = totalProducts > 0 ? (int)Math.Round((activeProducts / (double)totalProducts) * 100) : 0;
+                    }
+                    <div class="flex items-center text-green-600 text-xs">
+                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd" />
+                        </svg>
+                        <span>@activeProductPercentage% Active</span>
+                    </div>
+                    <div class="flex items-center text-red-600 text-xs">
+                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
+                                  clip-rule="evenodd" />
+                        </svg>
+                        <span>@(100 - activeProductPercentage)% Inactive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Products Card -->
+        <div class="bg-white rounded-xl shadow-sm p-5 border border-gray-200">
+            <div class="flex items-center gap-3 mb-1">
+                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div class="w-8 h-8 bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center"
+                         style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-bag-check-fill size-4 text-white" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-base font-medium text-gray-700">Active Products</h2>
+            </div>
+            <div class="ps-14">
+                <h3 class="text-2xl font-semibold text-gray-900">@activeProducts</h3>
+                <p class="text-xs text-gray-500 mt-1">Currently Active</p>
+                <div class="flex items-center gap-2 mt-2">
+                    <div class="flex items-center text-green-600 text-xs">
+                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd" />
+                        </svg>
+                        <span>@activeProductPercentage% of Total</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inactive Products Card -->
+        <div class="bg-white rounded-xl shadow-sm p-5 border border-gray-200">
+            <div class="flex items-center gap-3 mb-1">
+                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div class="w-8 h-8 bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center"
+                         style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)">
+                        <svg width="16" height="16" fill="currentColor" class="bi bi-bag-x-fill size-4 text-white"
+                             viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M6.854 8.146a.5.5 0 1 0-.708.708L7.293 10l-1.147 1.146a.5.5 0 0 0 .708.708L8 10.707l1.146 1.147a.5.5 0 0 0 .708-.708L8.707 10l1.147-1.146a.5.5 0 0 0-.708-.708L8 9.293z" />
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-base font-medium text-gray-700">Inactive Products</h2>
+            </div>
+            <div class="ps-14">
+                <h3 class="text-2xl font-semibold text-gray-900">@inactiveProducts</h3>
+                <p class="text-xs text-gray-500 mt-1">Currently Inactive</p>
+                <div class="flex items-center gap-2 mt-2">
+                    <div class="flex items-center text-red-600 text-xs">
+                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
+                                  clip-rule="evenodd" />
+                        </svg>
+                        <span>@inactiveProductPercentage% of Total</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Low Stock Card -->
+        <div class="bg-white rounded-xl shadow-sm p-5 border border-gray-200">
+            <div class="flex items-center gap-3 mb-1">
+                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div class="w-8 h-8 bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center"
+                         style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                             class="size-4 text-white">
+                            <path fill-rule="evenodd"
+                                  d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                                  clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-base font-medium text-gray-700">Low/Out of Stock</h2>
+            </div>
+            <div class="ps-14">
+                <h3 class="text-2xl font-semibold text-gray-900">@lowStock</h3>
+                <p class="text-xs text-gray-500 mt-1">Need Restock</p>
+                <div class="flex items-center gap-2 mt-2">
+                    <div class="relative inline-block group" tabindex="0" aria-label="Low stock">
+                        @{
+                            var noProducts = totalProducts == 0;
+                            var statusClass = noProducts ? "text-sky-600 bg-sky-600/10" :
+                            (lowStock > 0 ? "text-orange-600 bg-orange-600/10" : "text-green-600 bg-primary/10");
+                            var statusText = noProducts ? "No Existing Product" :
+                            (lowStock > 0 ? "Attention Needed" : "All Products in Stock");
+                        }
+
+                        <div class="flex items-center @statusClass text-xs cursor-pointer px-2 py-1 rounded-lg">
+                            <svg class="size-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                @if (noProducts)
+                                {
+                                    <!-- Info icon for no products (blue) -->
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+                                }
+                                else if (lowStock > 0)
+                                {
+                                    <!-- Warning icon for low stock -->
+                                    <path fill-rule="evenodd"
+                                          d="M8.257 3.099c.765-1.36 2.721-1.36 3.486 0l6.518 11.593c.75 1.335-.213 2.983-1.743 2.983H3.482c-1.53 0-2.493-1.648-1.743-2.983L8.257 3.1zM10 6.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 6.5zm0 7.75a.75.75 0 100 1.5.75.75 0 000-1.5z"
+                                          clip-rule="evenodd" />
+                                }
+                                else
+                                {
+                                    <!-- Checkmark icon for all in stock -->
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                }
+                            </svg>
+                            <span>@statusText</span>
+                        </div>
+
+                        @if (lowStock > 0 && lowStockProducts.Any())
+                        {
+                            <!-- Tooltip: list of products that need restock -->
+                            <div class="z-50 pointer-events-none opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-150 absolute top-full mt-3 left-1 transform -translate-x-1/2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg p-3 text-sm text-gray-700">
+                                <div class="font-medium text-red-600 mb-2">Products Needing Restock</div>
+                                <div class="space-y-3 max-h-36 overflow-auto">
+                                    @foreach (var product in lowStockProducts)
+                                    {
+                                        <div class="flex items-start justify-between py-2">
+                                            <div class="flex items-start gap-3 min-w-0 flex-1">
+                                                <span class="w-2 h-2 rounded-full @(product.StockCount == 0 ? "bg-red-400" : "bg-yellow-400") inline-block mt-1"></span>
+                                                <span class="tooltip-name text-xs text-gray-600">@product.Name</span>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-3">
+                                                <span class="font-semibold text-gray-800 text-xs whitespace-nowrap">
+                                                    @(product.StockCount == 0 ? "Out of Stock" : $"{product.StockCount} left")
+                                                </span>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Table -->
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+        <style>
+            .cell-text {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                line-height: 1.25rem;
+                max-height: calc(2 * 1.25rem);
+                text-overflow: ellipsis;
+                white-space: normal;
+            }
+
+            .tooltip-name {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                line-height: 1rem;
+                max-height: calc(2 * 1rem);
+                display: block;
+            }
+        </style>
+
+        <!-- Products List Header -->
+        <div class="bg-white shadow-sm p-5 mb-2">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <!-- Left: Title -->
+                <div class="flex items-start gap-4">
+                    <div>
+                        <h2 class="text-xl font-semibold text-primary">Product List</h2>
+                    </div>
+                </div>
+
+                <!-- Center: Search -->
+                <div class="w-full lg:max-w-xl mx-auto">
+                    <form class="flex items-center bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+                        <div class="relative flex-1">
+                            <input type="text" @bind="searchTerm" @bind:event="oninput"
+                                   placeholder="Search Product..." aria-label="Search products"
+                                   class="w-full px-3 py-2 pl-10 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-500" />
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <button type="button"
+                                class="px-4 py-2 bg-primary text-white text-sm font-medium hover:bg-emerald-700 transition-colors">
+                            Search
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Action buttons -->
+                <div class="flex items-center gap-3">
+                    <button
+                            class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm font-medium flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        Add Product
+                    </button>
+
+                    <button 
+                            class="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium flex items-center">
+                        <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zM13 3.5L18.5 9H13V3.5zM8 13h8v2H8v-2zm0-4h8v2H8V9z" />
+                        </svg>
+                        Export
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filters Row -->
+            <div class="mt-4">
+                <form class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                    <div class="flex flex-wrap gap-3 items-center w-full md:w-auto">
+                        <select @bind="statusFilter" class="px-3 py-2 border border-gray-300 rounded-lg text-sm min-w-[140px]">
+                            <option value="">All Status</option>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+
+                        <select @bind="categoryFilter" class="px-3 py-2 border border-gray-300 rounded-lg text-sm min-w-[160px]">
+                            <option value="">All Categories</option>
+                            @foreach (var category in categories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        </select>
+
+                        <select @bind="stockFilter" class="px-3 py-2 border border-gray-300 rounded-lg text-sm min-w-[140px]">
+                            <option value="">All Stocks</option>
+                            <option value="High">High</option>
+                            <option value="Low">Low</option>
+                            <option value="Out">Out of Stock</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center gap-3 justify-end w-full md:w-auto">
+                        <button type="button" 
+                                class="px-5 py-2 bg-primary text-white rounded-lg hover:bg-emerald-700 text-sm font-medium">
+                            Filter
+                        </button>
+
+                        <button type="button"
+                                class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 hover:bg-gray-50">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="h-[430px] bg-white flex flex-col">
+            <!-- Scrollable table wrapper -->
+            <div class="flex-1">
+                <table class="table-fixed min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 align-middle text-left font-medium text-gray-700 uppercase tracking-wide"
+                                style="width:12.5%">Product</th>
+                            <th class="px-6 py-3 align-middle text-left font-medium text-gray-700 uppercase tracking-wide"
+                                style="width:12.5%">Brand</th>
+                            <th class="px-6 py-3 align-middle text-left font-medium text-gray-700 uppercase tracking-wide"
+                                style="width:12.5%">Category</th>
+                            <th class="px-6 py-3 align-middle text-left font-medium text-gray-700 uppercase tracking-wide"
+                                style="width:12.5%">Stock</th>
+                            <th class="px-6 py-3 align-middle text-left font-medium text-gray-700 uppercase tracking-wide"
+                                style="width:12.5%">Stock Status</th>
+                            <th class="px-6 py-3 align-middle text-left font-medium text-gray-700 uppercase tracking-wide"
+                                style="width:12.5%">Warranty</th>
+                            <th class="px-6 py-3 align-middle text-left font-medium text-gray-700 uppercase tracking-wide"
+                                style="width:12.5%">Status</th>
+                            <th class="px-6 py-3 align-middle text-left font-medium text-gray-700 uppercase tracking-wide"
+                                style="width:12.5%">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-100 px-4">
+                        @foreach (var product in products)
+                        {
+                            <tr class="hover:bg-gray-50 transition-colors text-sm h-16">
+                                <td class="px-6 py-3 align-middle text-gray-800 font-medium w-1/4">
+                                    <div class="flex items-center gap-3 min-w-0 flex-nowrap">
+                                        <div class="relative group flex-none">
+                                            <img src="@product.ImageUrl" alt="@product.Name" title="@product.Name"
+                                                 class="w-10 h-10 rounded-md object-cover" />
+                                            <!-- Tooltip on hover shows full product name -->
+                                            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-primary rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10 max-w-xs overflow-hidden text-ellipsis">
+                                                @product.Name
+                                                <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-primary"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="cell-text min-w-0 flex-1">
+                                            @product.Name
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-3 align-middle text-gray-600">
+                                    <div class="cell-text">@(product.Brand?.Name ?? "—")</div>
+                                </td>
+                                <td class="px-6 py-3 align-middle text-gray-600">
+                                    <div class="cell-text">@(product.Category?.Name ?? "—")</div>
+                                </td>
+                                <td class="px-6 py-3 align-middle text-gray-600">
+                                    <div class="cell-text">@product.StockCount</div>
+                                </td>
+                                <td class="px-6 py-3 align-middle w-1/6">
+                                    @{
+                                        var stock = product.StockCount;
+                                        var low = product.LowThreshold;
+                                        var stockBadge = stock == 0
+                                        ? ("Out of Stock", "bg-red-100 text-red-800")
+                                        : (stock <= low
+                                        ? ("Low", "bg-yellow-100 text-yellow-800")
+                                        : ("High", "bg-green-100 text-green-800"));
+                                    }
+                                    <div class="cell-text">
+                                        <span class="px-2.5 py-0.5 text-xs font-medium rounded-full @stockBadge.Item2">
+                                            @stockBadge.Item1
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-3 align-middle text-gray-600">
+                                    <div class="cell-text">@(product.WarrantyPeriod?.ToString() ?? "—") Months</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2.5 py-0.5 text-xs font-medium rounded-full @(product.Status == "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800")">
+                                        @(product.Status)
+                                    </span>
+                                </td>
+                                <td class="px-6 py-3 align-middle">
+                                    <div class="flex space-x-2">
+                                        <!-- View Button -->
+                                        <div class="relative group">
+                                            <button 
+                                                    class="text-gray-600 hover:text-primary/90 transition-colors duration-200 p-1 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                                     fill="currentColor">
+                                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                    <path fill-rule="evenodd"
+                                                          d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                          clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-primary rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
+                                                View Product
+                                                <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-primary"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Edit Button -->
+                                        <div class="relative group">
+                                            <button 
+                                                    class="text-gray-600 hover:text-primary/90 transition-colors duration-200 p-1 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                                     fill="currentColor">
+                                                    <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                                                </svg>
+                                            </button>
+                                            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-primary rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
+                                                Edit Product
+                                                <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-primary"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
+                        @* @if (!FilteredProducts.Any())
+                        {
+                            <tr>
+                                <td colspan="8" class="px-6 py-3 text-center text-gray-500">No products found.</td>
+                            </tr>
+                        } *@
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-auto bg-white px-6 py-4 border-t border-gray-200 text-xs sticky bottom-0 z-20">
+                <div class="flex flex-col sm:flex-row items-center sm:justify-between gap-3">
+                    <div class="text-xs text-gray-600">
+                        Showing 5 of @totalProducts products
+                    </div>
+
+                    <div class="flex items-center justify-center gap-1">
+                        <!-- First -->
+                        <button class="flex items-center justify-center w-7 h-7 text-xs border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
+                                title="First Page">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Previous -->
+                        <button class="flex items-center justify-center w-7 h-7 text-xs border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
+                                title="Previous">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Pages -->
+                        <button class="flex items-center justify-center w-7 h-7 text-xs font-medium rounded-full bg-primary text-white border border-primary">
+                            1
+                        </button>
+                        <button class="flex items-center justify-center w-7 h-7 text-xs border border-gray-300 rounded-full hover:bg-gray-50">
+                            2
+                        </button>
+                        <button class="flex items-center justify-center w-7 h-7 text-xs border border-gray-300 rounded-full hover:bg-gray-50">
+                            3
+                        </button>
+                        <span class="text-xs text-gray-400 px-1">...</span>
+                        <button class="flex items-center justify-center w-7 h-7 text-xs border border-gray-300 rounded-full hover:bg-gray-50">
+                            8
+                        </button>
+
+                        <!-- Next -->
+                        <button class="flex items-center justify-center w-7 h-7 text-xs border border-gray-300 rounded-full hover:bg-gray-50"
+                                title="Next">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                        <!-- Last -->
+                        <button class="flex items-center justify-center w-7 h-7 text-xs border border-gray-300 rounded-full hover:bg-gray-50"
+                                title="Last Page">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </AuthGuard>
+
+@code {
+    private List<Product> products = new();
+    private List<Product> filteredProducts = new();
+    private List<Category> categories = new();
+    private List<Product> lowStockProducts = new();
+
+    private string searchTerm = string.Empty;
+    private string statusFilter = "";
+    private string categoryFilter = "";
+    private string stockFilter = "";
+
+    // Statistics
+    private int totalProducts => products.Count;
+    private int activeProducts => products.Count(p => p.Status == "Active");
+    private int inactiveProducts => products.Count(p => p.Status == "Inactive");
+    private int lowStock => products.Count(p => p.StockCount <= (p.LowThreshold ?? 10));
+    private int inactiveProductPercentage => totalProducts > 0 ? (int)Math.Round((inactiveProducts / (double)totalProducts) * 100) : 0;
+
+    protected override void OnInitialized()
+    {
+        LoadSampleData();
+    }
+
+    private void LoadSampleData()
+    {
+        // Sample categories
+        categories = new List<Category>
+        {
+            new Category { Id = 1, Name = "Electronics" },
+            new Category { Id = 2, Name = "Mobile Phones" },
+            new Category { Id = 3, Name = "Laptops" }
+        };
+
+        // Sample products
+        products = new List<Product>
+        {
+            new Product {
+                Id = 1,
+                Name = "iPhone 15 Pro",
+                Brand = new Brand { Name = "Apple" },
+                Category = categories[1],
+                StockCount = 5,
+                LowThreshold = 10,
+                WarrantyPeriod = 12,
+                Status = "Active",
+                ImageUrl = "/images/iphone15.jpg"
+            },
+            new Product {
+                Id = 2,
+                Name = "Samsung Galaxy S24",
+                Brand = new Brand { Name = "Samsung" },
+                Category = categories[1],
+                StockCount = 15,
+                LowThreshold = 10,
+                WarrantyPeriod = 12,
+                Status = "Active",
+                ImageUrl = "/images/galaxy-s24.jpg"
+            },
+            new Product {
+                Id = 3,
+                Name = "MacBook Pro 16",
+                Brand = new Brand { Name = "Apple" },
+                Category = categories[2],
+                StockCount = 0,
+                LowThreshold = 5,
+                WarrantyPeriod = 24,
+                Status = "Inactive",
+                ImageUrl = "/images/macbook-pro.jpg"
+            }
+        };
+
+        // Sample low stock products for tooltip
+        lowStockProducts = products.Where(p => p.StockCount <= (p.LowThreshold ?? 10)).ToList();
+    }
+
+    
+    // Model Classes
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public Brand? Brand { get; set; }
+        public Category? Category { get; set; }
+        public int StockCount { get; set; }
+        public int? LowThreshold { get; set; } = 10;
+        public int? WarrantyPeriod { get; set; }
+        public string Status { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
+    }
+
+    public class Brand
+    {
+        public string Name { get; set; } = string.Empty;
+    }
+
+    public class Category
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+    }
+}

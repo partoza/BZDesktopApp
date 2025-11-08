@@ -2445,5 +2445,5 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\obj\Debug\net9.
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-qcwqa70t6f.gz
-C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-qcwqa70t6f.br
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-zsxl4ktgi0.gz
+C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-zsxl4ktgi0.br
