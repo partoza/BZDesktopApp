@@ -1,0 +1,69 @@
+# =====================
+# Visual Studio / IDE
+# =====================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ncb
+*.aps
+*.psess
+*.vsp
+*.vspscc
+*.vssscc
+*.DotSettings.user
+
+# JetBrains Rider / IntelliJ
+.idea/
+*.iml
+
+# =====================
+# Build / Output
+# =====================
+bin/
+obj/
+publish/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.zip
+
+# =====================
+# .NET / MAUI / ASP.NET
+# =====================
+*.db
+*.db-shm
+*.db-wal
+*.nuget
+*.userprefs
+*.log
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# =====================
+# Node / npm (if used for Blazor web assets)
+# =====================
+node_modules/
+package-lock.json
+npm-debug.log
+
+# =====================
+# OS / Misc
+# =====================
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.bak
+*.tmp
+
+# =====================
+# Copilot temporary / indexes
+# =====================
+CopilotIndices/
+FileContentIndex/
+*.db-shm
+*.db-wal
+*.vsidx

@@ -1,5 +1,6 @@
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
+wwwroot\js\category.js.gz
 wwwroot\lib\flowbite\flowbite.min.js.gz
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.gz
 wwwroot\js\flowbite-init.js.gz
@@ -11,6 +12,7 @@ wwwroot\css\bootstrap\bootstrap.min.css.gz
 wwwroot\css\bootstrap\bootstrap.min.css.map.gz
 wwwroot\app.css.gz
 wwwroot\AppIcon.ico.gz
+wwwroot\js\category.js.br
 wwwroot\lib\flowbite\flowbite.min.js.br
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.br
 wwwroot\js\flowbite-init.js.br
@@ -87,6 +89,7 @@ splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\BZDesktopApp.styles.css
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css
+package-lock.json
 Platforms\Windows\Assets\AppIcon.ico
 AboutAssets.txt
 tailwind.extension.json
@@ -100,7 +103,11 @@ wwwroot\images\background\login-bg.jpg
 wwwroot\images\logo\bz-logo-green.png
 wwwroot\images\logo\bz-logo-white.png
 wwwroot\index.html
+<<<<<<< HEAD
 wwwroot\js\addProduct.js
+=======
+wwwroot\js\category.js
+>>>>>>> 9fd5f8a3ddbea736f1308ae22c876e91462e932f
 wwwroot\js\EmployeeRecords.js
 wwwroot\js\flowbite-init.js
 wwwroot\js\navmenu.js

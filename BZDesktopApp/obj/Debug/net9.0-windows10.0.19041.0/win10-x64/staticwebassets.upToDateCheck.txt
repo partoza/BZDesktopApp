@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\js\category.js
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\lib\flowbite\flowbite.min.js
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\js\flowbite-init.js
@@ -11,6 +12,19 @@ C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\app.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\AppIcon.ico
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\css\app.css
 C:\Users\r3x\source\repos\BZDesktopApp\BZDesktopApp\BZDesktopApp\wwwroot\js\addProduct.js
+=======
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\category.js
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\lib\flowbite\flowbite.min.js
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\flowbite-init.js
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\index.html
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\navmenu.js
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\EmployeeRecords.js
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\css\bootstrap\bootstrap.min.css
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\css\bootstrap\bootstrap.min.css.map
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\app.css
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\AppIcon.ico
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\css\app.css
+>>>>>>> 9fd5f8a3ddbea736f1308ae22c876e91462e932f
 wwwroot\app.css
 wwwroot\AppIcon.ico
 wwwroot\css\app.css
@@ -21,7 +35,10 @@ wwwroot\images\background\login-bg.jpg
 wwwroot\images\logo\bz-logo-green.png
 wwwroot\images\logo\bz-logo-white.png
 wwwroot\index.html
+<<<<<<< HEAD
 wwwroot\js\addProduct.js
+=======
+>>>>>>> 9fd5f8a3ddbea736f1308ae22c876e91462e932f
 wwwroot\js\category.js
 wwwroot\js\EmployeeRecords.js
 wwwroot\js\flowbite-init.js

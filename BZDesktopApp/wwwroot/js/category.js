@@ -14,4 +14,8 @@ window.closeCategoryModal = (modalId) => {
     } else {
         console.warn(`Modal with id '${modalId}' not found or not initialized.`);
     }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 9fd5f8a3ddbea736f1308ae22c876e91462e932f
