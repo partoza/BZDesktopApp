@@ -1,180 +1,72 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\",
+  "WorkspaceRootPath": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZAppSolution.sln\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\auth\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\manage\\categories.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\bzdesktopapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\manage\\categories.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\bzdesktopapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\authguard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{52A334E2-79BB-7787-4A34-C09D7FAFABB5}|..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.shared\\bzdesktopapp.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\manage\\customers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\dashboard\\dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\guestguard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp\\wwwroot\\js\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp\\wwwroot\\js\\navmenu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp\\wwwroot\\js\\employeerecords.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{52A334E2-79BB-7787-4A34-C09D7FAFABB5}|..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.shared\\dtos\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52A334E2-79BB-7787-4A34-C09D7FAFABB5}|..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.shared\\dtos\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\inventory\\addproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BZDesktopApp.Shared\\Dtos\\LoginResponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\layout\\authlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{52A334E2-79BB-7787-4A34-C09D7FAFABB5}|..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.shared\\dtos\\categorydtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\models\\branch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\bzdesktopapp.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\bzdesktopapp.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52A334E2-79BB-7787-4A34-C09D7FAFABB5}|..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52A334E2-79BB-7787-4A34-C09D7FAFABB5}|..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.shared\\bzdesktopapp.shared.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Dtos\\LoginRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BZDesktopApp.Shared\\Dtos\\LoginRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\migrations\\20251105135435_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52A334E2-79BB-7787-4A34-C09D7FAFABB5}|..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.shared\\bzdesktopapp.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.Build.Msix.Pri.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\manage\\suppliers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\logs\\auditlogs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\inventory\\salesorder.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\inventory\\purchaseorder.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\inventory\\products.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\history\\transactionhistory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\employee\\permissions.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\employee\\employees.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\dashboard\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\cloud\\sync.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp\\components\\pages\\cloud\\backup.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\models\\branch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\seed\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzappsolution\\bzdesktopapp.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Config\\MenuConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BZDesktopApp.Shared\\Config\\MenuConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Config\\SidebarMenuItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BZDesktopApp.Shared\\Config\\SidebarMenuItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BZDesktopApp.Shared\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{60714C4C-5867-D5F5-D52E-2052E1D5A29B}|..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj|c:\\users\\mypc\\source\\repos\\bzdesktopapp\\bzdesktopapp.api\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -184,7 +76,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 57,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -196,690 +88,288 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Program.cs",
               "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Program.cs",
               "RelativeToolTip": "..\\BZDesktopApp.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAawBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T12:50:49.611Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BZDesktopApp.Api",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T12:30:37.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Shared\\Class1.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\Class1.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Shared\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T12:05:41.674Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\App.xaml.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\App.xaml.cs",
-              "RelativeToolTip": "..\\BZDesktopApp\\App.xaml.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAYwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T11:54:03.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\App.xaml",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\App.xaml",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\App.xaml",
-              "RelativeToolTip": "..\\BZDesktopApp\\App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-06T11:53:15.298Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GuestGuard.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\GuestGuard.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\GuestGuard.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\GuestGuard.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\GuestGuard.razor",
-              "ViewState": "AgIAABIAAAAAAAAAAAAIwCIAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T11:44:53.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "LoginResponse.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T11:21:03.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "BZDesktopApp.Shared.csproj",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-              "RelativeToolTip": "..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T09:54:18.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-06T10:12:40.215Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "BZDesktopApp.Shared",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-              "RelativeToolTip": "..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T10:00:25.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BZDesktopApp",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\BZDesktopApp.csproj",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\BZDesktopApp.csproj",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\BZDesktopApp.csproj",
-              "RelativeToolTip": "..\\BZDesktopApp\\BZDesktopApp.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T09:59:39.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAHsIAAAAAAAAAAAgwIwIAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-11-06T09:55:57.478Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Microsoft.Build.Msix.Pri.targets",
-              "DocumentMoniker": "C:\\Users\\MYPC\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.Build.Msix.Pri.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.Build.Msix.Pri.targets",
-              "ToolTip": "C:\\Users\\MYPC\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.Build.Msix.Pri.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.Build.Msix.Pri.targets",
-              "ViewState": "AgIAAAYCAAAAAAAAAAAgwBcCAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-11-06T09:55:39.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "AuditLogs.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Logs\\AuditLogs.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Logs\\AuditLogs.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Logs\\AuditLogs.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Logs\\AuditLogs.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:24:50.035Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthGuard.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\AuthGuard.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\AuthGuard.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\AuthGuard.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\AuthGuard.razor",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAkwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:16:37.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Sync.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Cloud\\Sync.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Cloud\\Sync.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Cloud\\Sync.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Cloud\\Sync.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:09:27.945Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Backup.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Cloud\\Backup.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Cloud\\Backup.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Cloud\\Backup.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Cloud\\Backup.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:10:13.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Suppliers.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Manage\\Suppliers.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Manage\\Suppliers.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Manage\\Suppliers.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Manage\\Suppliers.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:08:35.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Customers.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Manage\\Customers.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Manage\\Customers.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Manage\\Customers.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Manage\\Customers.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:07:47.064Z",
+              "WhenOpened": "2025-11-09T10:27:19.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Categories.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Manage\\Categories.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Manage\\Categories.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Manage\\Categories.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Manage\\Categories.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:08:03.914Z",
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Services\\CategoryService.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Services\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T10:23:12.611Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "Permissions.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Employee\\Permissions.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Employee\\Permissions.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Employee\\Permissions.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Employee\\Permissions.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:05:45.955Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "Employees.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Employee\\Employees.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Employee\\Employees.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Employee\\Employees.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Employee\\Employees.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:05:00.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Products.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Inventory\\Products.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\Products.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Inventory\\Products.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\Products.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:00:52.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "TransactionHistory.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\History\\TransactionHistory.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\History\\TransactionHistory.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\History\\TransactionHistory.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\History\\TransactionHistory.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T19:00:53.708Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "SalesOrder.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Inventory\\SalesOrder.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\SalesOrder.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Inventory\\SalesOrder.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\SalesOrder.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T18:57:17.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "PurchaseOrder.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Inventory\\PurchaseOrder.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\PurchaseOrder.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Inventory\\PurchaseOrder.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\PurchaseOrder.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T18:51:35.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "MenuConfig.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Config\\MenuConfig.cs",
-              "RelativeDocumentMoniker": "BZDesktopApp.Shared\\Config\\MenuConfig.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Config\\MenuConfig.cs",
-              "RelativeToolTip": "BZDesktopApp.Shared\\Config\\MenuConfig.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:27:17.718Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "SidebarMenuItem.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Config\\SidebarMenuItem.cs",
-              "RelativeDocumentMoniker": "BZDesktopApp.Shared\\Config\\SidebarMenuItem.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Config\\SidebarMenuItem.cs",
-              "RelativeToolTip": "BZDesktopApp.Shared\\Config\\SidebarMenuItem.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAQwAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:26:15.274Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T16:55:56.258Z",
+              "WhenOpened": "2025-11-09T10:22:22.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "App.g.i.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
-              "RelativeToolTip": "..\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAYwEgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T16:44:23.505Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "AdminDashboard.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Dashboard\\AdminDashboard.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Dashboard\\AdminDashboard.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Dashboard\\AdminDashboard.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Dashboard\\AdminDashboard.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T16:21:44.716Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T16:05:39.741Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AuthLayout.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Layout\\AuthLayout.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Layout\\AuthLayout.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Layout\\AuthLayout.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Layout\\AuthLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T15:55:13.169Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\MauiProgram.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\MauiProgram.cs",
-              "RelativeToolTip": "..\\BZDesktopApp\\MauiProgram.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwAwAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T15:18:59.015Z",
+              "DocumentIndex": 5,
+              "Title": "BZDesktopApp.Shared",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
+              "RelativeToolTip": "..\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-09T10:21:36.543Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Routes.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Routes.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Routes.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Routes.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Routes.razor",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T15:07:25.042Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Dashboard.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Dashboard\\Dashboard.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Dashboard\\Dashboard.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Dashboard\\Dashboard.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Dashboard\\Dashboard.razor",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAAAAEAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T15:07:11.441Z",
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\index.html",
+              "RelativeToolTip": "..\\BZDesktopApp\\wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-09T10:04:34.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAYwHwAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T15:07:05.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "LoginResponse.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
-              "RelativeDocumentMoniker": "BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
-              "RelativeToolTip": "BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T15:02:24.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Dtos\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "BZDesktopApp.Shared\\Dtos\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Dtos\\LoginRequest.cs",
-              "RelativeToolTip": "BZDesktopApp.Shared\\Dtos\\LoginRequest.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T15:02:10.167Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Class1.cs",
-              "RelativeDocumentMoniker": "BZDesktopApp.Shared\\Class1.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZAppSolution.sln\\BZDesktopApp.Shared\\Class1.cs",
-              "RelativeToolTip": "BZDesktopApp.Shared\\Class1.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T15:01:22.506Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Services\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Services\\AuthenticationService.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Services\\AuthenticationService.cs",
-              "RelativeToolTip": "..\\BZDesktopApp\\Services\\AuthenticationService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAwEwAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T14:56:52.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BZDesktopApp.csproj",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\BZDesktopApp.csproj",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\BZDesktopApp.csproj",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\BZDesktopApp.csproj",
-              "RelativeToolTip": "..\\BZDesktopApp\\BZDesktopApp.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAwwGAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-05T14:04:02.866Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T14:28:43.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Services\\AuthService.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Services\\AuthService.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAEEAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T14:23:41.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Services\\Interfaces\\IAuthService.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Services\\Interfaces\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T14:22:43.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T14:03:02.474Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "ApplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T13:54:41.024Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "20251105135435_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Migrations\\20251105135435_InitialCreate.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Migrations\\20251105135435_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Migrations\\20251105135435_InitialCreate.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Migrations\\20251105135435_InitialCreate.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAwDwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T13:54:35.916Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "DbSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Seed\\DbSeeder.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Seed\\DbSeeder.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Seed\\DbSeeder.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Seed\\DbSeeder.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAowFIAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T12:36:11.845Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Models\\Employee.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Models\\Employee.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Models\\Employee.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T11:27:03.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Branch.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Models\\Branch.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Models\\Branch.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Models\\Branch.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Models\\Branch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T11:26:41.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T11:23:50.639Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "BZDesktopApp.Api.csproj",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\BZDesktopApp.Api.csproj",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-04T11:17:21.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp.Api\\appsettings.json",
-              "RelativeToolTip": "..\\BZDesktopApp.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-04T11:15:04.355Z",
+              "DocumentIndex": 8,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\MainPage.xaml",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\MainPage.xaml",
+              "RelativeToolTip": "..\\BZDesktopApp\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-09T10:04:19.445Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\MainPage.xaml",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\MainPage.xaml",
-              "RelativeToolTip": "..\\BZDesktopApp\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-04T11:06:10.382Z",
+              "Title": "category.js",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\category.js",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\wwwroot\\js\\category.js",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\category.js",
+              "RelativeToolTip": "..\\BZDesktopApp\\wwwroot\\js\\category.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-09T10:01:46.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Login.razor",
-              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Auth\\Login.razor",
-              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Auth\\Login.razor",
-              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZAppSolution\\BZDesktopApp\\Components\\Pages\\Auth\\Login.razor",
-              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Auth\\Login.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkBAAANAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "EmployeeRecords.js",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\EmployeeRecords.js",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\wwwroot\\js\\EmployeeRecords.js",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\EmployeeRecords.js",
+              "RelativeToolTip": "..\\BZDesktopApp\\wwwroot\\js\\EmployeeRecords.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-09T09:59:41.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "navmenu.js",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\navmenu.js",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\wwwroot\\js\\navmenu.js",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\navmenu.js",
+              "RelativeToolTip": "..\\BZDesktopApp\\wwwroot\\js\\navmenu.js",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-09T09:59:36.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.g.i.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "RelativeToolTip": "..\\BZDesktopApp\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T09:55:18.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Services\\AuthService.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T09:52:21.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T09:51:56.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Shared\\Dtos\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T09:48:29.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddProduct.razor",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Inventory\\AddProduct.razor",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\AddProduct.razor",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Inventory\\AddProduct.razor",
+              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\AddProduct.razor",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAuwDEAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-04T11:00:50.835Z",
+              "WhenOpened": "2025-11-09T09:19:25.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAwwD4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T09:19:19.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CategoryDtos.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\Dtos\\CategoryDtos.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Shared\\Dtos\\CategoryDtos.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\Dtos\\CategoryDtos.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Shared\\Dtos\\CategoryDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T09:07:33.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Services\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Services\\AuthenticationService.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Services\\AuthenticationService.cs",
+              "RelativeToolTip": "..\\BZDesktopApp\\Services\\AuthenticationService.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAwwFIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T09:02:51.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Models\\Category.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Models\\Category.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T08:45:04.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Branch.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Models\\Branch.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Models\\Branch.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Models\\Branch.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Models\\Branch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T08:45:03.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Models\\Employee.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T08:45:03.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp.Api\\Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Api\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "..\\BZDesktopApp.Api\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAIwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T08:43:10.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Categories.razor",
+              "DocumentMoniker": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Manage\\Categories.razor",
+              "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Manage\\Categories.razor",
+              "ToolTip": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Manage\\Categories.razor",
+              "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Manage\\Categories.razor",
+              "ViewState": "AgIAAEACAAAAAAAAAAAowFgCAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-09T08:35:10.434Z",
               "EditorCaption": ""
             }
           ]

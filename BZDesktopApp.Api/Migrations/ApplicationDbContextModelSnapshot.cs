@@ -42,6 +42,55 @@ namespace BZDesktopApp.Api.Migrations
                     b.ToTable("Branches");
                 });
 
+            modelBuilder.Entity("BZDesktopApp.Api.Models.Category", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("CategoryType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatedById")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<long?>("ParentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("UpdatedById")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("BZDesktopApp.Api.Models.Employee", b =>
                 {
                     b.Property<long>("EmployeeId")
@@ -93,6 +142,16 @@ namespace BZDesktopApp.Api.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("BZDesktopApp.Api.Models.Category", b =>
+                {
+                    b.HasOne("BZDesktopApp.Api.Models.Category", "Parent")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("Parent");
+                });
+
             modelBuilder.Entity("BZDesktopApp.Api.Models.Employee", b =>
                 {
                     b.HasOne("BZDesktopApp.Api.Models.Branch", "Branch")
@@ -107,6 +166,11 @@ namespace BZDesktopApp.Api.Migrations
             modelBuilder.Entity("BZDesktopApp.Api.Models.Branch", b =>
                 {
                     b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("BZDesktopApp.Api.Models.Category", b =>
+                {
+                    b.Navigation("SubCategories");
                 });
 #pragma warning restore 612, 618
         }

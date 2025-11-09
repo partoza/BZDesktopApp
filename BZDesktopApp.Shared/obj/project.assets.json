@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\r3x\\.nuget\\packages\\": {},
+    "C:\\Users\\MYPC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
       "projectName": "BZDesktopApp.Shared",
-      "projectPath": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
-      "packagesPath": "C:\\Users\\r3x\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp.Shared\\obj\\",
+      "projectPath": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\BZDesktopApp.Shared.csproj",
+      "packagesPath": "C:\\Users\\MYPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\r3x\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MYPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
