@@ -1,232 +1,404 @@
-@page "/addProduct"
-@using System.Collections.Generic
-@inject NavigationManager NavigationManager
+﻿@page "/addProduct"
+@page "/addProduct/{ProductId:long?}"
+@using System.Globalization
+@using BZDesktopApp.Shared.Dtos
+@using System.Net.Http.Json
+@inject HttpClient Http
 @inject IJSRuntime JS
+@inject NavigationManager Nav
 
-<div class="overflow-hidden">
-    <!-- Header -->
-    <div class="flex items-center justify-between bg-white rounded-xl shadow-sm px-6 py-3">
-        <div>
-            <h2 class="text-xl font-bold text-primary whitespace-nowrap">Add New Product</h2>
-            <p class="text-sm text-gray-600 mt-1">Please fill up all the required fields to add new product.</p>
+<AuthGuard>
+    <div class="overflow-hidden">
+        <!-- Header -->
+        <div class="flex items-center justify-between bg-white rounded-xl shadow-sm px-6 py-3">
+            <div>
+                <h2 class="text-xl font-bold text-primary whitespace-nowrap">
+                    @(ProductId == null ? "Add New Product" : "Edit Product")
+                </h2>
+                <p class="text-sm text-gray-600 mt-1">
+                    @(ProductId == null ? "Please fill up all required fields to add a new product." : "Modify the fields below to update this product.")
+                </p>
+            </div>
+            <div class="flex items-center gap-3">
+                <button type="button"
+                        class="inline-flex items-center gap-2 px-4 py-2 border-2 border-secondary text-secondary rounded-lg text-gray-700 hover:bg-gray-300 hover:text-black transition-colors duration-200 font-medium"
+                        @onclick="GoBack">
+                    Back
+                </button>
+
+                <button type="button"
+                        class="inline-flex items-center gap-2 px-4 py-2 border-2 border-secondary text-secondary rounded-lg font-medium hover:bg-red-500 hover:text-white transition-colors duration-200"
+                        @onclick="ResetForm">
+                    Discard
+                </button>
+            </div>
         </div>
-        <div class="flex items-center gap-3">
-            <button type="button" @onclick="GoBack"
-                class="inline-flex items-center gap-2 px-4 py-2 border-2 border-secondary text-secondary rounded-lg text-gray-700 hover:bg-gray-300 hover:text-black transition-colors duration-200 font-medium">
-                Back
-            </button>
 
-            <button type="button" @onclick="Discard"
-                class="inline-flex items-center gap-2 px-4 py-2 border-2 border-secondary text-secondary rounded-lg font-medium hover:bg-red-500 hover:text-white transition-colors duration-200">
-                Discard
-            </button>
+        <!-- Product Form -->
+        <EditForm Model="@productForm" OnValidSubmit="@HandleSubmit">
+            <DataAnnotationsValidator />
+
+            <div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-3">
+                <!-- Left Panel -->
+                <div class="lg:col-span-2 bg-white py-4 px-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Product Information</h3>
+
+                    <!-- ProductName -->
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Product Name</label>
+                        <InputText @bind-Value="productForm.ProductName" class="w-full px-4 py-3 border border-gray-300 rounded-lg" placeholder="Intel Core i9 12th" />
+                        <ValidationMessage For="@(() => productForm.ProductName)" class="text-red-500 text-sm" />
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-5">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                        <InputTextArea @bind-Value="productForm.Description" class="w-full px-4 py-3 border border-gray-300 rounded-lg" rows="4" placeholder="Enter product description..." />
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="mb-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Product Image</h3>
+
+                        <!-- File input -->
+                        <InputFile OnChange="HandleFileSelected" accept="image/*" class="mb-2" />
+
+                        <!-- Preview container -->
+                        <div class="mt-2 w-full h-40 border border-gray-300 rounded-md flex items-center justify-center bg-gray-50 overflow-hidden relative">
+                            @if (!string.IsNullOrEmpty(productForm.ImageUrl))
+                            {
+                                <img src="@productForm.ImageUrl" class="object-contain w-full h-full" />
+                                <button type="button" class="absolute top-1 right-1 text-white bg-red-500 rounded-full p-1 hover:bg-red-600"
+                                        @onclick="ClearImage">
+                                    ✕
+                                </button>
+                            }
+                            else
+                            {
+                                <span class="text-gray-400 text-sm">No image selected</span>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Panel -->
+                <div class="flex flex-col space-y-3">
+                    <!-- Classification -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Classification</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1 mt-2">Brand</label>
+                                <select @bind="productForm.BrandId" class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white">
+                                    <option value="@((long?)null)">Select Brand</option>
+                                    @foreach (var b in brands)
+                                    {
+                                        <option value="@b.Id">@b.Name</option>
+                                    }
+                                </select>
+                                <button type="button" class="btn btn-primary mt-2" @onclick="OpenBrandModal">Add Brand</button>
+                            </div>
+
+
+
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1 mt-2">Main Category</label>
+                                <select @bind="productForm.CategoryId" @bind:after="OnMainCategoryChanged"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white">
+                                    <option value="">Select Main Category</option>
+                                    @foreach (var cat in ParentCategories)
+                                    {
+                                        <option value="@cat.Id">@cat.Name</option>
+                                    }
+                                </select>
+                                <ValidationMessage For="@(() => productForm.CategoryId)" class="text-red-500 text-sm" />
+
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1 mt-2">Subcategory</label>
+                                <select @bind="productForm.SubCategoryId"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white"
+                                        disabled="@(!SubCategories.Any())">
+                                    <option value="">Select Subcategory</option>
+                                    @foreach (var sub in SubCategories)
+                                    {
+                                        <option value="@sub.Id">@sub.Name</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1 mt-2">Status</label>
+                                <InputSelect @bind-Value="productForm.ActiveStatus" class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white">
+                                    <option value="true">Active</option>
+                                    <option value="false">Inactive</option>
+                                </InputSelect>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additions -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Additions</h3>
+                        <div class="mb-3">
+                            <label class="block text-sm text-gray-600 mb-1">Promo Code</label>
+                            <InputText @bind-Value="productForm.PromoCode" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="Enter promo code" />
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="w-full px-4 py-3 bg-primary font-medium hover:bg-emerald-700 text-white rounded-lg mt-4" disabled="@isSubmitting">
+                        @(isSubmitting ? (ProductId == null ? "Publishing..." : "Saving...") : (ProductId == null ? "Publish Product" : "Save Changes"))
+                    </button>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+    <!-- Flowbite Add Brand Modal -->
+    <div id="addBrandModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-700/70 backdrop-blur-sm">
+        <div class="relative p-4 max-w-md w-full">
+            <div class="relative bg-white rounded-lg shadow border border-gray-200">
+                <!-- Header -->
+                <div class="flex items-center justify-between p-4 border-b border-gray-200 rounded-t">
+                    <h3 class="text-xl font-semibold text-gray-800">Add Brand</h3>
+                    <button type="button"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center"
+                            @onclick="() => CloseBrandModal()">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+
+                <!-- Body -->
+                <div class="p-4 space-y-4">
+                    <label class="block text-sm font-medium text-gray-700">Brand Name</label>
+                    <InputText @bind-Value="newBrandName"
+                               class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500" />
+                </div>
+
+                <!-- Footer -->
+                <div class="flex justify-end gap-3 p-4 border-t border-gray-200">
+                    <button type="button"
+                            class="px-4 py-2 border rounded-xl text-gray-700 hover:bg-gray-100"
+                            @onclick="() => CloseBrandModal()">
+                        Cancel
+                    </button>
+                    <button type="button"
+                            class="px-4 py-2 bg-primary hover:bg-emerald-700 text-white rounded-xl font-medium shadow-sm"
+                            @onclick="AddBrand"
+                            disabled="@string.IsNullOrWhiteSpace(newBrandName)">
+                        Save
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Form -->
-    <EditForm Model="productModel" OnValidSubmit="SubmitProduct">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
 
-        <div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-3">
-            <!-- Left Panel: Product Info -->
-            <div class="lg:col-span-2 bg-white py-4 px-6 rounded-lg shadow-sm">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Product Information</h3>
-
-                <!-- Product Name -->
-                <div class="mb-3">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Product Name</label>
-                    <InputText @bind-Value="productModel.ProductName"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg placeholder:font-normal placeholder:text-gray-400"
-                        placeholder="Intel Core i9 12th" />
-                    <ValidationMessage For="@(() => productModel.ProductName)" class="text-sm text-red-600 mt-1" />
-                </div>
-
-                <!-- Description -->
-                <div class="mb-5">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
-                    <InputTextArea @bind-Value="productModel.Description"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder:font-normal placeholder:text-gray-400"
-                        rows="4" placeholder="Enter product description..." />
-                    <ValidationMessage For="@(() => productModel.Description)" class="text-sm text-red-600 mt-1" />
-                </div>
-
-                <!-- Product Image -->
-                <div class="mb-5">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Product Image</h3>
-                    <InputFile OnChange="OnInputFileChange" accept="image/*" />
-                    @if (!string.IsNullOrEmpty(productImagePreview))
-                    {
-                        <img src="@productImagePreview" class="mt-2 max-h-64 rounded-lg object-contain" />
-                    }
-                </div>
-
-                <!-- Pricing -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Base Price</label>
-                        <InputNumber @bind-Value="productModel.BasePrice"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder:font-normal placeholder:text-gray-400" />
-                        <ValidationMessage For="@(() => productModel.BasePrice)" class="text-sm text-red-600 mt-1" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Discounted Price</label>
-                        <InputNumber @bind-Value="productModel.DiscountedPrice"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder:font-normal placeholder:text-gray-400"
-                            disabled />
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Panel: Classification + Additions -->
-            <div class="flex flex-col space-y-3">
-                <!-- Classification -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Classification</h3>
-                    <div class="space-y-3">
-                        <!-- Brand -->
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1 mt-2">Brand</label>
-                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white" @bind="productModel.BrandId">
-                                <option value="">Select Brand</option>
-                                @foreach (var brand in brands)
-                                {
-                                    <option value="@brand.Id">@brand.Name</option>
-                                }
-                            </select>
-                        </div>
-
-                        <!-- Main Category -->
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1 mt-2">Main Category</label>
-                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white" @bind="productModel.MainCategoryId">
-                                <option value="">Select Main Category</option>
-                                @foreach (var category in mainCategories)
-                                {
-                                    <option value="@category.Id">@category.Name</option>
-                                }
-                            </select>
-                        </div>
-
-                        <!-- Subcategory -->
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1 mt-2">Subcategory</label>
-                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white" @bind="productModel.SubCategoryId" disabled="@(subCategories.Count == 0)">
-                                <option value="">Select Subcategory</option>
-                                @foreach (var sub in subCategories)
-                                {
-                                    <option value="@sub.Id">@sub.Name</option>
-                                }
-                            </select>
-                        </div>
-
-                        <!-- Status -->
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1 mt-2">Status</label>
-                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white" @bind="productModel.Status">
-                                <option value="Active">Active</option>
-                                <option value="Inactive">Inactive</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additions -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Additions</h3>
-                    <!-- Promo Code -->
-                    <div class="mb-3">
-                        <label class="block text-sm text-gray-600 mb-1">Promo Code</label>
-                        <InputText @bind-Value="productModel.PromoCode" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="Enter promo code"/>
-                    </div>
-
-                    <!-- Track Serials -->
-                    <div class="flex items-center gap-2 mb-3">
-                        <InputCheckbox @bind-Value="productModel.TrackSerials" class="accent-primary" />
-                        <label class="text-gray-700">Track serials for this product</label>
-                    </div>
-
-                    <!-- Warranty -->
-                    @if (productModel.TrackSerials)
-                    {
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1">Warranty</label>
-                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white" @bind="productModel.WarrantyPeriod">
-                                <option value="0">No Warranty</option>
-                                <option value="3">3 Months</option>
-                                <option value="6">6 Months</option>
-                                <option value="12">12 Months</option>
-                            </select>
-                        </div>
-                    }
-                </div>
-
-                <!-- Submit -->
-                <button type="submit" class="w-full px-4 py-3 bg-primary font-medium hover:bg-emerald-700 text-white rounded-lg mt-4">Publish Product</button>
-            </div>
-        </div>
-    </EditForm>
-</div>
+</AuthGuard>
 
 @code {
-    private ProductModel productModel = new ProductModel();
-    private string? productImagePreview;
+    [Parameter] public long? ProductId { get; set; }
 
-    private List<Brand> brands = new() {
-        new Brand { Id = 1, Name = "Intel" },
-        new Brand { Id = 2, Name = "AMD" }
-    };
+    private ProductForm productForm = new();
+    private List<CategoryDto> categories = new();
+    private List<BrandDto> brands = new();
+    private bool isSubmitting = false;
+    private string? uploadedImageBase64;
 
-    private List<Category> mainCategories = new() {
-        new Category { Id = 1, Name = "CPU" },
-        new Category { Id = 2, Name = "GPU" }
-    };
+    private List<CategoryDto> ParentCategories = new();
+    private List<CategoryDto> SubCategories = new();
 
-    private List<Category> subCategories = new();
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCategories();
+        await LoadBrands();
 
-    private void GoBack() => NavigationManager.NavigateTo("/products");
-    private void Discard() => NavigationManager.NavigateTo("/products");
+        if (ProductId != null)
+            await LoadProduct(ProductId.Value);
+    }
 
-    private async Task OnInputFileChange(InputFileChangeEventArgs e)
+    private async Task LoadCategories()
+    {
+        try
+        {
+            var summary = await Http.GetFromJsonAsync<CategorySummaryDto>("api/categories");
+            categories = summary?.Categories ?? new List<CategoryDto>();
+
+            // Populate main categories
+            ParentCategories = categories.Where(c => c.ParentId == null).ToList();
+        }
+        catch
+        {
+            categories = new List<CategoryDto>();
+            ParentCategories = new List<CategoryDto>();
+        }
+    }
+
+    private async Task LoadBrands()
+    {
+        try
+        {
+            // expects an endpoint like GET api/products/brands or create one in ProductsController
+            var result = await Http.GetFromJsonAsync<List<BrandDto>>("api/products/brands");
+            brands = result ?? new List<BrandDto>();
+        }
+        catch
+        {
+            brands = new List<BrandDto>();
+        }
+    }
+
+    private async Task LoadProduct(long id)
+    {
+        try
+        {
+            var product = await Http.GetFromJsonAsync<ProductDto>($"api/products/{id}");
+            if (product != null)
+            {
+                productForm = new ProductForm
+                {
+                    ProductName = product.ProductName,
+                    Description = product.Description,
+                    PromoCode = product.PromoCode,
+                    CategoryId = product.CategoryId,
+                    SubCategoryId = product.SubCategoryId,
+                    BrandId = product.BrandId,
+                    ActiveStatus = product.ActiveStatus,
+                    ImageUrl = product.Image ?? product.ImageUrl
+                };
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading product: {ex.Message}");
+        }
+    }
+
+    private async Task HandleSubmit()
+    {
+        isSubmitting = true;
+        try
+        {
+            HttpResponseMessage response;
+
+            if (ProductId == null)
+                response = await Http.PostAsJsonAsync("api/products", productForm);
+            else
+                response = await Http.PutAsJsonAsync($"api/products/{ProductId}", productForm);
+
+            if (response.IsSuccessStatusCode)
+            {
+                await JS.InvokeVoidAsync("alert", ProductId == null ? "Product added successfully!" : "Product updated successfully!");
+                Nav.NavigateTo("/products");
+            }
+            else
+            {
+                var text = await response.Content.ReadAsStringAsync();
+                await JS.InvokeVoidAsync("alert", $"Something went wrong: {text}");
+            }
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+
+    private void ResetForm() => productForm = new ProductForm();
+
+    private void GoBack() => Nav.NavigateTo("/products");
+
+    private async Task HandleFileSelected(InputFileChangeEventArgs e)
     {
         var file = e.File;
-        var buffer = new byte[file.Size];
-        await file.OpenReadStream().ReadAsync(buffer);
-        productImagePreview = $"data:{file.ContentType};base64,{Convert.ToBase64String(buffer)}";
+        if (file != null)
+        {
+            using var stream = new MemoryStream();
+            await file.OpenReadStream(maxAllowedSize: 10_000_000).CopyToAsync(stream);
+            var bytes = stream.ToArray();
+            var base64 = Convert.ToBase64String(bytes);
+
+            productForm.ImageBase64 = base64;
+            productForm.ImageUrl = $"data:{file.ContentType};base64,{base64}";
+        }
     }
 
-    private void LoadSubcategories(ChangeEventArgs e)
+    private void ClearImage()
     {
-        int selectedMainId = int.TryParse(e.Value?.ToString(), out var id) ? id : 0;
-        // Example logic: replace with actual DB call
-        if (selectedMainId == 1)
-            subCategories = new List<Category> { new Category { Id = 101, Name = "Desktop CPU" }, new Category { Id = 102, Name = "Laptop CPU" } };
-        else if (selectedMainId == 2)
-            subCategories = new List<Category> { new Category { Id = 201, Name = "Gaming GPU" }, new Category { Id = 202, Name = "Workstation GPU" } };
+        productForm.ImageBase64 = null;
+        productForm.ImageUrl = null;
+    }
+
+    private void OnMainCategoryChanged()
+    {
+        if (productForm.CategoryId != null)
+        {
+            SubCategories = categories
+                .Where(c => c.ParentId == productForm.CategoryId)
+                .ToList();
+        }
         else
-            subCategories = new();
+        {
+            SubCategories = new List<CategoryDto>();
+        }
+
+        // Reset subcategory selection
+        productForm.SubCategoryId = null;
     }
 
-    private void SubmitProduct()
+    private string? newBrandName;
+
+    // Open modal
+    private void OpenBrandModal()
     {
-        // TODO: Save productModel to your database
+        newBrandName = null;
+        JS.InvokeVoidAsync("initBrandModal", "addBrandModal");
+        JS.InvokeVoidAsync("showBrandModal", "addBrandModal");
     }
 
-    public class ProductModel
+    // Close modal
+    private void CloseBrandModal()
     {
-        public string ProductName { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public decimal BasePrice { get; set; }
-        public decimal? DiscountedPrice { get; set; }
-        public int? BrandId { get; set; }
-        public int? MainCategoryId { get; set; }
-        public int? SubCategoryId { get; set; }
-        public string Status { get; set; } = "Active";
-        public string? PromoCode { get; set; }
-        public bool TrackSerials { get; set; }
-        public int WarrantyPeriod { get; set; } = 0;
+        JS.InvokeVoidAsync("closeBrandModal", "addBrandModal");
     }
 
-    public class Brand { public int Id { get; set; } public string Name { get; set; } = string.Empty; }
-    public class Category { public int Id { get; set; } public string Name { get; set; } = string.Empty; }
+    // Add brand
+    private async Task AddBrand()
+    {
+        if (string.IsNullOrWhiteSpace(newBrandName))
+            return;
+
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/products/brands", new BrandForm { Name = newBrandName });
+            if (response.IsSuccessStatusCode)
+            {
+                var createdBrand = await response.Content.ReadFromJsonAsync<BrandDto>();
+                if (createdBrand != null)
+                {
+                    await LoadBrands(); // reload brand list
+                    productForm.BrandId = createdBrand.Id; // auto-select
+                }
+                CloseBrandModal();
+            }
+            else
+            {
+                var text = await response.Content.ReadAsStringAsync();
+                await JS.InvokeVoidAsync("alert", $"Failed to add brand: {text}");
+            }
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", $"Error: {ex.Message}");
+        }
+    }
+
+    
 }

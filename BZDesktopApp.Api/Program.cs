@@ -28,6 +28,7 @@ namespace BZDesktopApp.Api
             // Register Services
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
 
             // JWT Authentication
             var jwtKey = builder.Configuration["Jwt:Key"] ?? "super-secret-dev-key"; // fallback for dev

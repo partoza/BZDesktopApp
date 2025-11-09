@@ -42,6 +42,27 @@ namespace BZDesktopApp.Api.Migrations
                     b.ToTable("Branches");
                 });
 
+            modelBuilder.Entity("BZDesktopApp.Api.Models.Brand", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Brands");
+                });
+
             modelBuilder.Entity("BZDesktopApp.Api.Models.Category", b =>
                 {
                     b.Property<long>("Id")
@@ -142,6 +163,61 @@ namespace BZDesktopApp.Api.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("BZDesktopApp.Api.Models.Product", b =>
+                {
+                    b.Property<long>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ProductId"));
+
+                    b.Property<bool>("ActiveStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("BrandId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("CategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatedById")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<long?>("SubCategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("UpdatedById")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("SubCategoryId");
+
+                    b.HasIndex("UpdatedById");
+
+                    b.ToTable("Products");
+                });
+
             modelBuilder.Entity("BZDesktopApp.Api.Models.Category", b =>
                 {
                     b.HasOne("BZDesktopApp.Api.Models.Category", "Parent")
@@ -163,9 +239,52 @@ namespace BZDesktopApp.Api.Migrations
                     b.Navigation("Branch");
                 });
 
+            modelBuilder.Entity("BZDesktopApp.Api.Models.Product", b =>
+                {
+                    b.HasOne("BZDesktopApp.Api.Models.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("BZDesktopApp.Api.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("BZDesktopApp.Api.Models.Employee", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("BZDesktopApp.Api.Models.Category", "SubCategory")
+                        .WithMany()
+                        .HasForeignKey("SubCategoryId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("BZDesktopApp.Api.Models.Employee", "UpdatedBy")
+                        .WithMany()
+                        .HasForeignKey("UpdatedById")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("SubCategory");
+
+                    b.Navigation("UpdatedBy");
+                });
+
             modelBuilder.Entity("BZDesktopApp.Api.Models.Branch", b =>
                 {
                     b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("BZDesktopApp.Api.Models.Brand", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("BZDesktopApp.Api.Models.Category", b =>

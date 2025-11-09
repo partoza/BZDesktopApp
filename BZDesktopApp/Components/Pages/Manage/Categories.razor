@@ -1,18 +1,17 @@
 ﻿@page "/categories"
 @using System.Globalization
 @using BZDesktopApp.Shared.Dtos
-@inject IJSRuntime JS
 
 <AuthGuard>
     <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-5">
-
         <!-- Total Categories Card -->
         <div class="bg-white rounded-xl shadow-sm p-5 border border-gray-200 hover:shadow-md transition-shadow">
             <div class="flex items-center gap-3 mb-1">
                 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <div class="w-8 h-8 bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center"
                          style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                             class="w-5 h-5 text-white">
                             <path d="M19.5 21a3 3 0 003-3v-4.5a3 3 0 00-3-3h-15a3 3 0 00-3 3V18a3 3 0 003 3h15zM1.5 10.146V6a3 3 0 013-3h5.379a2.25 2.25 0 011.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 013 3v1.146A4.483 4.483 0 0019.5 9h-15a4.483 4.483 0 00-3 1.146z" />
                         </svg>
                     </div>
@@ -21,15 +20,23 @@
             </div>
 
             <div class="ps-14">
-                <h3 class="text-2xl font-semibold text-gray-900">@categories.Count</h3>
+                <h3 class="text-2xl font-semibold text-gray-900">@(summary?.TotalCount ?? 0)</h3>
                 <p class="text-xs text-gray-500 mt-1">As of today</p>
 
                 <div class="flex items-center gap-2 mt-2">
                     <div class="flex items-center text-green-600 bg-green-400/10 px-2 py-1 rounded text-xs font-medium">
-                        <span>+ 100% Active</span>
+                        <span>
+                            + @(summary != null && summary.TotalCount > 0
+                                                        ? Math.Round((double)summary.ActiveCount / summary.TotalCount * 100, 1)
+                                                        : 0)% Active
+                        </span>
                     </div>
                     <div class="flex items-center text-red-600 bg-red-400/10 px-2 py-1 text-xs font-medium">
-                        <span>- % Inactive</span>
+                        <span>
+                            - @(summary != null && summary.TotalCount > 0
+                                                        ? Math.Round((double)summary.InactiveCount / summary.TotalCount * 100, 1)
+                                                        : 0)% Inactive
+                        </span>
                     </div>
                 </div>
             </div>
@@ -41,7 +48,8 @@
                 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <div class="w-8 h-8 bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center"
                          style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                             class="w-5 h-5 text-white">
                             <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z" clip-rule="evenodd" />
                         </svg>
                     </div>
@@ -50,15 +58,17 @@
             </div>
 
             <div class="ps-14">
-                <h3 class="text-2xl font-semibold text-gray-900"> To do </h3>
+                <h3 class="text-2xl font-semibold text-gray-900">
+                    @(summary?.SubActiveCount + summary?.SubInactiveCount ?? 0)
+                </h3>
                 <p class="text-xs text-gray-500 mt-1">Total Subcategories</p>
 
                 <div class="flex items-center gap-2 mt-2">
                     <div class="flex items-center text-blue-600 bg-blue-400/10 px-2 py-1 rounded text-xs font-medium">
-                        <span>@(categories.Count(c => c.CategoryType == "Product")) Product</span>
+                        <span>@summary?.ProductCount Product</span>
                     </div>
                     <div class="flex items-center text-purple-600 bg-purple-400/10 px-2 py-1 text-xs font-medium">
-                        <span>@(categories.Count(c => c.CategoryType == "Service")) Service</span>
+                        <span>@summary?.ServiceCount Service</span>
                     </div>
                 </div>
             </div>
@@ -70,7 +80,8 @@
                 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <div class="w-8 h-8 bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center"
                          style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                             class="w-5 h-5 text-white">
                             <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
                         </svg>
                     </div>
@@ -79,15 +90,15 @@
             </div>
 
             <div class="ps-14">
-                <h3 class="text-2xl font-semibold text-gray-900"> To do </h3>
+                <h3 class="text-2xl font-semibold text-gray-900">@(summary?.ActiveCount ?? 0)</h3>
                 <p class="text-xs text-gray-500 mt-1">Currently Active</p>
 
                 <div class="flex items-center gap-2 mt-2">
                     <div class="flex items-center text-green-600 bg-green-400/10 px-2 py-1 rounded text-xs font-medium">
-                        <span>@(categories.Count(c => c.Status == "Active" && c.ParentId == null)) Main</span>
+                        <span>@summary?.MainActiveCount Main</span>
                     </div>
                     <div class="flex items-center text-blue-600 bg-blue-400/10 px-2 py-1 text-xs font-medium">
-                        <span>@(categories.Count(c => c.Status == "Active" && c.ParentId != null)) Sub</span>
+                        <span>@summary?.SubActiveCount Sub</span>
                     </div>
                 </div>
             </div>
@@ -99,7 +110,8 @@
                 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <div class="w-8 h-8 bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center"
                          style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                             class="w-5 h-5 text-white">
                             <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
                         </svg>
                     </div>
@@ -108,15 +120,15 @@
             </div>
 
             <div class="ps-14">
-                <h3 class="text-2xl font-semibold text-gray-900"> To do </h3>
+                <h3 class="text-2xl font-semibold text-gray-900">@(summary?.InactiveCount ?? 0)</h3>
                 <p class="text-xs text-gray-500 mt-1">Currently Inactive</p>
 
                 <div class="flex items-center gap-2 mt-2">
                     <div class="flex items-center text-red-600 bg-red-400/10 px-2 py-1 rounded text-xs font-medium">
-                        <span>@(categories.Count(c => c.Status == "Inactive" && c.ParentId == null)) Main</span>
+                        <span>@summary?.MainInactiveCount Main</span>
                     </div>
                     <div class="flex items-center text-orange-600 bg-orange-400/10 px-2 py-1 text-xs font-medium">
-                        <span>@(categories.Count(c => c.Status == "Inactive" && c.ParentId != null)) Sub</span>
+                        <span>@summary?.SubInactiveCount Sub</span>
                     </div>
                 </div>
             </div>
@@ -145,7 +157,7 @@
                 </div>
 
                 <!-- Search Section -->
-                <div class="flex-1 max-w-xl">
+                @* <div class="flex-1 max-w-xl">
                     <form class="w-full">
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
@@ -163,7 +175,7 @@
                             </button>
                         </div>
                     </form>
-                </div>
+                </div> *@
 
                 <!-- Action Buttons -->
                 <div class="flex items-center gap-3">
@@ -302,53 +314,50 @@
                 </div>
 
                 <!-- Filters Form -->
-                <form id="filtersForm" method="GET" class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+                <form @onsubmit="ApplyFilters" class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
                     <!-- Filter Controls -->
                     <div class="flex flex-col sm:flex-row gap-4 flex-1">
-                        <!-- Status Filter -->
+                        <!-- Type Select -->
                         <div class="flex flex-col gap-2">
-                            <label for="categoriesTypeSelect" class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                            <label for="selectedType" class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
                                 Category Type
                             </label>
                             <div class="relative">
-                                <select id="categoriesTypeSelect"
+                                <select id="selectedType"
+                                        @bind="selectedType"
                                         class="w-full min-w-[200px] appearance-none text-gray-900 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-xl py-3 px-4 pr-10 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 cursor-pointer shadow-sm">
-                                    <option value="all">Main Categories</option>
-                                    <option value="active">Sub Categories</option>
+                                    <option value="all">All Types</option>
+                                    <option value="Product">Product</option>
+                                    <option value="Service">Service</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Role Filter -->
+                        <!-- Status Filter -->
                         <div class="flex flex-col gap-2">
                             <label for="catgoriesStatusSelect" class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
                                 Status
                             </label>
                             <div class="relative">
                                 <select id="catgoriesStatusSelect"
+                                        @bind="selectedStatus"
                                         class="w-full min-w-[200px] appearance-none text-gray-900 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-xl py-3 px-4 pr-10 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 cursor-pointer shadow-sm">
-                                    <option value="all">Active</option>
-                                    <option value="superadmin">Inactive</option>
+                                    <option value="all">All</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
                                 </select>
-
                             </div>
                         </div>
 
-                        <!-- Role Filter -->
+                        <!-- Search -->
                         <div class="flex flex-col gap-2">
-                            <label for="categoriesBranchSelect" class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
-                                Branch
+                            <label for="search" class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                                Search
                             </label>
-                            <div class="relative">
-                                <select id="categoriesRolesSelect"
-                                        class="w-full min-w-[200px] appearance-none text-gray-900 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-xl py-3 px-4 pr-10 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 cursor-pointer shadow-sm">
-                                    <option value="all">All Branch</option>
-                                    <option value="superadmin">Davao</option>
-                                    <option value="admin">Kidapawan </option>
-                                    <option value="employee">Gensan</option>
-                                </select>
-
-                            </div>
+                            <input id="search"
+                                   @bind="search"
+                                   placeholder="Search category..."
+                                   class="w-full min-w-[200px] text-gray-900 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-xl py-3 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 shadow-sm" />
                         </div>
                     </div>
 
@@ -361,7 +370,8 @@
                         </button>
 
                         <!-- Reset Button -->
-                        <button id="resetFilters" type="button"
+                        <button type="button"
+                                @onclick="ResetFilters"
                                 class="px-4 py-3 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-xl text-sm text-gray-700 dark:text-gray-300 font-medium transition-all duration-200 shadow-sm hover:shadow-md hover:bg-gray-50 dark:hover:bg-gray-500 focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 flex items-center gap-2 cursor-pointer">
                             Reset
                         </button>
@@ -372,14 +382,12 @@
 
 
         <div class="overflow-hidden">
-            <table class="min-w-full divide-y divide-gray-200 text-sm text-left">
+            <table class="min-w-full divide-y divide-gray-200 text-sm text-left">   
                 <thead class="bg-gray-50">
                     <tr>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Category Name</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Type</th>
-                        <th class="px-6 py-3 text-left font-medium text-gray-700">
-                             To do
-                        </th>
+                        <th class="px-6 py-3 text-left font-medium text-gray-700">To do</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">To do</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Total Products</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Inventory Value</th>
@@ -387,88 +395,94 @@
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Actions</th>
                     </tr>
                 </thead>
+
                 <tbody class="bg-white divide-y divide-gray-100">
-                    @foreach (var cat in categories)
+                    @if (categories == null || categories.Count == 0)
                     {
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-3">
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-3">
-                                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div class="font-medium text-gray-800">@cat.Name</div>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td class="px-6 py-3">
-                                <span class="px-2 py-1 text-xs font-medium rounded-full bg-purple-100 text-purple-800">@cat.CategoryType</span>
-                            </td>
-
-                            <td class="px-6 py-3 text-gray-600">
-                                To do
-                            </td>
-
-                            <td class="px-6 py-3 text-gray-600">To do</td>
-
-                            <td class="px-6 py-3 text-gray-600">To do</td>
-
-                            <td class="px-6 py-3 text-gray-600">To do</td>
-
-                            <td class="px-6 py-4">
-                                <span class="px-2.5 py-0.5 text-xs font-medium rounded-full @(cat.Status == "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800")">
-                                    @(cat.Status)
-                                </span>
-                            </td>
-
-                            <td class="px-6 py-4 align-middle">
-                                <div class="flex space-x-2">
-                                    <!-- View Button -->
-                                    <div class="relative group">
-                                        <button class="text-gray-600 hover:text-primary/90 transition-colors duration-200 p-1 rounded cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                                 fill="currentColor">
-                                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                                                <path fill-rule="evenodd"
-                                                      d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                                                      clip-rule="evenodd" />
-                                            </svg>
-                                        </button>
-                                        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-primary rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
-                                            View Category
-                                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-primary">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Edit Button -->
-                                    <div class="relative group">
-                                        <button class="text-gray-600 hover:text-primary/90 transition-colors duration-200 p-1 rounded cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                                 fill="currentColor">
-                                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                                            </svg>
-                                        </button>
-                                        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-primary rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
-                                            Edit Category
-                                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-primary">
-                                            </div>
-                                        </div>
-                                    </div>
+                        <tr>
+                            <td colspan="8" class="px-6 py-8 text-center text-gray-500">
+                                <div class="flex flex-col items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9.75 9V5.25a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75V9M4.5 9h15a.75.75 0 01.75.75v9.75a.75.75 0 01-.75.75h-15a.75.75 0 01-.75-.75V9.75A.75.75 0 014.5 9z" />
+                                    </svg>
+                                    <p class="text-sm text-gray-500 font-medium">
+                                        No categories found.
+                                    </p>
                                 </div>
                             </td>
                         </tr>
                     }
-
-                    @* @if (())
+                    else
                     {
-                        <tr>
-                            <td colspan="8" class="px-6 py-6 text-center text-gray-500">No records found.</td>
-                        </tr>
-                    }  *@
+                        @foreach (var cat in categories)
+                        {
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-3">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium text-gray-800">@cat.Name</div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td class="px-6 py-3">
+                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-purple-100 text-purple-800">@cat.CategoryType</span>
+                                </td>
+
+                                <td class="px-6 py-3 text-gray-600">To do</td>
+                                <td class="px-6 py-3 text-gray-600">To do</td>
+                                <td class="px-6 py-3 text-gray-600">To do</td>
+                                <td class="px-6 py-3 text-gray-600">To do</td>
+
+                                <td class="px-6 py-4">
+                                    <span class="px-2.5 py-0.5 text-xs font-medium rounded-full @(cat.Status == "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800")">
+                                        @(cat.Status)
+                                    </span>
+                                </td>
+
+                                <td class="px-6 py-4 align-middle">
+                                    <div class="flex space-x-2">
+                                        <!-- View Button -->
+                                        <div class="relative group">
+                                            <button class="text-gray-600 hover:text-primary/90 transition-colors duration-200 p-1 rounded cursor-pointer">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-primary rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
+                                                View Category
+                                                <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-primary"></div>
+                                            </div>
+                                        </div
+
+                                        <!-- Edit Button -->
+                                        <div class="relative group">
+                                            <button type="button"
+                                                    data-modal-target="addCategoryModal"
+                                                    data-modal-toggle="addCategoryModal"
+                                                    @onclick="() => OpenAddModal(cat)"
+                                                    class="text-gray-600 hover:text-primary/90 transition-colors duration-200 p-1 rounded cursor-pointer">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                                                </svg>
+                                            </button>
+                                            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-primary rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
+                                                Edit Category
+                                                <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-primary"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
                 </tbody>
             </table>
         </div>
@@ -568,13 +582,22 @@
 
 @code {
     private List<CategoryDto> categories = new();
+    private CategorySummaryDto? summary;
     private CategoryForm categoryForm = new();
     private CategoryDto? editingCategory = null;
 
     // Only categories that are NOT children (ParentId == null)
     private List<CategoryDto> ParentCategories => categories.Where(c => c.ParentId == null).ToList();
 
+    // Filter state (bound to your filter UI)
+    private string search = "";
+    private string selectedType = "all";   
+    private string selectedStatus = "all"; 
+
+    private bool isSubmitting = false;
+
     [Inject] private HttpClient Http { get; set; } = default!;
+    [Inject] private IJSRuntime JS { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
     {
@@ -594,11 +617,28 @@
     {
         try
         {
-            categories = await Http.GetFromJsonAsync<List<CategoryDto>>("api/categories") ?? new List<CategoryDto>();
+            // Build query string only including non-default filters
+            var queryParams = new List<string>();
+            if (!string.IsNullOrWhiteSpace(search))
+                queryParams.Add($"search={Uri.EscapeDataString(search)}");
+
+            if (!string.IsNullOrWhiteSpace(selectedType) && selectedType != "all")
+                queryParams.Add($"type={Uri.EscapeDataString(selectedType)}");
+
+            if (!string.IsNullOrWhiteSpace(selectedStatus) && selectedStatus != "all")
+                queryParams.Add($"status={Uri.EscapeDataString(selectedStatus)}");
+
+            var url = "api/categories";
+            if (queryParams.Any())
+                url += "?" + string.Join("&", queryParams);
+
+            summary = await Http.GetFromJsonAsync<CategorySummaryDto>(url);
+            categories = summary?.Categories ?? new List<CategoryDto>();
         }
         catch (HttpRequestException ex)
         {
             Console.WriteLine($"Failed to load categories: {ex.Message}");
+            summary = new CategorySummaryDto();
             categories = new List<CategoryDto>();
         }
     }
@@ -624,21 +664,24 @@
         }
     }
 
-    private bool isSubmitting = false;
-
     private async Task HandleCreateOrUpdate()
     {
         isSubmitting = true;
         try
         {
-            // your HTTP POST/PUT logic
             if (editingCategory == null)
             {
+                // Create
                 var response = await Http.PostAsJsonAsync("api/categories", categoryForm);
-                if (response.IsSuccessStatusCode) await LoadCategories();
+                if (response.IsSuccessStatusCode)
+                {
+                    await LoadCategories();
+                    editingCategory = null;
+                }
             }
             else
             {
+                // Update local DTO from form then send PUT
                 editingCategory.Name = categoryForm.Name;
                 editingCategory.CategoryType = categoryForm.CategoryType;
                 editingCategory.ParentId = categoryForm.ParentId;
@@ -646,7 +689,11 @@
                 editingCategory.Status = categoryForm.IsActive ? "Active" : "Inactive";
 
                 var response = await Http.PutAsJsonAsync($"api/categories/{editingCategory.Id}", editingCategory);
-                if (response.IsSuccessStatusCode) await LoadCategories();
+                if (response.IsSuccessStatusCode)
+                {
+                    await LoadCategories();
+                    editingCategory = null;
+                }
             }
 
             // Close modal after submit
@@ -656,6 +703,29 @@
         {
             isSubmitting = false;
         }
+    }
+
+    // Called by your "Apply Filters" button/form
+    private async Task ApplyFilters()
+    {
+        await LoadCategories();
+    }
+
+    // Called by your "Reset" button
+    private async Task ResetFilters()
+    {
+        search = "";
+        selectedType = "all";
+        selectedStatus = "all";
+        await LoadCategories();
+    }
+
+    // Helper to get parent name for table (used by markup)
+    private string GetParentName(long? parentId)
+    {
+        if (parentId == null) return "-";
+        var parent = categories.FirstOrDefault(c => c.Id == parentId.Value);
+        return parent?.Name ?? "-";
     }
 }
 

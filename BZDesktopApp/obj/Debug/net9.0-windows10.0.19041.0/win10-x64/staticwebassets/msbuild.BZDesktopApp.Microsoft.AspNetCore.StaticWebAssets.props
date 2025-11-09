@@ -12,12 +12,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f3cnigmzrc</Fingerprint>
-      <Integrity>BbHOMo1YbRKYOnFSy2mQAq/hHW14AAVATlvMUu+I/X8=</Integrity>
+      <Fingerprint>200twe9ykx</Fingerprint>
+      <Integrity>Qs3RBYsFr6wonxyZ69UPlF0mpUIdLfrpOMCyBvX02YQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>68206</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 09:43:54 GMT</LastWriteTime>
+      <FileLength>67596</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 21:56:41 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AppIcon.ico'))">
@@ -192,12 +192,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ss67v5coce</Fingerprint>
-      <Integrity>1G48R1M3jwPBzwDhcDy2vw58AXjOHcZ8MYWyjRoONbw=</Integrity>
+      <Fingerprint>0jw4jjbz3q</Fingerprint>
+      <Integrity>rAxoZtWHhCQS9UHbbT/CwXSrEZliUf31Tjf/hIMn9h4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>1238</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 10:04:50 GMT</LastWriteTime>
+      <FileLength>1283</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 19:50:29 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\category.js'))">
@@ -217,7 +217,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>552</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 10:01:51 GMT</LastWriteTime>
+      <LastWriteTime>Sun, 09 Nov 2025 14:44:29 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\category.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\EmployeeRecords.js'))">
@@ -280,6 +280,26 @@
       <LastWriteTime>Sun, 09 Nov 2025 07:55:46 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\navmenu.js'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\product.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>BZDesktopApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>js/product.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>qdiwafoisx</Fingerprint>
+      <Integrity>8vSOrK6fQyGYJKFJc+yPKWo4HtNCH9s1V3JG+H8Wh3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <FileLength>653</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 19:50:09 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\product.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\flowbite\flowbite.min.js'))">
       <SourceType>Package</SourceType>
       <SourceId>BZDesktopApp</SourceId>
@@ -297,7 +317,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>135824</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 10:26:20 GMT</LastWriteTime>
+      <LastWriteTime>Sun, 09 Nov 2025 23:01:38 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\flowbite\flowbite.min.js'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>

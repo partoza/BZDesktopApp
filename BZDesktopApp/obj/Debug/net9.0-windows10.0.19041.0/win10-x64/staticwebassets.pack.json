@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\js\\navmenu.js"
     },
     {
+      "Id": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\product.js",
+      "PackagePath": "staticwebassets\\js\\product.js"
+    },
+    {
       "Id": "C:\\Users\\MYPC\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\lib\\flowbite\\flowbite.min.js",
       "PackagePath": "staticwebassets\\lib\\flowbite\\flowbite.min.js"
     },

@@ -15,10 +15,37 @@ public class CategoryService : ICategoryService
         _context = context;
     }
 
-    public async Task<List<CategoryDto>> GetCategoriesAsync()
+    public async Task<CategorySummaryDto> GetCategoriesAsync(string? search = null, string? type = null, string? status = null)
     {
-        var categories = await _context.Categories.AsNoTracking().ToListAsync();
-        return categories.Select(c => new CategoryDto
+        var allCategories = await _context.Categories.AsNoTracking().ToListAsync();
+
+        // Full summary for cards (unfiltered)
+        var fullSummary = new CategorySummaryDto
+        {
+            TotalCount = allCategories.Count,
+            ActiveCount = allCategories.Count(c => c.Status == "Active"),
+            InactiveCount = allCategories.Count(c => c.Status == "Inactive"),
+            MainActiveCount = allCategories.Count(c => c.Status == "Active" && c.ParentId == null),
+            SubActiveCount = allCategories.Count(c => c.Status == "Active" && c.ParentId != null),
+            MainInactiveCount = allCategories.Count(c => c.Status == "Inactive" && c.ParentId == null),
+            SubInactiveCount = allCategories.Count(c => c.Status == "Inactive" && c.ParentId != null),
+            ProductCount = allCategories.Count(c => c.CategoryType == "Product"),
+            ServiceCount = allCategories.Count(c => c.CategoryType == "Service")
+        };
+
+        // Now apply filters for table only
+        var query = allCategories.AsQueryable();
+        if (!string.IsNullOrWhiteSpace(search))
+            query = query.Where(c => c.Name.Contains(search));
+        if (!string.IsNullOrWhiteSpace(type) && type != "all")
+            query = query.Where(c => c.CategoryType == type);
+        if (!string.IsNullOrWhiteSpace(status) && status != "all")
+            query = query.Where(c => c.Status == status);
+
+        var filteredCategories = query.ToList();
+
+        // Attach filtered categories to summary
+        fullSummary.Categories = filteredCategories.Select(c => new CategoryDto
         {
             Id = c.Id,
             Name = c.Name,
@@ -27,7 +54,12 @@ public class CategoryService : ICategoryService
             Description = c.Description,
             Status = c.Status
         }).ToList();
+
+        return fullSummary;
     }
+
+
+
 
     public async Task<CategoryDto> CreateCategoryAsync(CategoryForm form, int userId)
     {

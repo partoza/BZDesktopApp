@@ -17,3 +17,17 @@ public class CategoryDto
     public string? Description { get; set; }
     public string Status { get; set; } = "Active";
 }
+
+public class CategorySummaryDto
+{
+    public List<CategoryDto> Categories { get; set; } = new();
+    public int TotalCount { get; set; }
+    public int ActiveCount { get; set; }
+    public int InactiveCount { get; set; }
+    public int MainActiveCount { get; set; }
+    public int SubActiveCount { get; set; }
+    public int MainInactiveCount { get; set; }
+    public int SubInactiveCount { get; set; }
+    public int ProductCount { get; set; }
+    public int ServiceCount { get; set; }
+}

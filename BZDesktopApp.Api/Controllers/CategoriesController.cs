@@ -15,10 +15,10 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetCategories()
+    public async Task<IActionResult> GetCategories([FromQuery] string? search = null, [FromQuery] string? type = null, [FromQuery] string? status = null)
     {
-        var categories = await _categoryService.GetCategoriesAsync();
-        return Ok(categories);
+        var summary = await _categoryService.GetCategoriesAsync(search, type, status);
+        return Ok(summary);
     }
 
     [HttpPost]

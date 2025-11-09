@@ -8,6 +8,7 @@ wwwroot\index.html.gz
 wwwroot\js\navmenu.js.gz
 wwwroot\js\EmployeeRecords.js.gz
 wwwroot\css\bootstrap\bootstrap.min.css.gz
+wwwroot\js\product.js.gz
 wwwroot\css\bootstrap\bootstrap.min.css.map.gz
 wwwroot\app.css.gz
 wwwroot\AppIcon.ico.gz
@@ -19,6 +20,7 @@ wwwroot\index.html.br
 wwwroot\js\navmenu.js.br
 wwwroot\js\EmployeeRecords.js.br
 wwwroot\css\bootstrap\bootstrap.min.css.br
+wwwroot\js\product.js.br
 wwwroot\css\bootstrap\bootstrap.min.css.map.br
 wwwroot\app.css.br
 wwwroot\AppIcon.ico.br
@@ -102,4 +104,5 @@ wwwroot\js\category.js
 wwwroot\js\EmployeeRecords.js
 wwwroot\js\flowbite-init.js
 wwwroot\js\navmenu.js
+wwwroot\js\product.js
 wwwroot\lib\flowbite\flowbite.min.js
