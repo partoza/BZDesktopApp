@@ -12,12 +12,16 @@ bin/
 obj/
 out/
 
+# (Removed wwwroot ignore so all static assets are tracked)
+# If you later need to ignore generated bundles, add patterns like:
+# wwwroot/dist/
+# wwwroot/**/*.map
 
 # IIS Express
 iisexpress/
 *.vspscc
 
-# Visual Studio cache/options directory
+# Editor settings
 .vscode/
 
 # NuGet packages
@@ -29,7 +33,7 @@ iisexpress/
 # Logs
 *.log
 
-# Compiled files
+# Compiled / packaged binaries
 *.dll
 *.exe
 *.app
@@ -43,13 +47,10 @@ iisexpress/
 _ReSharper*/
 *.DotSettings.user
 .idea/
+*.sln.iml
 
 # DotNet Tools
 tools/
-
-# JetBrains Rider
-.idea/
-*.sln.iml
 
 # Backup & autosave files
 *.bak
@@ -60,6 +61,6 @@ tools/
 .env
 *.local
 
-# Cache files
+# Cache / dependencies
 node_modules/
 .cache/
