@@ -1,91 +1,196 @@
 ﻿@page "/admin/dashboard"
-@using BZDesktopApp.Components
-<AuthGuard>
-    <div class="space-y-6">
-        <div>
-            <h1 class="text-4xl font-bold text-gray-900">Welcome Back! 👋</h1>
-            <p class="text-gray-600 mt-2">You're now logged in to your application</p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary-500">
-                <h2 class="text-xl font-semibold text-gray-900 mb-2">Tailwind CSS</h2>
-                <p class="text-gray-600">This application is now using Tailwind CSS with a green primary color theme
-                </p>
-            </div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-5">
 
-            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary-500">
-                <h2 class="text-xl font-semibold text-gray-900 mb-2">Authentication</h2>
-                <p class="text-gray-600">You have successfully authenticated and are viewing the home page</p>
-            </div>
-        </div>
+    <!-- LEFT COLUMN (col-span-8) -->
+    <div class="xl:col-span-7 flex flex-col gap-5">
+        <!-- Welcome Card -->
+        <div class="bg-white rounded-xl shadow-sm p-6 flex items-center justify-between h-44">
+            <div>
+                <h1 class="text-xl font-semibold text-gray-800">
+                    Hello <span class="text-emerald-600">John Rex!</span>, Welcome to BZ
+                </h1>
+                <p class="text-gray-600 mt-1 font-medium">Ready to make some sales today?</p>
 
-        <div class="bg-primary-50 border border-primary-200 rounded-lg p-4">
-            <p class="text-primary-900 text-sm">
-                <span class="font-semibold">Tip:</span> Click the logout button in the top navigation to return to the
-                login page
-            </p>
-        </div>
-
-
-
-        <!-- Modal toggle -->
-        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-            Toggle modal
-        </button>
-
-
-        <form class="max-w-md mx-auto">
-            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-            <div class="relative">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                </div>
-                <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-                <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-            </div>
-        </form>
-
-
-        <!-- Main modal -->
-        <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-            <!-- Backdrop -->
-            <div class="fixed inset-0 bg-gray-900/50 dark:bg-gray-900/80 z-40" data-modal-hide="default-modal" aria-hidden="true"></div>
-
-            <div class="relative z-50 p-4 w-full max-w-2xl max-h-full">
-                <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-                    <!-- Modal header -->
-                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                            Terms of Service
-                        </h3>
-                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Close modal</span>
-                        </button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-4 md:p-5 space-y-4">
-                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                        </p>
-                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                            The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                        </p>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                        <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
-                        <button data-modal-hide="default-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Decline</button>
-                    </div>
+                <div class="bg-[#F1C40F]/10 rounded-lg p-2 mt-4 text-[#F1C40F] text-sm flex items-center gap-2">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                            <path d="M5.85 3.5a.75.75 0 0 0-1.117-1 9.719 9.719 0 0 0-2.348 4.876.75.75 0 0 0 1.479.248A8.219 8.219 0 0 1 5.85 3.5ZM19.267 2.5a.75.75 0 1 0-1.118 1 8.22 8.22 0 0 1 1.987 4.124.75.75 0 0 0 1.48-.248A9.72 9.72 0 0 0 19.266 2.5Z" />
+                            <path fill-rule="evenodd" d="M12 2.25A6.75 6.75 0 0 0 5.25 9v.75a8.217 8.217 0 0 1-2.119 5.52.75.75 0 0 0 .298 1.206c1.544.57 3.16.99 4.831 1.243a3.75 3.75 0 1 0 7.48 0 24.583 24.583 0 0 0 4.83-1.244.75.75 0 0 0 .298-1.205 8.217 8.217 0 0 1-2.118-5.52V9A6.75 6.75 0 0 0 12 2.25ZM9.75 18c0-.034 0-.067.002-.1a25.05 25.05 0 0 0 4.496 0l.002.1a2.25 2.25 0 1 1-4.5 0Z" clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                    <span>There are <span class="font-semibold">2 products</span> low in stock. <a href="#" class="text-primary font-medium underline">View products here</a>.</span>
                 </div>
             </div>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/993/993928.png"
+                 class="w-40 h-40 object-contain" />
         </div>
 
+
+        <!-- Analytics Section -->
+        <div class="bg-white rounded-xl shadow-sm p-6 h-96">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Analytics by Product Categories</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Donut Chart -->
+                <div class="flex justify-center items-center">
+                    <div class="relative w-48 h-48">
+                        <div class="absolute inset-0 rounded-full"
+                             style="background: conic-gradient(#10B981 0% 50%, #3B82F6 50% 85%, #F59E0B 85% 100%);">
+                        </div>
+                        <div class="absolute inset-8 bg-white rounded-full"></div>
+                        <div class="absolute top-2 left-1/2 transform -translate-x-1/2 text-center text-xs font-medium text-gray-700">
+                            Computer Parts<br />50%
+                        </div>
+                        <div class="absolute bottom-8 right-0 text-center text-xs font-medium text-gray-700">
+                            CCTV<br />35%
+                        </div>
+                        <div class="absolute bottom-8 left-0 text-center text-xs font-medium text-gray-700">
+                            Solar<br />15%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Details -->
+                <div class="space-y-4">
+                    <!-- Computer Parts -->
+                    <div class="flex gap-3 border-l-4 border-emerald-600 pl-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
+                             class="w-10 h-10 rounded-md object-cover" />
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Computer Parts</h3>
+                            <p class="text-sm text-gray-700">
+                                <span class="font-bold text-gray-900">₱ 250,000.00</span> Total Sales
+                            </p>
+                            <p class="text-sm text-emerald-600 font-medium">Growth: +20%</p>
+                            <p class="text-xs text-gray-600 mt-1">Top Product: Intel i7 Processor</p>
+                        </div>
+                    </div>
+
+                    <!-- CCTV -->
+                    <div class="flex gap-3 border-l-4 border-blue-500 pl-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/483/483947.png"
+                             class="w-10 h-10 rounded-md object-cover" />
+                        <div>
+                            <h3 class="font-semibold text-gray-900">CCTV</h3>
+                            <p class="text-sm text-gray-700">
+                                <span class="font-bold text-gray-900">₱ 175,000.00</span> Total Sales
+                            </p>
+                            <p class="text-sm text-emerald-600 font-medium">Growth: +15%</p>
+                            <p class="text-xs text-gray-600 mt-1">Top Product: HikVision Dome Camera</p>
+                        </div>
+                    </div>
+
+                    <!-- Solar -->
+                    <div class="flex gap-3 border-l-4 border-yellow-500 pl-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"
+                             class="w-10 h-10 rounded-md object-cover" />
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Solar</h3>
+                            <p class="text-sm text-gray-700">
+                                <span class="font-bold text-gray-900">₱ 75,000.00</span> Total Sales
+                            </p>
+                            <p class="text-sm text-red-600 font-medium">Growth: -10%</p>
+                            <p class="text-xs text-gray-600 mt-1">Top Product: 100W Solar Panel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</AuthGuard>
+
+    <!-- RIGHT COLUMN (col-span-4) -->
+    <div class="xl:col-span-5 flex flex-col gap-5">
+        <!-- Row 1: Profits + Sales -->
+        <div class="grid grid-cols-2 gap-5 h-44">
+            @foreach (var card in statCards.Take(2))
+            {
+                <div class="bg-white rounded-xl shadow-sm p-6 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                        <img src="@card.Icon" class="w-6 h-6" />
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600">@card.Title</p>
+                        <p class="text-xl font-bold text-gray-900">@card.Value</p>
+                        <p class="text-xs text-emerald-600 font-medium">@card.Growth</p>
+                        <p class="text-xs text-gray-500">@card.Note</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Row 2: Payments + Transactions -->
+        <div class="grid grid-cols-2 gap-5 h-44">
+            @foreach (var card in statCards.Skip(2).Take(2))
+            {
+                <div class="bg-white rounded-xl shadow-sm p-6 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                        <img src="@card.Icon" class="w-6 h-6" />
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600">@card.Title</p>
+                        <p class="text-xl font-bold text-gray-900">@card.Value</p>
+                        <p class="text-xs text-emerald-600 font-medium">@card.Growth</p>
+                        <p class="text-xs text-gray-500">@card.Note</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Row 3: Service Revenue -->
+        <div class="bg-white rounded-xl shadow-sm p-6 h-[188px]">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Service Revenue</h3>
+            <p class="text-sm text-gray-600">Total Income Service</p>
+            <p class="text-2xl font-bold text-gray-900 mt-2">₱130,330</p>
+            <p class="text-sm text-emerald-600 font-medium mt-1">+50%</p>
+        </div>
+    </div>
+</div>
+
+@code {
+    public class StatCardModel
+    {
+        public string Title { get; set; } = string.Empty;
+        public string Value { get; set; } = string.Empty;
+        public string Note { get; set; } = string.Empty;
+        public string Growth { get; set; } = string.Empty;
+        public string Icon { get; set; } = string.Empty;
+    }
+
+    private List<StatCardModel> statCards = new()
+    {
+        new StatCardModel
+        {
+            Title = "Profits",
+            Value = "₱ 530,330",
+            Note = "Monthly Profits",
+            Growth = "+100%",
+            Icon = "https://cdn-icons-png.flaticon.com/512/1170/1170576.png"
+        },
+        new StatCardModel
+        {
+            Title = "Sales",
+            Value = "₱ 2,830,330",
+            Note = "Monthly Sales",
+            Growth = "+100%",
+            Icon = "https://cdn-icons-png.flaticon.com/512/3500/3500833.png"
+        },
+        new StatCardModel
+        {
+            Title = "Payments",
+            Value = "₱ 130,330",
+            Note = "Monthly Payments",
+            Growth = "+100%",
+            Icon = "https://cdn-icons-png.flaticon.com/512/3595/3595455.png"
+        },
+        new StatCardModel
+        {
+            Title = "Transactions",
+            Value = "100",
+            Note = "Monthly Transactions",
+            Growth = "",
+            Icon = "https://cdn-icons-png.flaticon.com/512/891/891462.png"
+        }
+    };
+}
