@@ -18,7 +18,7 @@ function initializeMenuState(currentUrl) {
     } catch { /* no-op */ }
 }
 
-// Toggle dropdown menu (button with data-menu-title)
+// Toggle dropdown menu (button with data-menu-title)x
 function toggleDropdown(buttonElement) {
     if (!buttonElement) return;
     const now = Date.now();

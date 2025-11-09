@@ -3,6 +3,7 @@ Components\Layout\NavMenu.razor.css
 wwwroot\lib\flowbite\flowbite.min.js.gz
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.gz
 wwwroot\js\flowbite-init.js.gz
+wwwroot\js\supplier.js.gz
 wwwroot\index.html.gz
 wwwroot\js\navmenu.js.gz
 wwwroot\js\EmployeeRecords.js.gz
@@ -13,6 +14,7 @@ wwwroot\AppIcon.ico.gz
 wwwroot\lib\flowbite\flowbite.min.js.br
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css.br
 wwwroot\js\flowbite-init.js.br
+wwwroot\js\supplier.js.br
 wwwroot\index.html.br
 wwwroot\js\navmenu.js.br
 wwwroot\js\EmployeeRecords.js.br
@@ -21,8 +23,10 @@ wwwroot\css\bootstrap\bootstrap.min.css.map.br
 wwwroot\app.css.br
 wwwroot\AppIcon.ico.br
 wwwroot\css\app.css.br
+wwwroot\js\addProduct.js.br
 wwwroot\BZDesktopApp.styles.css.br
 wwwroot\css\app.css.gz
+wwwroot\js\addProduct.js.gz
 wwwroot\BZDesktopApp.styles.css.gz
 OpenSans-Regular.ttf
 appicon.ico
@@ -91,11 +95,14 @@ wwwroot\AppIcon.ico
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\images\background\dashboard-illustration.png
 wwwroot\images\background\login-bg.jpg
 wwwroot\images\logo\bz-logo-green.png
 wwwroot\images\logo\bz-logo-white.png
 wwwroot\index.html
+wwwroot\js\addProduct.js
 wwwroot\js\EmployeeRecords.js
 wwwroot\js\flowbite-init.js
 wwwroot\js\navmenu.js
+wwwroot\js\supplier.js
 wwwroot\lib\flowbite\flowbite.min.js

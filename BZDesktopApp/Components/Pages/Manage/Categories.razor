@@ -1,5 +1,7 @@
 ﻿@page "/categories"
 @using System.Globalization
+@using BZDesktopApp.Shared.Dtos
+@inject IJSRuntime JS
 
 <AuthGuard>
     <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-5">
@@ -24,10 +26,10 @@
 
                 <div class="flex items-center gap-2 mt-2">
                     <div class="flex items-center text-green-600 bg-green-400/10 px-2 py-1 rounded text-xs font-medium">
-                        <span>+ @(GetActivePercentage())% Active</span>
+                        <span>+ 100% Active</span>
                     </div>
                     <div class="flex items-center text-red-600 bg-red-400/10 px-2 py-1 text-xs font-medium">
-                        <span>- @(GetInactivePercentage())% Inactive</span>
+                        <span>- % Inactive</span>
                     </div>
                 </div>
             </div>
@@ -48,7 +50,7 @@
             </div>
 
             <div class="ps-14">
-                <h3 class="text-2xl font-semibold text-gray-900">@totalSubcategories</h3>
+                <h3 class="text-2xl font-semibold text-gray-900"> To do </h3>
                 <p class="text-xs text-gray-500 mt-1">Total Subcategories</p>
 
                 <div class="flex items-center gap-2 mt-2">
@@ -77,7 +79,7 @@
             </div>
 
             <div class="ps-14">
-                <h3 class="text-2xl font-semibold text-gray-900">@activeCategories</h3>
+                <h3 class="text-2xl font-semibold text-gray-900"> To do </h3>
                 <p class="text-xs text-gray-500 mt-1">Currently Active</p>
 
                 <div class="flex items-center gap-2 mt-2">
@@ -106,7 +108,7 @@
             </div>
 
             <div class="ps-14">
-                <h3 class="text-2xl font-semibold text-gray-900">@inactiveCategories</h3>
+                <h3 class="text-2xl font-semibold text-gray-900"> To do </h3>
                 <p class="text-xs text-gray-500 mt-1">Currently Inactive</p>
 
                 <div class="flex items-center gap-2 mt-2">
@@ -165,7 +167,7 @@
 
                 <!-- Action Buttons -->
                 <div class="flex items-center gap-3">
-                    <!-- Add Employee Button -->
+                    <!-- Add Categories Button -->
                     <button type="button"
                             data-modal-target="addCategoryModal"
                             data-modal-toggle="addCategoryModal"
@@ -175,6 +177,105 @@
                         </svg>
                         Add Categories
                     </button>
+
+                    <!-- Flowbite Modal -->
+                    <div id="addCategoryModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+                         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-700/70 dark:bg-opacity-80 backdrop-blur-sm">
+                        <div class="relative p-4 max-w-4xl w-full">
+                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 border border-gray-200 dark:border-gray-600">
+                                <!-- Header -->
+                                <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-200 rounded-t dark:border-gray-600">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-primary dark:text-white">
+                                            @((editingCategory == null) ? "Add New Category" : "Edit Category")
+                                        </h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                            Please fill up all the required fields to @((editingCategory == null) ? "add" : "edit") category.
+                                        </p>
+                                    </div>
+                                    <button type="button"
+                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                            data-modal-hide="addCategoryModal">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                             viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+
+                                <!-- Modal Body -->
+                                <EditForm Model="categoryForm" OnValidSubmit="HandleCreateOrUpdate" class="p-4 md:p-5">
+                                    <DataAnnotationsValidator />
+                                    <ValidationSummary />
+
+                                    <div class="overflow-y-auto max-h-[60vh] space-y-4">
+                                        <!-- Category Name -->
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Category Name</label>
+                                            <InputText @bind-Value="categoryForm.Name"
+                                                       class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500" />
+                                        </div>
+
+                                        <!-- Category Type & Parent -->
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Category Type</label>
+                                                <InputSelect @bind-Value="categoryForm.CategoryType"
+                                                             class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500">
+                                                    <option value="Product">Product</option>
+                                                    <option value="Service">Service</option>
+                                                </InputSelect>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Parent Category</label>
+                                                <InputSelect @bind-Value="categoryForm.ParentId"
+                                                             class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500">
+                                                    <option value="">None</option>
+                                                    @foreach (var parent in ParentCategories)
+                                                    {
+                                                        <option value="@parent.Id">@parent.Name</option>
+                                                    }
+                                                </InputSelect>
+                                            </div>
+                                        </div>
+
+                                        <!-- Description -->
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                                            <InputTextArea @bind-Value="categoryForm.Description" rows="3"
+                                                           class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500" />
+                                        </div>
+
+                                        <!-- Status -->
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                                            <div class="flex items-center gap-3 px-3 py-2 bg-gray-50 border rounded-xl">
+                                                <input type="checkbox" @bind="categoryForm.IsActive"
+                                                       class="h-5 w-5 text-blue-600 border-gray-300 rounded" />
+                                                <label class="text-sm text-gray-800 select-none cursor-pointer">Active</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer -->
+                                    <div class="mt-6 flex justify-end gap-3 border-t border-gray-200 pt-4">
+                                        <button type="button" data-modal-hide="addCategoryModal"
+                                                class="px-4 py-3 border rounded-xl text-gray-700 hover:bg-gray-100 transition-colors">
+                                            Cancel
+                                        </button>
+                                        <button type="submit"
+                                                class="px-4 py-3 bg-primary hover:bg-emerald-700 text-white rounded-xl font-medium shadow-sm"
+                                                disabled="@isSubmitting">
+                                            @(editingCategory == null ? "Create Category" : "Update Category")
+                                        </button>
+                                    </div>
+                                </EditForm>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <!-- Export Button -->
                     <a href="#"
@@ -277,9 +378,9 @@
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Category Name</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Type</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">
-                            @(viewType == "subcategories" ? "Parent Category" : "Sub-Categories")
+                            To do
                         </th>
-                        <th class="px-6 py-3 text-left font-medium text-gray-700">Products</th>
+                        <th class="px-6 py-3 text-left font-medium text-gray-700">To do</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Total Products</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Inventory Value</th>
                         <th class="px-6 py-3 text-left font-medium text-gray-700">Status</th>
@@ -308,21 +409,14 @@
                             </td>
 
                             <td class="px-6 py-3 text-gray-600">
-                                @if (viewType == "subcategories")
-                                {
-                                    @(cat.ParentCategory?.Name ?? "— None —")
-                                }
-                                else
-                                {
-                                    @cat.SubcategoriesCount
-                                }
+                                To do
                             </td>
 
-                            <td class="px-6 py-3 text-gray-600">@cat.DirectProductsCount</td>
+                            <td class="px-6 py-3 text-gray-600">To do</td>
 
-                            <td class="px-6 py-3 text-gray-600">@cat.TotalProductsCount</td>
+                            <td class="px-6 py-3 text-gray-600">To do</td>
 
-                            <td class="px-6 py-3 text-gray-600">₱ @cat.InventoryValue.ToString("N2")</td>
+                            <td class="px-6 py-3 text-gray-600">To do</td>
 
                             <td class="px-6 py-4">
                                 <span class="px-2.5 py-0.5 text-xs font-medium rounded-full @(cat.Status == "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800")">
@@ -438,256 +532,8 @@
             </div>
         </div>
     </div>
-    <!-- Add Category Modal -->
-    <div id="addCategoryModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-700/70 bg-opacity-50 dark:bg-opacity-80 backdrop-blur-sm">
-        <div class="relative p-4 max-w-4xl w-full">
-            <!-- Changed from max-w-4xl to max-w-5xl -->
-            <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 border border-gray-200 dark:border-gray-600">
-                <!-- Modal header -->
-                <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-200 rounded-t dark:border-gray-600">
-                    <div>
-                        <h3 class="text-xl font-semibold text-primary dark:text-white">
-                            Add New Category
-                        </h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                            Please fill up all the required fields to add new category.
-                        </p>
-                    </div>
-                    <button type="button"
-                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-hide="addCategoryModal">
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
-                </div>
 
-                <!-- Modal body -->
-                <form id="categoryForm" enctype="multipart/form-data" class="p-4 md:p-5">
-                    <div class="grid grid-cols-1 gap-6 max-h-[65vh] overflow-y-auto">
-                        <div class="overflow-y-auto max-h-[60vh] space-y-4 px-4">
-                            <div>
-                                <label for="categoryName" class="block text-sm font-medium text-gray-700 mb-2">Category Name</label>
-                                <input id="categoryName"
-                                           class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50"
-                                           placeholder="Electronics" />
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Category Type</label>
-                                    <select class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white">
-                                        <option value="Product">Product</option>
-                                        <option value="Service">Service</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Parent Category</label>
-                                    <select class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white">
-                                        <option value="">None</option>
-                                        @foreach (var parent in ParentCategories)
-                                        {
-                                            <option value="@parent.Id">@parent.Name</option>
-                                        }
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
-                                <textarea rows="3"
-                                               class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500"
-                                               placeholder="Brief description of the category" />
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>                                    <!-- Hidden Checkbox bound to your model -->
-                                <label class="inline-flex items-center mb-5 cursor-pointer">
-                                    <input type="checkbox" @bind="isActive" class="sr-only peer">
-
-                                    <div class="relative w-11 h-6 rounded-full
-                @(isActive ? "bg-green-600 dark:bg-green-600" : "bg-red-400 dark:bg-red-700")
-                peer-focus:outline-none peer-focus:ring-4
-                @(isActive ? "peer-focus:ring-green-300 dark:peer-focus:ring-green-800" : "peer-focus:ring-red-300 dark:peer-focus:ring-red-800")
-                peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
-                peer-checked:after:border-white
-                after:content-[''] after:absolute after:top-[2px] after:start-[2px]
-                after:bg-white after:border-gray-300 after:border after:rounded-full
-                after:w-5 after:h-5 after:transition-all dark:border-gray-600">
-                                    </div>
-
-                                    <span class="ms-3 text-sm font-medium @(isActive ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400")">
-                                        @(isActive ? "Active" : "Inactive")
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Confirmation Modal -->
-                    <div id="addCategoryConfirmationModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-                         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[60] justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-700/70 bg-opacity-50 dark:bg-opacity-80 backdrop-blur-sm">
-                        <div class="relative p-4 w-full max-w-md max-h-full">
-                            <!-- Modal content -->
-                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 border border-gray-200 dark:border-gray-600">
-                                <!-- Modal header -->
-                                <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-200 rounded-t dark:border-gray-600">
-                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                                        Confirm Category Creation
-                                    </h3>
-                                    <button type="button"
-                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                                            data-modal-hide="addCategoryConfirmationModal">
-                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                        </svg>
-                                        <span class="sr-only">Close modal</span>
-                                    </button>
-                                </div>
-                                <!-- Modal body -->
-                                <div class="p-4 md:p-5">
-                                    <div class="flex items-center mb-4">
-                                        <div class="flex-shrink-0">
-                                            <svg class="w-6 h-6 text-primary dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                            </svg>
-                                        </div>
-                                        <div class="ms-3">
-                                            <p class="text-sm text-gray-700 dark:text-gray-300">
-                                                Are you sure you want to add this new product category? This action will update your product records.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-3 mb-4">
-                                        <p class="text-xs text-blue-800 dark:text-blue-300">
-                                            <strong>Note:</strong> Once created, this category will be available for product listings and can be assigned to items in your inventory.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="flex items-center justify-end p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600 gap-3">
-                                    <button type="button" data-modal-hide="addCategoryConfirmationModal"
-                                            class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 cursor-pointer">
-                                        Cancel
-                                    </button>
-                                    <button type="button" id="finalCreateBtn"
-                                            class="text-white bg-primary hover:bg-emerald-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer">
-                                        Yes, Add Category
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="flex items-center justify-end pt-4 border-t border-gray-200 rounded-b dark:border-gray-600 mt-6 gap-3">
-                        <button type="button"
-                                data-modal-hide="addCategoryModal"
-                                class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 cursor-pointer">
-                            Cancel
-                        </button>
-                        <button type="button" data-modal-target="addCategoryConfirmationModal"
-                            data-modal-toggle="addCategoryConfirmationModal"
-                                class="text-white bg-primary hover:bg-emerald-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer">
-                            Add Category
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- Add Category Modal -->
-    @if (showAddModal)
-    {
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm">
-            <div class="bg-white p-5 rounded-2xl shadow-2xl w-full max-w-4xl mx-4 border border-gray-100">
-                <div class="flex items-center justify-between mb-4">
-                    <div>
-                        <h2 class="text-2xl font-bold text-primary">@(editingCategory == null ? "Add New Category" : "Edit Category")</h2>
-                        <p class="text-sm text-gray-600 mt-1">Please fill up all the required fields to @(editingCategory == null ? "add new" : "edit") category.</p>
-                    </div>
-                    <button type="button" class="text-gray-400 hover:text-red-600 transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <hr class="mb-2">
-
-                <form class="global-focus flex flex-col">
-
-                    <!-- Scrollable body -->
-                    <div class="overflow-y-auto max-h-[60vh] space-y-4 mt-4">
-                        <div>
-                            <label for="categoryName" class="block text-sm font-medium text-gray-700 mb-2">Category Name</label>
-                            <InputText id="categoryName"
-                                       class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50"
-                                       placeholder="Electronics" />
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Category Type</label>
-                                <InputSelect @bind-Value="categoryForm.CategoryType" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white">
-                                    <option value="Product">Product</option>
-                                    <option value="Service">Service</option>
-                                </InputSelect>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Parent Category</label>
-                                <InputSelect @bind-Value="categoryForm.ParentId" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white">
-                                    <option value="">None</option>
-                                    @foreach (var parent in ParentCategories)
-                                    {
-                                        <option value="@parent.Id">@parent.Name</option>
-                                    }
-                                </InputSelect>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
-                            <InputTextArea @bind-Value="categoryForm.Description" rows="3"
-                                           class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500"
-                                           placeholder="Brief description of the category" />
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
-                            <div class="flex items-center gap-3 px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl">
-                                <input type="checkbox" @bind="categoryForm.IsActive"
-                                       class="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
-                                <label class="text-sm text-gray-800 select-none cursor-pointer">Active</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer pinned to bottom -->
-                    <div class="mt-4 pt-4 border-t flex justify-end gap-3">
-                        <button type="button"
-                                class="px-4 py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-100 transition-colors font-medium">
-                            Cancel
-                        </button>
-                        <button type="submit"
-                                class="px-4 py-3 bg-primary hover:bg-emerald-700 text-white rounded-xl font-medium shadow-sm hover:shadow-md transition-all duration-200">
-                            @(editingCategory == null ? "Create Category" : "Update Category")
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    }
-
-    <!-- Confirmation Modal for Delete -->
+    @* <!-- Confirmation Modal for Delete -->
     @if (showDeleteModal)
     {
         <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm">
@@ -715,103 +561,100 @@
                 </div>
             </div>
         </div>
-    }
+    } *@
 </AuthGuard>
 
+@using BZDesktopApp.Shared
+
 @code {
-    private bool isActive { get; set; } = true; // initial state
-    private List<Category> categories = new();
-    private bool showAddModal = false;
-    private bool showDeleteModal = false;
-    private Category? editingCategory = null;
-    private Category? categoryToDelete = null;
+    private List<CategoryDto> categories = new();
     private CategoryForm categoryForm = new();
-    private string searchTerm = string.Empty;
-    private string viewType = "categories";
-    private string statusFilter = "";
-    private int currentPage = 1;
-    private int pageSize = 10;
+    private CategoryDto? editingCategory = null;
 
-    // Computed properties
-    private int totalSubcategories => categories.Count(c => c.ParentId.HasValue);
-    private int activeCategories => categories.Count(c => c.Status == "Active");
-    private int inactiveCategories => categories.Count(c => c.Status == "Inactive");
+    // Only categories that are NOT children (ParentId == null)
+    private List<CategoryDto> ParentCategories => categories.Where(c => c.ParentId == null).ToList();
 
-    private List<Category> ParentCategories => categories.Where(c => c.ParentId == null).ToList();
+    [Inject] private HttpClient Http { get; set; } = default!;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        LoadSampleData();
+        await LoadCategories();
     }
 
-    private void LoadSampleData()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        categories = new List<Category>
+        if (firstRender)
         {
-            new Category { Id = 1, Name = "Electronics", CategoryType = "Product", Status = "Active",
-                         DirectProductsCount = 15, TotalProductsCount = 45, InventoryValue = 125000.50m,
-                         SubcategoriesCount = 3, CreatedAt = DateTime.Now },
-
-            new Category { Id = 2, Name = "Mobile Phones", CategoryType = "Product", ParentId = 1, Status = "Active",
-                         DirectProductsCount = 8, TotalProductsCount = 8, InventoryValue = 75000.25m,
-                         SubcategoriesCount = 0, CreatedAt = DateTime.Now },
-
-            new Category { Id = 3, Name = "Laptops", CategoryType = "Product", ParentId = 1, Status = "Active",
-                         DirectProductsCount = 7, TotalProductsCount = 7, InventoryValue = 50000.75m,
-                         SubcategoriesCount = 0, CreatedAt = DateTime.Now },
-
-            new Category { Id = 4, Name = "Services", CategoryType = "Service", Status = "Active",
-                         DirectProductsCount = 0, TotalProductsCount = 12, InventoryValue = 0,
-                         SubcategoriesCount = 2, CreatedAt = DateTime.Now },
-
-            new Category { Id = 5, Name = "Repair Services", CategoryType = "Service", ParentId = 4, Status = "Inactive",
-                         DirectProductsCount = 0, TotalProductsCount = 5, InventoryValue = 0,
-                         SubcategoriesCount = 0, CreatedAt = DateTime.Now }
-        };
-
-        // Set parent category references
-        foreach (var category in categories)
-        {
-            if (category.ParentId.HasValue)
-            {
-                category.ParentCategory = categories.FirstOrDefault(c => c.Id == category.ParentId.Value);
-            }
+            // Initialize modal after first render so it's available in the DOM
+            await JS.InvokeVoidAsync("initCategoryModal", "addCategoryModal");
         }
     }
 
-    private double GetActivePercentage()
+    private async Task LoadCategories()
     {
-        return categories.Count > 0 ? Math.Round((activeCategories / (double)categories.Count) * 100, 0) : 0;
+        try
+        {
+            categories = await Http.GetFromJsonAsync<List<CategoryDto>>("api/categories") ?? new List<CategoryDto>();
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"Failed to load categories: {ex.Message}");
+            categories = new List<CategoryDto>();
+        }
     }
 
-    private double GetInactivePercentage()
+    private void OpenAddModal(CategoryDto? category = null)
     {
-        return categories.Count > 0 ? Math.Round((inactiveCategories / (double)categories.Count) * 100, 0) : 0;
+        editingCategory = category;
+
+        if (category != null)
+        {
+            categoryForm = new CategoryForm
+            {
+                Name = category.Name,
+                CategoryType = category.CategoryType,
+                ParentId = category.ParentId,
+                Description = category.Description,
+                IsActive = category.Status == "Active"
+            };
+        }
+        else
+        {
+            categoryForm = new CategoryForm();
+        }
     }
 
-    // Model Classes
-    public class Category
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string CategoryType { get; set; } = "Product";
-        public int? ParentId { get; set; }
-        public Category? ParentCategory { get; set; }
-        public string Description { get; set; } = string.Empty;
-        public string Status { get; set; } = "Active";
-        public int DirectProductsCount { get; set; }
-        public int TotalProductsCount { get; set; }
-        public decimal InventoryValue { get; set; }
-        public int SubcategoriesCount { get; set; }
-        public DateTime CreatedAt { get; set; }
-    }
+    private bool isSubmitting = false;
 
-    public class CategoryForm
+    private async Task HandleCreateOrUpdate()
     {
-        public string Name { get; set; } = string.Empty;
-        public string CategoryType { get; set; } = "Product";
-        public int? ParentId { get; set; }
-        public string Description { get; set; } = string.Empty;
-        public bool IsActive { get; set; } = true;
+        isSubmitting = true;
+        try
+        {
+            // your HTTP POST/PUT logic
+            if (editingCategory == null)
+            {
+                var response = await Http.PostAsJsonAsync("api/categories", categoryForm);
+                if (response.IsSuccessStatusCode) await LoadCategories();
+            }
+            else
+            {
+                editingCategory.Name = categoryForm.Name;
+                editingCategory.CategoryType = categoryForm.CategoryType;
+                editingCategory.ParentId = categoryForm.ParentId;
+                editingCategory.Description = categoryForm.Description;
+                editingCategory.Status = categoryForm.IsActive ? "Active" : "Inactive";
+
+                var response = await Http.PutAsJsonAsync($"api/categories/{editingCategory.Id}", editingCategory);
+                if (response.IsSuccessStatusCode) await LoadCategories();
+            }
+
+            // Close modal after submit
+            await JS.InvokeVoidAsync("closeCategoryModal", "addCategoryModal");
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
     }
 }

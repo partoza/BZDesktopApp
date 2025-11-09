@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\wwwroot\\images\\background\\dashboard-illustration.png",
+      "PackagePath": "staticwebassets\\images\\background\\dashboard-illustration.png"
+    },
+    {
       "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\wwwroot\\images\\background\\login-bg.jpg",
       "PackagePath": "staticwebassets\\images\\background\\login-bg.jpg"
     },
@@ -45,12 +49,24 @@
       "PackagePath": "staticwebassets\\js\\EmployeeRecords.js"
     },
     {
+      "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\addProduct.js",
+      "PackagePath": "staticwebassets\\js\\addProduct.js"
+    },
+    {
+      "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\category.js",
+      "PackagePath": "staticwebassets\\js\\category.js"
+    },
+    {
       "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\flowbite-init.js",
       "PackagePath": "staticwebassets\\js\\flowbite-init.js"
     },
     {
       "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\navmenu.js",
       "PackagePath": "staticwebassets\\js\\navmenu.js"
+    },
+    {
+      "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\wwwroot\\js\\supplier.js",
+      "PackagePath": "staticwebassets\\js\\supplier.js"
     },
     {
       "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\BZDesktopApp\\wwwroot\\lib\\flowbite\\flowbite.min.js",
