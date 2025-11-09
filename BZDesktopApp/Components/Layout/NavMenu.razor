@@ -7,73 +7,168 @@
 @using BZDesktopApp.Shared.Dtos
 @inject AuthenticationService AuthService
 @inject NavigationManager NavManager
+@using Microsoft.AspNetCore.Components.Routing
+@implements IDisposable 
 
-<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-1/5 h-screen pt-20 bg-white dark:bg-gray-800">
-    <div class="h-full px-3 pb-4 overflow-y-auto">
-        <ul class="space-y-2 font-medium">
-            @if (UserRole != null)
-            {
-                foreach (var item in MenuConfig.GetMenu().Where(m => m.Roles == null || m.Roles.Contains(UserRole)))
-                {
-                    <li>
-                        @if (item.Children != null && item.Children.Any(c => c.Roles == null || c.Roles.Contains(UserRole)))
-                        {
-                            <button @onclick="() => ToggleDropdown(item.Title)"
-                                    class="flex items-center w-full p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 transition duration-75">
-                                @((MarkupString)(item.IconSvg ?? string.Empty))
-                                <span class="flex-1 ms-3 text-left">@item.Title</span>
-                                <svg class="w-3 h-3" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-width="2" d="m1 1 4 4 4-4" /></svg>
-                            </button>
-                            <ul class="@GetDropdownClass(item.Title) py-2 space-y-2">
-                                @foreach (var child in item.Children.Where(c => c.Roles == null || c.Roles.Contains(UserRole)))
-                                {
-                                    <li>
-                                        <NavLink href="@child.Uri" class="flex items-center w-full p-2 pl-11 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                                            @((MarkupString)(child.IconSvg ?? string.Empty))
-                                            <span class="ms-3">@child.Title</span>
-                                        </NavLink>
-                                    </li>
-                                }
-                            </ul>
-                        }
-                        else
-                        {
-                            <NavLink href="@item.Uri" class="flex items-center w-full p-2 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                                @((MarkupString)(item.IconSvg ?? string.Empty))
-                                <span class="ms-3">@item.Title</span>
-                            </NavLink>
-                        }
-                    </li>
-                }
-            }
-        </ul>   
-    </div>
+<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-1/5 h-screen bg-white dark:bg-gray-800">
+ <!-- Modern Logo and Company Info Section -->
+ <div class="relative p-6 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border-b border-gray-100 dark:border-gray-700">
+ <!-- Background decorative elements -->
+ <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-emerald-500/5 to-transparent rounded-full blur-xl"></div>
+
+ <div class="relative flex items-center space-x-4">
+ <!-- Enhanced Logo Container -->
+ <div class="relative">
+ <!-- Outer glow effect -->
+ <div class="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full opacity-20 blur-sm"></div>
+
+ <!-- Main logo container -->
+ <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-emerald-600 flex items-center justify-center rounded-full shadow-inner transition-all duration-300 hover:scale-105">
+ <img src="images/logo/bz-logo-white.png"
+ alt="BZ IT Solutions"
+ class="w-12 h-12 object-contain filter brightness-0 invert transition-transform duration-300 hover:scale-110" />
+ </div>
+ </div>
+
+ <!-- Company Info with improved typography -->
+ <div class="flex-1 min-w-0">
+ <h1 class="text-xl font-semibold bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
+ BZ IT Solutions
+ </h1>
+ <p class="text-sm text-gray-600 dark:text-gray-300 font-medium mt-1">
+ Affordable IT Solutions
+ </p>
+ <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold mt-0.5 flex items-center">
+ <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2 animate-pulse"></span>
+ Serving Mindanao
+ </p>
+ </div>
+ </div>
+
+ <!-- Subtle bottom accent -->
+ <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
+ </div>
+
+ <!-- Navigation Menu -->
+ <nav class="h-full px-5 pb-4 overflow-y-auto my-5">
+ <ul class="space-y-2 font-medium" id="nav-menu">
+ @if (UserRole != null)
+ {
+ foreach (var item in MenuConfig.GetMenu().Where(m => m.Roles == null || m.Roles.Contains(UserRole)))
+ {
+ var hasChildren = item.Children != null && item.Children.Any(c => c.Roles == null || c.Roles.Contains(UserRole));
+ var isActiveParent = IsActiveMenu(item);
+ <li class="relative">
+ @if (hasChildren)
+ {
+ <button type="button"
+ data-menu-title="@item.Title"
+ aria-expanded="@(isActiveParent.ToString().ToLower())"
+ class="nav-parent group flex items-center w-full p-2 text-base rounded-lg transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 @(isActiveParent ? "bg-primary/10 font-medium text-primary" : string.Empty)">
+ <span class="flex items-center">
+ @((MarkupString)(item.IconSvg ?? string.Empty))
+ </span>
+ <span class="flex-1 ms-3 text-left whitespace-nowrap">@item.Title</span>
+
+ <!-- Only this arrow rotates -->
+ <svg xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="@($"dropdown-arrow w-3 h-3 transition-transform duration-200 {(isActiveParent ? "rotate-90" : "")}")">
+   <path fill-rule="evenodd"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1.5"
+         d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+         clip-rule="evenodd" />
+ </svg>
+
+ </button>
+ <ul class="@(isActiveParent ? "py-2 space-y-2" : "hidden py-2 space-y-2")">
+ @foreach (var child in item.Children.Where(c => c.Roles == null || c.Roles.Contains(UserRole)))
+ {
+ <li>
+ <NavLink href="@child.Uri"
+ Match="NavLinkMatch.All"
+ ActiveClass="font-medium text-primary"
+ class="nav-child flex items-center w-full p-2 pl-11 transition-colors duration-200 rounded-lg group hover:bg-gray-100 dark:hover:bg-gray-700">
+ @((MarkupString)(child.IconSvg ?? string.Empty))
+ <span class="nav-dot w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0 bg-gray-400 dark:bg-gray-500"></span>
+ <span class="ms-3">@child.Title</span>
+ </NavLink>
+ </li>
+ }
+ </ul>
+ }
+ else
+ {
+ <NavLink href="@item.Uri"
+ Match="NavLinkMatch.All"
+ ActiveClass="bg-primary/10 font-medium text-primary"
+ class="nav-parent flex items-center w-full p-2 text-base rounded-lg transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+ @((MarkupString)(item.IconSvg ?? string.Empty))
+ <span class="ms-3">@item.Title</span>
+ </NavLink>
+ }
+ </li>
+ }
+ }
+ </ul>
+ </nav>
 </aside>
 
 @code {
-    private string? UserRole;
-    private HashSet<string> openDropdowns = new();
+ private string? UserRole;
 
-    protected override async Task OnInitializedAsync()
-    {
-        var userJson = await JS.InvokeAsync<string>("localStorage.getItem", "bz_user");
-        if (!string.IsNullOrEmpty(userJson))
-        {
-            var userObj = JsonSerializer.Deserialize<LoginResponse>(userJson, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
-            UserRole = userObj?.Role;
-        }
-    }
+ protected override async Task OnInitializedAsync()
+ {
+ var userJson = await JS.InvokeAsync<string>("localStorage.getItem", "bz_user");
+ if (!string.IsNullOrEmpty(userJson))
+ {
+ var userObj = JsonSerializer.Deserialize<LoginResponse>(userJson, new JsonSerializerOptions
+ {
+ PropertyNameCaseInsensitive = true
+ });
+ UserRole = userObj?.Role;
+ }
+ NavManager.LocationChanged += HandleLocationChanged;
+ }
 
-    private void ToggleDropdown(string title)
-    {
-        if (openDropdowns.Contains(title))
-            openDropdowns.Remove(title);
-        else
-            openDropdowns.Add(title);
-    }
+ private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
+ {
+ InvokeAsync(StateHasChanged);
+ }
 
-    private string GetDropdownClass(string title) => openDropdowns.Contains(title) ? "block" : "hidden";
+ private bool IsActiveMenu(SidebarMenuItem item)
+ {
+ if (item.Children == null || !item.Children.Any())
+ {
+ return IsCurrentUri(item.Uri);
+ }
+ return item.Children.Any(child => IsCurrentUri(child.Uri));
+ }
+
+ private bool IsCurrentUri(string? uri)
+ {
+ if (string.IsNullOrWhiteSpace(uri)) return false;
+ var current = NavManager.ToBaseRelativePath(NavManager.Uri).TrimEnd('/');
+ // Convert relative target to absolute string then to base-relative
+ var targetInput = uri!.StartsWith('/') ? NavManager.BaseUri.TrimEnd('/') + uri : uri;
+ var target = NavManager.ToBaseRelativePath(targetInput).TrimEnd('/');
+ return string.Equals(current, target, StringComparison.OrdinalIgnoreCase);
+ }
+
+ protected override async Task OnAfterRenderAsync(bool firstRender)
+ {
+ if (firstRender)
+ {
+ await JS.InvokeVoidAsync("setupNavMenu");
+ }
+ }
+
+ public void Dispose()
+ {
+ NavManager.LocationChanged -= HandleLocationChanged;
+ }
 }
