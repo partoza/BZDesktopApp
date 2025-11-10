@@ -1,5 +1,5 @@
 # =====================
-# Visual Studio / IDE
+# VISUAL STUDIO / IDE
 # =====================
 .vs/
 *.suo
@@ -19,39 +19,64 @@
 *.iml
 
 # =====================
-# Build / Output
+# BUILD / OUTPUT
 # =====================
 bin/
 obj/
 publish/
+artifacts/
 *.dll
 *.exe
 *.pdb
 *.cache
 *.zip
+*.mdb
+*.pidb
+*.dbmdl
+
+# ASP.NET / Blazor build artifacts
+**/staticwebassets.build.json
+**/staticwebassets.publish.json
+**/staticwebassets.endpoints.json
+**/staticwebassets.removed.txt
+**/staticwebassets.upToDateCheck.txt
+**/project.assets.json
+**/project.nuget.cache
 
 # =====================
-# .NET / MAUI / ASP.NET
+# TAILWIND / FRONTEND
 # =====================
+# Keep Tailwind config, ignore generated CSS output
+**/tailwind.output.css
+
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# =====================
+# PUBLISH / DEPLOYMENT
+# =====================
+*.Publish.xml
+*.pubxml
+*.pubxml.user
+Properties/PublishProfiles/
+
+# =====================
+# LOGS / DATABASE / ENV
+# =====================
+*.log
+logs/
 *.db
 *.db-shm
 *.db-wal
 *.nuget
 *.userprefs
-*.log
-project.lock.json
-project.fragment.lock.json
-artifacts/
+.env
+appsettings.Development.json
 
 # =====================
-# Node / npm (if used for Blazor web assets)
-# =====================
-node_modules/
-package-lock.json
-npm-debug.log
-
-# =====================
-# OS / Misc
+# OS / MISC
 # =====================
 Thumbs.db
 Desktop.ini
@@ -60,10 +85,24 @@ Desktop.ini
 *.tmp
 
 # =====================
-# Copilot temporary / indexes
+# COPILOT / INDEXES
 # =====================
 CopilotIndices/
 FileContentIndex/
-*.db-shm
-*.db-wal
 *.vsidx
+
+# =====================
+# ASP.NET UPLOADS (IGNORE)
+# =====================
+BZDesktopApp.Api/wwwroot/uploads/
+BZDesktopApp.Api/wwwroot/uploads/**
+
+# =====================
+# KEEP STATIC ASSETS (MAUI / FRONTEND)
+# =====================
+!BZDesktopApp/wwwroot/**
+!**/tailwind.config.js
+!**/tailwind.css
+!**/tailwind.extension.json
+!**/package.json
+!**/package-lock.json
