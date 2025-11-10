@@ -272,7 +272,7 @@
                     SubCategoryId = product.SubCategoryId,
                     BrandId = product.BrandId,
                     ActiveStatus = product.ActiveStatus,
-                    ImageUrl = product.Image ?? product.ImageUrl
+                    ImageUrl = product.ImageUrl  // use only ImageUrl
                 };
             }
         }
@@ -282,17 +282,43 @@
         }
     }
 
+
     private async Task HandleSubmit()
     {
         isSubmitting = true;
         try
         {
-            HttpResponseMessage response;
+            using var content = new MultipartFormDataContent();
 
+            // Basic fields
+            content.Add(new StringContent(productForm.ProductName), "ProductName");
+            if (!string.IsNullOrWhiteSpace(productForm.Description))
+                content.Add(new StringContent(productForm.Description), "Description");
+            if (productForm.PromoCode != null)
+                content.Add(new StringContent(productForm.PromoCode), "PromoCode");
+            if (productForm.CategoryId.HasValue)
+                content.Add(new StringContent(productForm.CategoryId.Value.ToString()), "CategoryId");
+            if (productForm.SubCategoryId.HasValue)
+                content.Add(new StringContent(productForm.SubCategoryId.Value.ToString()), "SubCategoryId");
+            if (productForm.BrandId.HasValue)
+                content.Add(new StringContent(productForm.BrandId.Value.ToString()), "BrandId");
+            content.Add(new StringContent(productForm.ActiveStatus.ToString()), "ActiveStatus");
+
+            // Attach file if exists
+            if (selectedFile != null)
+            {
+                var stream = selectedFile.OpenReadStream(maxAllowedSize: 10_000_000);
+                var fileContent = new StreamContent(stream);
+                fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(selectedFile.ContentType);
+
+                content.Add(fileContent, "ImageFile", selectedFile.Name); // Must match server form property
+            }
+
+            HttpResponseMessage response;
             if (ProductId == null)
-                response = await Http.PostAsJsonAsync("api/products", productForm);
+                response = await Http.PostAsync("api/products", content);
             else
-                response = await Http.PutAsJsonAsync($"api/products/{ProductId}", productForm);
+                response = await Http.PutAsync($"api/products/{ProductId}", content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -315,24 +341,26 @@
 
     private void GoBack() => Nav.NavigateTo("/products");
 
+    private IBrowserFile? selectedFile;
+
     private async Task HandleFileSelected(InputFileChangeEventArgs e)
     {
         var file = e.File;
         if (file != null)
         {
+            selectedFile = file; // store locally for upload
+
+            // Preview as Base64 (optional, for UI only)
             using var stream = new MemoryStream();
-            await file.OpenReadStream(maxAllowedSize: 10_000_000).CopyToAsync(stream);
+            await file.OpenReadStream(10_000_000).CopyToAsync(stream);
             var bytes = stream.ToArray();
             var base64 = Convert.ToBase64String(bytes);
-
-            productForm.ImageBase64 = base64;
             productForm.ImageUrl = $"data:{file.ContentType};base64,{base64}";
         }
     }
 
     private void ClearImage()
     {
-        productForm.ImageBase64 = null;
         productForm.ImageUrl = null;
     }
 

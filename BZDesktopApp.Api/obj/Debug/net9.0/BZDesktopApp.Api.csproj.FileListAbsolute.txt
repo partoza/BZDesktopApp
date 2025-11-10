@@ -508,3 +508,4 @@ C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Api\obj\Debug\net9.0\refint
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Api\obj\Debug\net9.0\BZDesktopApp.Api.pdb
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Api\obj\Debug\net9.0\BZDesktopApp.Api.genruntimeconfig.cache
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Api\obj\Debug\net9.0\ref\BZDesktopApp.Api.dll
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Api\bin\Debug\net9.0\BZDesktopApp.Api.staticwebassets.runtime.json

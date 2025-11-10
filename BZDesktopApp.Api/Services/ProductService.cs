@@ -9,10 +9,12 @@ namespace BZDesktopApp.Api.Services;
 public class ProductService : IProductService
 {
     private readonly ApplicationDbContext _context;
+    private readonly IWebHostEnvironment _env;
 
-    public ProductService(ApplicationDbContext context)
+    public ProductService(ApplicationDbContext context, IWebHostEnvironment env)
     {
         _context = context;
+        _env = env;
     }
 
     // -----------------------------
@@ -76,7 +78,8 @@ public class ProductService : IProductService
             BrandName = p.Brand?.Name,
             ActiveStatus = p.ActiveStatus,
             CreatedAt = p.CreatedAt,
-            UpdatedAt = p.UpdatedAt
+            UpdatedAt = p.UpdatedAt,
+            ImageUrl = p.Image  // <-- assign the URL from DB
         }).ToList();
 
         return summary;
@@ -90,13 +93,33 @@ public class ProductService : IProductService
     // -----------------------------
     public async Task<ProductDto> CreateProductAsync(ProductForm form, long userId)
     {
+        string? imageUrl = null;
+
+        // Determine upload folder safely
+        var webRoot = _env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+        var uploadsFolder = Path.Combine(webRoot, "uploads", "products");
+        if (!Directory.Exists(uploadsFolder))
+            Directory.CreateDirectory(uploadsFolder);
+
+        // Handle uploaded image
+        if (form.ImageFile != null)
+        {
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(form.ImageFile.FileName)}";
+            var filePath = Path.Combine(uploadsFolder, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+                await form.ImageFile.CopyToAsync(stream);
+
+            imageUrl = $"/uploads/products/{fileName}";
+        }
+
         var product = new Product
         {
             ProductName = form.ProductName,
             CategoryId = form.CategoryId,
             SubCategoryId = form.SubCategoryId,
             BrandId = form.BrandId,
-            Image = form.ImageBase64,
+            Image = imageUrl,
             ActiveStatus = form.ActiveStatus,
             CreatedAt = DateTime.UtcNow,
             CreatedById = userId
@@ -110,8 +133,12 @@ public class ProductService : IProductService
             ProductId = product.ProductId,
             ProductName = product.ProductName,
             CategoryId = product.CategoryId,
+            SubCategoryId = product.SubCategoryId,
             BrandId = product.BrandId,
-            ActiveStatus = product.ActiveStatus
+            ImageUrl = product.Image,
+            ActiveStatus = product.ActiveStatus,
+            CreatedAt = product.CreatedAt,
+            UpdatedAt = product.UpdatedAt
         };
     }
 
@@ -127,10 +154,27 @@ public class ProductService : IProductService
         product.CategoryId = form.CategoryId;
         product.SubCategoryId = form.SubCategoryId;
         product.BrandId = form.BrandId;
-        product.Image = form.Image;
         product.ActiveStatus = form.ActiveStatus;
         product.UpdatedAt = DateTime.UtcNow;
         product.UpdatedById = userId;
+
+        // Determine upload folder safely
+        var webRoot = _env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+        var uploadsFolder = Path.Combine(webRoot, "uploads", "products");
+        if (!Directory.Exists(uploadsFolder))
+            Directory.CreateDirectory(uploadsFolder);
+
+        // Handle uploaded image
+        if (form.ImageFile != null)
+        {
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(form.ImageFile.FileName)}";
+            var filePath = Path.Combine(uploadsFolder, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+                await form.ImageFile.CopyToAsync(stream);
+
+            product.Image = $"/uploads/products/{fileName}";
+        }
 
         await _context.SaveChangesAsync();
 
@@ -139,10 +183,15 @@ public class ProductService : IProductService
             ProductId = product.ProductId,
             ProductName = product.ProductName,
             CategoryId = product.CategoryId,
+            SubCategoryId = product.SubCategoryId,
             BrandId = product.BrandId,
-            ActiveStatus = product.ActiveStatus
+            ImageUrl = product.Image,
+            ActiveStatus = product.ActiveStatus,
+            CreatedAt = product.CreatedAt,
+            UpdatedAt = product.UpdatedAt
         };
     }
+
 
     // -----------------------------
     // BRANDS

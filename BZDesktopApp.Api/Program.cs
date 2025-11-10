@@ -14,7 +14,6 @@ namespace BZDesktopApp.Api
         public static void Main(string[] args)
         {   
 
-
             var builder = WebApplication.CreateBuilder(args);
 
             // Database connection
@@ -86,6 +85,9 @@ namespace BZDesktopApp.Api
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            // Serve static files from wwwroot
+            app.UseStaticFiles();
 
             // Map Controllers
             app.MapControllers();

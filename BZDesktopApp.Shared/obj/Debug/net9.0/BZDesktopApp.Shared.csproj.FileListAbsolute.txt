@@ -46,3 +46,4 @@ C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZD
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\refint\BZDesktopApp.Shared.dll
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.pdb
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\ref\BZDesktopApp.Shared.dll
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp.Shared\obj\Debug\net9.0\BZDesktopApp.Shared.csproj.AssemblyReference.cache

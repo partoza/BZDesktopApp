@@ -350,10 +350,9 @@
                                     <td class="px-6 py-4">
                                         <div class="flex items-center gap-3">
                                             <div class="flex-shrink-0">
-                                                @if (!string.IsNullOrEmpty(product.Image))
+                                                @if (!string.IsNullOrEmpty(product.ImageUrl))
                                                 {
-                                                    <img src="data:image/png;base64,@product.Image"
-                                                         alt="@product.ProductName"
+                                                    <img src="@product.ImageUrl" alt="@product.ProductName"
                                                          class="w-10 h-10 rounded-full object-cover border border-gray-200" />
                                                 }
                                                 else
@@ -365,6 +364,7 @@
                                                     </div>
                                                 }
                                             </div>
+
                                             <div class="flex-1 min-w-0">
                                                 <p class="text-sm font-medium text-gray-900">@product.ProductName</p>
                                             </div>
@@ -372,10 +372,10 @@
                                     </td>
 
                                     <!-- Brand -->
-                                    <td class="px-6 py-4 text-gray-600">@product.BrandName ?? "N/A"</td>
+                                    <td class="px-6 py-4 text-gray-600">@(product.BrandName ?? "N/A")</td>
 
                                     <!-- Category -->
-                                    <td class="px-6 py-4 text-gray-600">@product.CategoryName ?? "N/A"</td>
+                                    <td class="px-6 py-4 text-gray-600">@(product.CategoryName ?? "N/A")</td>
 
                                     <!-- Stock Left -->
                                     <td class="px-6 py-4 text-gray-600">TODO</td>

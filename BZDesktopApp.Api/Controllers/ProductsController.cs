@@ -31,25 +31,59 @@ namespace BZDesktopApp.Api.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct([FromBody] ProductForm form)
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct([FromForm] ProductForm form)
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (!int.TryParse(userIdClaim, out int userId))
                 return Unauthorized("User ID not found in token");
+
+            if (form.ImageFile != null && form.ImageFile.Length > 0)
+            {
+                // save uploaded file
+                var uploadsFolder = Path.Combine("wwwroot", "uploads", "products");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(form.ImageFile.FileName)}";
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                    await form.ImageFile.CopyToAsync(stream);
+
+                // store relative or absolute URL
+                form.ImageUrl = $"/uploads/products/{fileName}";
+            }
 
             var product = await _productService.CreateProductAsync(form, userId);
             return Ok(product);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(long id, [FromBody] ProductForm form)
+        public async Task<IActionResult> UpdateProduct(long id, [FromForm] ProductForm form)
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (!int.TryParse(userIdClaim, out int userId))
                 return Unauthorized("User ID not found in token");
 
+            if (form.ImageFile != null && form.ImageFile.Length > 0)
+            {
+                var uploadsFolder = Path.Combine("wwwroot", "uploads", "products");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(form.ImageFile.FileName)}";
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                    await form.ImageFile.CopyToAsync(stream);
+
+                form.ImageUrl = $"/uploads/products/{fileName}";
+            }
+
             var product = await _productService.UpdateProductAsync(id, form, userId);
             if (product == null) return NotFound();
+
             return Ok(product);
         }
 

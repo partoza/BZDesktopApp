@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace BZDesktopApp.Shared.Dtos
 {
@@ -9,7 +10,7 @@ namespace BZDesktopApp.Shared.Dtos
         public long ProductId { get; set; }
         public string ProductName { get; set; } = string.Empty;
 
-        // Category / subcategory
+        // Category / Subcategory
         public long? CategoryId { get; set; }
         public string? CategoryName { get; set; }
         public long? SubCategoryId { get; set; }
@@ -19,15 +20,15 @@ namespace BZDesktopApp.Shared.Dtos
         public long? BrandId { get; set; }
         public string? BrandName { get; set; }
 
-        // Extra fields page expects
+        // Description / Promo
         public string? Description { get; set; }
         public string? PromoCode { get; set; }
 
-        // Image
-        public string? Image { get; set; }      // existing DB field
-        public string? ImageUrl { get; set; }   // used by page for preview
+        // ✅ Image
+        // Database stores only the filename or relative path (e.g. "uploads/products/img123.jpg")
+        public string? ImageUrl { get; set; }
 
-        // Active / audit
+        // Active / Audit
         public bool ActiveStatus { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
@@ -36,28 +37,24 @@ namespace BZDesktopApp.Shared.Dtos
     // ProductForm used by Create/Update APIs / Blazor form
     public class ProductForm
     {
-        // Keep ProductName to match service and DB naming
         [Required(ErrorMessage = "Product name is required")]
         public string ProductName { get; set; } = string.Empty;
 
-        // Extra form fields your page uses
         public string? Description { get; set; }
         public string? PromoCode { get; set; }
 
-        // relationships
         [Required(ErrorMessage = "Please select a category")]
-        public long? CategoryId { get; set; }    // main category
+        public long? CategoryId { get; set; }
         public long? SubCategoryId { get; set; }
         public long? BrandId { get; set; }
 
-        // Image upload / preview
-        public string? Image { get; set; }        // persisted filename / path
-        public string? ImageUrl { get; set; }     // preview url
-        public string? ImageBase64 { get; set; }  // upload payload (optional)
+        // ✅ Image handling
+        public string? ImageUrl { get; set; }      // stored filename or path
+        public IFormFile? ImageFile { get; set; }  // actual uploaded file
 
-        // Active flag
         public bool ActiveStatus { get; set; } = true;
     }
+
 
     public class ProductSummaryDto
     {
