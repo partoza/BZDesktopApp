@@ -1,6 +1,7 @@
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\category.js
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\lib\flowbite\flowbite.min.js
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\flowbite-init.js
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\supplier.js
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\index.html
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\navmenu.js
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\wwwroot\js\EmployeeRecords.js
@@ -24,4 +25,5 @@ wwwroot\js\EmployeeRecords.js
 wwwroot\js\flowbite-init.js
 wwwroot\js\navmenu.js
 wwwroot\js\product.js
+wwwroot\js\supplier.js
 wwwroot\lib\flowbite\flowbite.min.js

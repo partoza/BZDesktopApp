@@ -10,11 +10,12 @@ public class ProductService : IProductService
 {
     private readonly ApplicationDbContext _context;
     private readonly IWebHostEnvironment _env;
-
-    public ProductService(ApplicationDbContext context, IWebHostEnvironment env)
+    private readonly IHttpContextAccessor _httpContextAccessor;
+    public ProductService(ApplicationDbContext context, IWebHostEnvironment env, IHttpContextAccessor httpContextAccessor)
     {
         _context = context;
         _env = env;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     // -----------------------------
@@ -110,7 +111,10 @@ public class ProductService : IProductService
             using (var stream = new FileStream(filePath, FileMode.Create))
                 await form.ImageFile.CopyToAsync(stream);
 
-            imageUrl = $"/uploads/products/{fileName}";
+            // Generate fully qualified URL
+            var request = _httpContextAccessor.HttpContext?.Request;
+            var baseUrl = $"{request?.Scheme}://{request?.Host}";
+            imageUrl = $"{baseUrl}/uploads/products/{fileName}";
         }
 
         var product = new Product
@@ -119,7 +123,7 @@ public class ProductService : IProductService
             CategoryId = form.CategoryId,
             SubCategoryId = form.SubCategoryId,
             BrandId = form.BrandId,
-            Image = imageUrl,
+            Image = imageUrl, // store full URL in DB
             ActiveStatus = form.ActiveStatus,
             CreatedAt = DateTime.UtcNow,
             CreatedById = userId
@@ -158,13 +162,11 @@ public class ProductService : IProductService
         product.UpdatedAt = DateTime.UtcNow;
         product.UpdatedById = userId;
 
-        // Determine upload folder safely
         var webRoot = _env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
         var uploadsFolder = Path.Combine(webRoot, "uploads", "products");
         if (!Directory.Exists(uploadsFolder))
             Directory.CreateDirectory(uploadsFolder);
 
-        // Handle uploaded image
         if (form.ImageFile != null)
         {
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(form.ImageFile.FileName)}";
@@ -173,7 +175,9 @@ public class ProductService : IProductService
             using (var stream = new FileStream(filePath, FileMode.Create))
                 await form.ImageFile.CopyToAsync(stream);
 
-            product.Image = $"/uploads/products/{fileName}";
+            var request = _httpContextAccessor.HttpContext?.Request;
+            var baseUrl = $"{request?.Scheme}://{request?.Host}";
+            product.Image = $"{baseUrl}/uploads/products/{fileName}";
         }
 
         await _context.SaveChangesAsync();

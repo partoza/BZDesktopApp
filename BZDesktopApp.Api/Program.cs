@@ -24,6 +24,8 @@ namespace BZDesktopApp.Api
             // Add Controllers
             builder.Services.AddControllers();
 
+            builder.Services.AddHttpContextAccessor();
+
             // Register Services
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();

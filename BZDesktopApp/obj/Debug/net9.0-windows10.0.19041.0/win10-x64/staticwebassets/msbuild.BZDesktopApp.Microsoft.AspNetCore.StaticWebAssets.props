@@ -12,12 +12,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>200twe9ykx</Fingerprint>
-      <Integrity>Qs3RBYsFr6wonxyZ69UPlF0mpUIdLfrpOMCyBvX02YQ=</Integrity>
+      <Fingerprint>j7laztyg2c</Fingerprint>
+      <Integrity>Ib8ccd4Dh8KeEal2cN0YUlu218bnX8d5AXRIT+N8MjI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>67596</FileLength>
-      <LastWriteTime>Mon, 10 Nov 2025 12:54:48 GMT</LastWriteTime>
+      <FileLength>67823</FileLength>
+      <LastWriteTime>Mon, 10 Nov 2025 16:01:53 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AppIcon.ico'))">
@@ -192,12 +192,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0jw4jjbz3q</Fingerprint>
-      <Integrity>rAxoZtWHhCQS9UHbbT/CwXSrEZliUf31Tjf/hIMn9h4=</Integrity>
+      <Fingerprint>fjfn0yc5po</Fingerprint>
+      <Integrity>a3YfuoZDmjBhzpNtrAlRstk+e4LCj4B86caDN2zAf5o=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>1283</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 23:10:00 GMT</LastWriteTime>
+      <FileLength>1325</FileLength>
+      <LastWriteTime>Mon, 10 Nov 2025 15:58:48 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\category.js'))">
@@ -300,6 +300,26 @@
       <LastWriteTime>Sun, 09 Nov 2025 19:50:09 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\product.js'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\supplier.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>BZDesktopApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>js/supplier.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w8j5hhbbuc</Fingerprint>
+      <Integrity>UAqTxN8XerPYmYMIz4ENOcJ9jkhNGEhB38koq8NDbMY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <FileLength>2005</FileLength>
+      <LastWriteTime>Mon, 10 Nov 2025 16:01:46 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\supplier.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\flowbite\flowbite.min.js'))">
       <SourceType>Package</SourceType>
       <SourceId>BZDesktopApp</SourceId>
@@ -317,7 +337,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>135824</FileLength>
-      <LastWriteTime>Mon, 10 Nov 2025 15:45:12 GMT</LastWriteTime>
+      <LastWriteTime>Mon, 10 Nov 2025 16:09:44 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\flowbite\flowbite.min.js'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>

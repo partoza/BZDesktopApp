@@ -3075,13 +3075,9 @@ C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\wwwroot\js\product.js.gz
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\wwwroot\js\product.js.br
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\wwwroot\js\product.js
-C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\bmhqyc36o1-0jw4jjbz3q.gz
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\l4wjra7ydt-qdiwafoisx.gz
-C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\bmhqyc36o1-0jw4jjbz3q.br
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\l4wjra7ydt-qdiwafoisx.br
-C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-200twe9ykx.gz
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\4eu5zzuviq-f84hs44zi6.gz
-C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-200twe9ykx.br
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\4eu5zzuviq-f84hs44zi6.br
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Http.dll
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Http.Abstractions.dll
@@ -3089,3 +3085,12 @@ C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.ObjectPool.dll
 C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Net.Http.Headers.dll
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\wwwroot\js\supplier.js.gz
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\wwwroot\js\supplier.js.br
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\wwwroot\js\supplier.js
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\bmhqyc36o1-fjfn0yc5po.gz
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\b1w7sv68qc-w8j5hhbbuc.gz
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\bmhqyc36o1-fjfn0yc5po.br
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\b1w7sv68qc-w8j5hhbbuc.br
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\npqi1ox1ie-j7laztyg2c.gz
+C:\Users\MYPC\source\repos\BZDesktopApp\BZDesktopApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\npqi1ox1ie-j7laztyg2c.br
