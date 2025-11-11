@@ -29,10 +29,10 @@
                 <p class="text-xs text-gray-500 mt-1">As of today</p>
 
                 <div class="flex items-center gap-2 mt-2">
-                    <div class="flex items-center text-green-600 bg-green-400/10 px-2 py-1 rounded text-xs font-medium">
+                    <div class="flex items-center text-green-600 px-2 py-1 rounded text-xs font-medium">
                         <span>+ @(employees.Count(e => e.IsActive)) Active</span>
                     </div>
-                    <div class="flex items-center text-red-600 bg-red-400/10 px-2 py-1 text-xs font-medium">
+                    <div class="flex items-center text-red-600 px-2 py-1 text-xs font-medium">
                         <span>- @(employees.Count(e => !e.IsActive)) Inactive</span>
                     </div>
                 </div>
@@ -58,10 +58,10 @@
                 <p class="text-xs text-gray-500 mt-1">Roles of Employee</p>
 
                 <div class="flex items-center gap-2 mt-2">
-                    <div class="flex items-center text-blue-600 bg-blue-400/10 px-2 py-1 rounded text-xs font-medium">
+                    <div class="flex items-center text-blue-600 px-2 py-1 rounded text-xs font-medium">
                         <span>@employees.Count(e => e.Role == "admin") Admin</span>
                     </div>
-                    <div class="flex items-center text-purple-600 bg-purple-400/10 px-2 py-1 text-xs font-medium">
+                    <div class="flex items-center text-purple-600 px-2 py-1 text-xs font-medium">
                         <span>@employees.Count(e => e.Role == "employee") Employee</span>
                     </div>
                 </div>
@@ -87,10 +87,10 @@
                 <p class="text-xs text-gray-500 mt-1">Current Employee</p>
 
                 <div class="flex items-center gap-2 mt-2">
-                    <div class="flex items-center text-green-600 bg-green-400/10 px-2 py-1 rounded text-xs font-medium">
+                    <div class="flex items-center text-green-600 px-2 py-1 rounded text-xs font-medium">
                         <span>@employees.Count(e => e.IsActive && e.Role == "employee") Active Staff</span>
                     </div>
-                    <div class="flex items-center text-blue-600 bg-blue-400/10 px-2 py-1 text-xs font-medium">
+                    <div class="flex items-center text-blue-600 px-2 py-1 text-xs font-medium">
                         <span>@employees.Count(e => e.IsActive && e.Role == "admin") Active Admin</span>
                     </div>
                 </div>
@@ -116,10 +116,10 @@
                 <p class="text-xs text-gray-500 mt-1">Past Employee</p>
 
                 <div class="flex items-center gap-2 mt-2">
-                    <div class="flex items-center text-red-600 bg-red-400/10 px-2 py-1 rounded text-xs font-medium">
+                    <div class="flex items-center text-red-600 px-2 py-1 rounded text-xs font-medium">
                         <span>@employees.Count(e => !e.IsActive && e.Role == "employee") Staff</span>
                     </div>
-                    <div class="flex items-center text-orange-600 bg-orange-400/10 px-2 py-1 text-xs font-medium">
+                    <div class="flex items-center text-orange-600 px-2 py-1 text-xs font-medium">
                         <span>@employees.Count(e => !e.IsActive && e.Role == "admin") Admin</span>
                     </div>
                 </div>

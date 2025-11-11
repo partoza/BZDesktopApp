@@ -1,10 +1,244 @@
 ﻿@page "/purchaseOrder"
 @using BZDesktopApp.Components
+
 <AuthGuard>
-    <div class="space-y-6">
-        <div>
-            <h1 class="text-4xl font-bold text-gray-900">Purchase Orders 👋</h1>
-            <p class="text-gray-600 mt-2">Placeholder page for P.O</p>
+    <div class="flex overflow-hidden flex-col gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 h-auto lg:h-[calc(100vh-8rem)]">
+            <!-- LEFT COLUMN: Supplier Info + Product Catalog -->
+            <div class="lg:col-span-2 flex flex-col min-h-0">
+
+                <!-- Supplier Information -->
+                <div class="bg-white rounded-xl shadow-sm p-6 py-4 mb-3">
+                    <div class="flex items-center justify-between mb-4 border-b border-gray-300 pb-3">
+                        <h2 class="text-lg font-semibold">Supplier Information</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-5">
+                        <!-- Supplier Selection -->
+                        <div class="global-focus">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Select Supplier
+                            </label>
+                            <select id="supplier-select" name="supplier_id"
+                                    class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 cursor-pointer">
+                                <option value="" disabled selected>Select Supplier</option>
+                                <option>DOC</option>
+                            </select>
+
+                            <div id="supplier-error" class="hidden text-sm text-red-600 mt-1" role="alert">
+                                Please select supplier first
+                            </div>
+                        </div>
+
+                        <!-- Info Boxes -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <div class="supplier-info">
+                                <label class="block text-xs text-gray-500 mb-1">Company</label>
+                                <div class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-sm min-h-[42px] flex items-center min-w-0">
+                                    <span class="text-gray-500 truncate w-full">Select a supplier</span>
+                                </div>
+                            </div>
+                            <div class="supplier-info">
+                                <label class="block text-xs text-gray-500 mb-1">Contact Person</label>
+                                <div class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-sm min-h-[42px] flex items-center min-w-0">
+                                    <span class="text-gray-500 truncate w-full">Select a supplier</span>
+                                </div>
+                            </div>
+                            <div class="supplier-info">
+                                <label class="block text-xs text-gray-500 mb-1">Email</label>
+                                <div class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-sm min-h-[42px] flex items-center min-w-0">
+                                    <span class="text-gray-500 truncate w-full">Select a supplier</span>
+                                </div>
+                            </div>
+                            <div class="supplier-info">
+                                <label class="block text-xs text-gray-500 mb-1">Phone</label>
+                                <div class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-sm min-h-[42px] flex items-center min-w-0">
+                                    <span class="text-gray-500 truncate w-full">Select a supplier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Catalog -->
+                <div class="flex flex-col bg-white rounded-xl shadow-sm p-6 flex-1 min-h-0">
+                    <!-- Header + Filters -->
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div>
+                            <h1 class="text-xl font-semibold text-primary">Purchase Order Items</h1>
+                            <p class="text-sm text-gray-500">Add products to your purchase order</p>
+                        </div>
+                        <div class="flex items-center gap-2 global-focus">
+                            <form class="w-full">
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </div>
+                                    <input type="search"
+                                           class="block w-full pl-12 pr-28 py-3.5 text-sm text-gray-900 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 dark:text-white dark:placeholder-gray-400"
+                                           placeholder="Search products ..."
+                                           required />
+                                    <button type="submit"
+                                            class="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-emerald-600 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-primary/20 flex items-center gap-2 cursor-pointer">
+                                        Search
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div class="gap-2">
+                                <div class="relative">
+                                    <select id="productBrandSelect"
+                                            class="w-full min-w-[180px] appearance-none text-gray-900 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-xl px-4 pr-10 text-sm font-medium focus:outline-none py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 cursor-pointer shadow-sm">
+                                        <option value="all">All Brands</option>
+                                        <option>NVIDIA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <!-- Product Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <button type="button"
+                                class="category-tab px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium border border-gray-200">
+                            All Products
+                        </button>
+                    </div>
+
+                    <!-- Product Grid -->
+                    <div id="productGridWrapper">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4 overflow-y-auto h-[300px] pr-2">
+
+                            <!-- Product Card -->
+                            <div class="border rounded-xl border-gray-300 p-2 flex flex-col justify-between bg-white hover:shadow-md transition product-card h-[220px]" data-product-id="PRODUCT_ID">
+
+                                <div class="mb-2 rounded-lg bg-white h-24 w-full flex items-center justify-center">
+                                    <img src="" alt="Product Name" class="max-h-full max-w-full object-contain" />
+                                </div>
+
+                                <!-- Product Name -->
+                                <div class="product-name font-semibold text-gray-800 text-sm truncate w-full">
+                                    Product Name
+                                </div>
+
+                                <!-- Stock -->
+                                <div class="product-stock text-xs text-gray-500" data-stock="10">
+                                    Stock:
+                                    <!-- Example Stock Status Options -->
+                                    <!-- Out of Stock -->
+                                    <!-- <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-red-100 text-red-800">Out of Stock</span> -->
+                                    <!-- Low Stock -->
+                                    <!-- <span>3 Left</span>
+                                    <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800">Low</span> -->
+                                    <!-- Normal Stock -->
+                                    <span>10 Left</span>
+                                </div>
+
+                                <!-- Add to Order Button -->
+                                <button class="px-3 py-2 mt-2 border border-2 border-gray-400 hover:border-none hover:bg-primary hover:text-white rounded-lg text-sm flex items-center justify-center gap-2 transition add-to-po-btn cursor-pointer"
+                                        type="button">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                              clip-rule="evenodd" />
+                                    </svg>
+                                    Add to Order
+                                </button>
+                            </div>
+
+                            <!-- If no products -->
+                            <!--
+                            <div class="col-span-full text-center text-gray-500 py-10">
+                                No products found for this selection.
+                            </div>
+                            -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Purchase Order Cart -->
+            <aside class="flex flex-col min-h-0 bg-white rounded-xl shadow-sm">
+                <div class="px-4 pt-4">
+                    <div class="bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-lg shadow-sm p-4 text-white">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <div class="text-sm font-medium">Purchase Order</div>
+                                <div class="text-xs" id="current-date">12:00 PM</div>
+                            </div>
+                            <div class="text-sm font-medium">
+                                Davao Branch
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 flex-1 min-h-0 flex flex-col">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-semibold text-md text-gray-800">Order Items</h3>
+                        <button id="clear-po" type="button"
+                                class="flex items-center gap-2 text-sm bg-red-50 text-red-600 px-4 py-2 rounded-md hover:bg-red-100 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 7l-.867 12.142A2 2 0 0 1 16.138 21H7.862a2 2 0 0 1-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22" />
+                            </svg>
+                            Clear All
+                        </button>
+                    </div>
+
+                    <div id="po-items" class="space-y-3 pr-2 overflow-y-auto" style="max-height:45vh;">
+                        <div class="text-center py-8 text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-300 mb-2"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                            <p>Purchase Order is Empty</p>
+                            <p class="text-sm">Add products from the catalog</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 border-t border-dashed border-gray-300 bg-white rounded-xl">
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="text-gray-600">Subtotal:</div>
+                            <div class="text-gray-800 font-medium" id="subtotal-amount">₱0.00</div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="text-gray-600">Shipping:</div>
+                            <div class="text-gray-800 font-medium">
+                                <input type="number" id="shipping-cost border-none" value="0" min="0" step="0.01"
+                                       class="w-16 text-sm text-end border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 dark:text-white dark:placeholder-gray-400">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="text-gray-600">Tax (12%):</div>
+                            <div class="text-gray-800 font-medium" id="tax-amount">₱0.00</div>
+                        </div>
+                        <div class="flex items-center justify-between text-base border-t border-gray-300 pt-2">
+                            <div class="text-gray-800 font-semibold">Total Amount:</div>
+                            <div class="text-green-600 font-bold text-lg" id="total-amount">₱0.00</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm mb-3">
+                        <div class="text-gray-600">Total Items: <span class="font-semibold" id="total-items">0</span></div>
+                        <div class="text-gray-600">Unique Items: <span class="font-semibold" id="unique-items">0</span></div>
+                    </div>
+
+                    <button id="create-po" type="submit"
+                            class="w-full py-3 bg-primary text-white rounded-lg font-medium flex items-center justify-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                            disabled>
+                        Purchase Order
+                    </button>
+                </div>
+            </aside>
         </div>
     </div>
 </AuthGuard>
