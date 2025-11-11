@@ -29,6 +29,7 @@ namespace BZDesktopApp.Services
 
             return new LoginResponse
             {
+                EmployeeId = user.EmployeeId,
                 Username = user.Username,
                 Role = user.Role,
                 FullName = $"{user.FirstName} {user.LastName}",

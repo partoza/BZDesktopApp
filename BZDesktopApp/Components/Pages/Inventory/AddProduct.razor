@@ -6,6 +6,7 @@
 @inject IJSRuntime JS
 @inject NavigationManager Nav
 @using Facades;
+@using BZDesktopApp.Services;
 
 <AuthGuard>
     <div class="overflow-hidden">
@@ -214,18 +215,23 @@
     private List<BrandDto> brands = new();
     private bool isSubmitting = false;
     private string? uploadedImageBase64;
+    private LoginResponse? currentUser;
 
     private List<CategoryDto> ParentCategories = new();
     private List<CategoryDto> SubCategories = new();
+    [Inject] private AuthenticationService AuthService { get; set; } = default!;
         
     protected override async Task OnInitializedAsync()
     {
         await LoadCategories();
         await LoadBrands();
+        currentUser = await AuthService.GetUserAsync();
 
         // if (ProductId != null)
         //     await LoadProduct(ProductId.Value);
     }
+
+
 
     private async Task LoadCategories()
     {
@@ -308,6 +314,7 @@
     //     }
     // }
 
+    
 
     private async Task HandleSubmit()
     {
@@ -316,16 +323,24 @@
         {
             ProductDto result;
 
+            if (currentUser == null)
+            {
+                await JS.InvokeVoidAsync("alert", "Error: No logged-in user found.");
+                return;
+            }
+
+            var loggedInUserId = (int)currentUser.EmployeeId;
+
             if (ProductId == null)
             {
                 // Create new product
-                result = await ProductsFacade.CreateProductAsync(productForm, userId: 1); // provide the user id
+                result = await ProductsFacade.CreateProductAsync(productForm, userId: loggedInUserId);
                 await JS.InvokeVoidAsync("alert", "Product added successfully!");
             }
             else
             {
-                // Update product (if you implement UpdateProductAsync in your facade)
-                // result = await ProductsFacade.UpdateProductAsync(ProductId.Value, productForm, userId: 1);
+                // Update product (if implemented)
+                // result = await ProductsFacade.UpdateProductAsync(ProductId.Value, productForm, userId: loggedInUserId);
                 // await JS.InvokeVoidAsync("alert", "Product updated successfully!");
             }
 
@@ -340,6 +355,7 @@
             isSubmitting = false;
         }
     }
+
 
     private void ResetForm() => productForm = new ProductForm();
 

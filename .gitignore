@@ -1,5 +1,5 @@
 # =====================
-# VISUAL STUDIO / IDE
+# IDE / Editor
 # =====================
 .vs/
 *.suo
@@ -19,7 +19,7 @@
 *.iml
 
 # =====================
-# BUILD / OUTPUT
+# Build / Output
 # =====================
 bin/
 obj/
@@ -44,18 +44,24 @@ artifacts/
 **/project.nuget.cache
 
 # =====================
-# TAILWIND / FRONTEND
+# Tailwind / Frontend
 # =====================
-# Keep Tailwind config, ignore generated CSS output
+# Ignore generated CSS
 **/tailwind.output.css
+**/app.css
+**/tailwind.extension.css
 
-# Node.js
+# Keep Tailwind config and npm files
+!**/tailwind.config.js
+!**/postcss.config.js
+!**/package.json
+!**/package-lock.json
+
+# Node modules
 node_modules/
-npm-debug.log
-package-lock.json
 
 # =====================
-# PUBLISH / DEPLOYMENT
+# Publish / Deployment
 # =====================
 *.Publish.xml
 *.pubxml
@@ -63,7 +69,7 @@ package-lock.json
 Properties/PublishProfiles/
 
 # =====================
-# LOGS / DATABASE / ENV
+# Logs / Database / Env
 # =====================
 *.log
 logs/
@@ -76,7 +82,7 @@ logs/
 appsettings.Development.json
 
 # =====================
-# OS / MISC
+# OS / Misc
 # =====================
 Thumbs.db
 Desktop.ini
@@ -85,24 +91,15 @@ Desktop.ini
 *.tmp
 
 # =====================
-# COPILOT / INDEXES
+# Copilot / Indexes
 # =====================
 CopilotIndices/
 FileContentIndex/
 *.vsidx
 
 # =====================
-# ASP.NET UPLOADS (IGNORE)
-# =====================
-BZDesktopApp.Api/wwwroot/uploads/
-BZDesktopApp.Api/wwwroot/uploads/**
-
-# =====================
-# KEEP STATIC ASSETS (MAUI / FRONTEND)
+# Keep static assets (MAUI / Frontend)
 # =====================
 !BZDesktopApp/wwwroot/**
-!**/tailwind.config.js
-!**/tailwind.css
-!**/tailwind.extension.json
-!**/package.json
-!**/package-lock.json
+!BZDesktopApp/wwwroot/lib/**
+!BZDesktopApp/wwwroot/js/**
