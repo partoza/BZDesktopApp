@@ -1,8 +1,9 @@
 ﻿@using BZDesktopApp.Services
 @using BZDesktopApp.Shared.Dtos
 @inherits LayoutComponentBase
-@inject NavigationManager Navigation
-@inject AuthenticationService AuthService
+@using Facades;
+@inject IJSRuntime JS
+
 
 <div class="flex h-screen bg-[#F5F5F5]">
     <div class="w-1/5 bg-white shadow-lg overflow-y-auto">
@@ -30,23 +31,21 @@
                 <div class="flex items-center">
             <div class="flex items-center ms-3">
                 <!-- Avatar Button -->
-                <button type="button"
-                        data-dropdown-toggle="dropdown-user"
+                <button id="userAvatarBtn" type="button"
                         class="relative flex text-sm rounded-full focus:ring-4 focus:ring-primary/40 dark:focus:ring-gray-600">
-                            <span class="sr-only">@((string.IsNullOrEmpty(user?.Role) ? "Guest" : user!.Role))</span>
+                    <span class="sr-only">@((string.IsNullOrEmpty(user?.Role) ? "Guest" : user!.Role))</span>
 
                     <!-- Avatar Wrapper -->
-                            <div class="w-10 h-10 rounded-full overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center">
-                                <img id="userAvatar"
-                                     class="w-10 h-10 rounded-full object-cover"
-                                     src="@GetAvatar()"
+                    <div class="w-10 h-10 rounded-full overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center">
+                        <img id="userAvatar"
+                                class="w-10 h-10 rounded-full object-cover"
+                                src="@GetAvatar()"
+                                alt="user photo"
+                                onerror="showFallbackAvatar('@user?.FullName')" />
 
-                                     alt="user photo"
-                                     onerror="showFallbackAvatar('@user?.FullName')" />
-
-                                <span id="userInitials"
-                                      class="hidden font-medium text-white text-sm"></span>
-                            </div>
+                        <span id="userInitials"
+                                class="hidden font-medium text-white text-sm"></span>
+                    </div>
                 </button>
 
                 <!-- Dropdown Menu -->
@@ -117,33 +116,43 @@
 
 
 @code {
+    [Inject] private AuthenticationService AuthService { get; set; } = default!;
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+
     private LoginResponse? user;
-    private string searchQuery = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        await AuthService.InitializeAsync();
+        // Load user from localStorage
+        await AuthService.InitializeAsync(); // this replaces LoadFromStorageAsync
         user = await AuthService.GetUserAsync();
 
-        // subscribe using a void handler that runs async work via InvokeAsync
+        // Subscribe to auth changes
         AuthService.OnAuthenticationChanged += HandleAuthChanged;
     }
 
-    // Matches Action signature (void). Use InvokeAsync to run async code on UI thread.
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Attach dropdown toggle to the avatar button
+            await JS.InvokeVoidAsync("BZ.toggleDropdown", "dropdown-user", "userAvatarBtn");
+        }
+    }
+
     private void HandleAuthChanged()
     {
         _ = InvokeAsync(async () =>
         {
-            user = await AuthService.GetUserAsync();
+            user = AuthService.IsLoggedIn ? await AuthService.GetUserAsync() : null;
             StateHasChanged();
         });
     }
 
-
     private string GetAvatar()
     {
         if (!string.IsNullOrEmpty(user?.AvatarUrl))
-            return user!.AvatarUrl.StartsWith("http") ? user.AvatarUrl : $"{Navigation.BaseUri.TrimEnd('/')}{user.AvatarUrl}";
+            return user.AvatarUrl.StartsWith("http") ? user.AvatarUrl : $"{Navigation.BaseUri.TrimEnd('/')}{user.AvatarUrl}";
 
         return $"https://ui-avatars.com/api/?name={Uri.EscapeDataString(user?.FullName ?? "User")}&background=0D8ABC&color=fff";
     }
@@ -151,21 +160,11 @@
     private async Task SignOut()
     {
         await AuthService.LogoutAsync();
-        user = null;
-        Navigation.NavigateTo("/login", forceLoad: true);
-    }
-
-    private Task OnSearch()
-    {
-        if (!string.IsNullOrWhiteSpace(searchQuery))
-            Navigation.NavigateTo($"/search?q={Uri.EscapeDataString(searchQuery)}");
-        return Task.CompletedTask;
+        Navigation.NavigateTo("/login", true);
     }
 
     public void Dispose()
     {
-        // Unsubscribe the same handler so there are no memory leaks
         AuthService.OnAuthenticationChanged -= HandleAuthChanged;
     }
 }
-

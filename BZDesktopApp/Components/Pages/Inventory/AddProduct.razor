@@ -3,9 +3,9 @@
 @using System.Globalization
 @using BZDesktopApp.Shared.Dtos
 @using System.Net.Http.Json
-@inject HttpClient Http
 @inject IJSRuntime JS
 @inject NavigationManager Nav
+@using Facades;
 
 <AuthGuard>
     <div class="overflow-hidden">
@@ -205,6 +205,8 @@
 </AuthGuard>
 
 @code {
+    [Inject] private ProductsFacade ProductsFacade { get; set; } = default!;
+    [Inject] private CategoriesFacade CategoriesFacade { get; set; } = default!;
     [Parameter] public long? ProductId { get; set; }
 
     private ProductForm productForm = new();
@@ -215,24 +217,24 @@
 
     private List<CategoryDto> ParentCategories = new();
     private List<CategoryDto> SubCategories = new();
-
+        
     protected override async Task OnInitializedAsync()
     {
         await LoadCategories();
         await LoadBrands();
 
-        if (ProductId != null)
-            await LoadProduct(ProductId.Value);
+        // if (ProductId != null)
+        //     await LoadProduct(ProductId.Value);
     }
 
     private async Task LoadCategories()
     {
         try
         {
-            var summary = await Http.GetFromJsonAsync<CategorySummaryDto>("api/categories");
+            var summary = await CategoriesFacade.GetCategoriesAsync();
             categories = summary?.Categories ?? new List<CategoryDto>();
 
-            // Populate main categories
+            // Populate main (parent) categories
             ParentCategories = categories.Where(c => c.ParentId == null).ToList();
         }
         catch
@@ -246,9 +248,7 @@
     {
         try
         {
-            // expects an endpoint like GET api/products/brands or create one in ProductsController
-            var result = await Http.GetFromJsonAsync<List<BrandDto>>("api/products/brands");
-            brands = result ?? new List<BrandDto>();
+            brands = await ProductsFacade.GetBrandsAsync();
         }
         catch
         {
@@ -256,31 +256,57 @@
         }
     }
 
-    private async Task LoadProduct(long id)
-    {
-        try
-        {
-            var product = await Http.GetFromJsonAsync<ProductDto>($"api/products/{id}");
-            if (product != null)
-            {
-                productForm = new ProductForm
-                {
-                    ProductName = product.ProductName,
-                    Description = product.Description,
-                    PromoCode = product.PromoCode,
-                    CategoryId = product.CategoryId,
-                    SubCategoryId = product.SubCategoryId,
-                    BrandId = product.BrandId,
-                    ActiveStatus = product.ActiveStatus,
-                    ImageUrl = product.ImageUrl 
-                };
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error loading product: {ex.Message}");
-        }
-    }
+    // private async Task LoadProduct(long id)
+    // {
+    //     try
+    //     {
+    //         var product = await Http.GetFromJsonAsync<ProductDto>($"api/products/{id}");
+    //         if (product != null)
+    //         {
+    //             productForm = new ProductForm
+    //             {
+    //                 ProductName = product.ProductName,
+    //                 Description = product.Description,
+    //                 PromoCode = product.PromoCode,
+    //                 CategoryId = product.CategoryId,
+    //                 SubCategoryId = product.SubCategoryId,
+    //                 BrandId = product.BrandId,
+    //                 ActiveStatus = product.ActiveStatus,
+    //                 ImageUrl = product.ImageUrl 
+    //             };
+    //         }
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         Console.WriteLine($"Error loading product: {ex.Message}");
+    //     }
+    // }
+
+    // private async Task LoadProduct(long id)
+    // {
+    //     try
+    //     {
+    //         var product = await ProductsFacade.GetProductByIdAsync(id);
+    //         if (product != null)
+    //         {
+    //             productForm = new ProductForm
+    //             {
+    //                 ProductName = product.ProductName,
+    //                 Description = product.Description,
+    //                 PromoCode = product.PromoCode,
+    //                 CategoryId = product.CategoryId,
+    //                 SubCategoryId = product.SubCategoryId,
+    //                 BrandId = product.BrandId,
+    //                 ActiveStatus = product.ActiveStatus,
+    //                 ImageUrl = product.ImageUrl
+    //             };
+    //         }
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         Console.WriteLine($"Error loading product: {ex.Message}");
+    //     }
+    // }
 
 
     private async Task HandleSubmit()
@@ -288,48 +314,26 @@
         isSubmitting = true;
         try
         {
-            using var content = new MultipartFormDataContent();
+            ProductDto result;
 
-            // Basic fields
-            content.Add(new StringContent(productForm.ProductName), "ProductName");
-            if (!string.IsNullOrWhiteSpace(productForm.Description))
-                content.Add(new StringContent(productForm.Description), "Description");
-            if (productForm.PromoCode != null)
-                content.Add(new StringContent(productForm.PromoCode), "PromoCode");
-            if (productForm.CategoryId.HasValue)
-                content.Add(new StringContent(productForm.CategoryId.Value.ToString()), "CategoryId");
-            if (productForm.SubCategoryId.HasValue)
-                content.Add(new StringContent(productForm.SubCategoryId.Value.ToString()), "SubCategoryId");
-            if (productForm.BrandId.HasValue)
-                content.Add(new StringContent(productForm.BrandId.Value.ToString()), "BrandId");
-            content.Add(new StringContent(productForm.ActiveStatus.ToString()), "ActiveStatus");
-
-            // Attach file if exists
-            if (selectedFile != null)
-            {
-                var stream = selectedFile.OpenReadStream(maxAllowedSize: 10_000_000);
-                var fileContent = new StreamContent(stream);
-                fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(selectedFile.ContentType);
-
-                content.Add(fileContent, "ImageFile", selectedFile.Name); // Must match server form property
-            }
-
-            HttpResponseMessage response;
             if (ProductId == null)
-                response = await Http.PostAsync("api/products", content);
+            {
+                // Create new product
+                result = await ProductsFacade.CreateProductAsync(productForm, userId: 1); // provide the user id
+                await JS.InvokeVoidAsync("alert", "Product added successfully!");
+            }
             else
-                response = await Http.PutAsync($"api/products/{ProductId}", content);
+            {
+                // Update product (if you implement UpdateProductAsync in your facade)
+                // result = await ProductsFacade.UpdateProductAsync(ProductId.Value, productForm, userId: 1);
+                // await JS.InvokeVoidAsync("alert", "Product updated successfully!");
+            }
 
-            if (response.IsSuccessStatusCode)
-            {
-                await JS.InvokeVoidAsync("alert", ProductId == null ? "Product added successfully!" : "Product updated successfully!");
-                Nav.NavigateTo("/products");
-            }
-            else
-            {
-                var text = await response.Content.ReadAsStringAsync();
-                await JS.InvokeVoidAsync("alert", $"Something went wrong: {text}");
-            }
+            Nav.NavigateTo("/products");
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", $"Error: {ex.Message}");
         }
         finally
         {
@@ -350,7 +354,6 @@
         {
             selectedFile = file; // store locally for upload
 
-            // Preview as Base64 (optional, for UI only)
             using var stream = new MemoryStream();
             await file.OpenReadStream(10_000_000).CopyToAsync(stream);
             var bytes = stream.ToArray();
@@ -405,22 +408,13 @@
 
         try
         {
-            var response = await Http.PostAsJsonAsync("api/products/brands", new BrandForm { Name = newBrandName });
-            if (response.IsSuccessStatusCode)
+            var createdBrand = await ProductsFacade.CreateBrandAsync(newBrandName);
+            if (createdBrand != null)
             {
-                var createdBrand = await response.Content.ReadFromJsonAsync<BrandDto>();
-                if (createdBrand != null)
-                {
-                    await LoadBrands(); // reload brand list
-                    productForm.BrandId = createdBrand.Id; // auto-select
-                }
-                CloseBrandModal();
+                await LoadBrands(); // reload brand list
+                productForm.BrandId = createdBrand.Id; // auto-select
             }
-            else
-            {
-                var text = await response.Content.ReadAsStringAsync();
-                await JS.InvokeVoidAsync("alert", $"Failed to add brand: {text}");
-            }
+            CloseBrandModal();
         }
         catch (Exception ex)
         {

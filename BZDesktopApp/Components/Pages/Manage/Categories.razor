@@ -1,5 +1,6 @@
 ﻿@page "/categories"
 @using System.Globalization
+@using Facades;
 @using BZDesktopApp.Shared.Dtos
 
 <AuthGuard>
@@ -581,6 +582,7 @@
 @using BZDesktopApp.Shared
 
 @code {
+    [Inject] private CategoriesFacade CategoriesFacade { get; set; } = default!;
     private List<CategoryDto> categories = new();
     private CategorySummaryDto? summary;
     private CategoryForm categoryForm = new();
@@ -596,7 +598,6 @@
 
     private bool isSubmitting = false;
 
-    [Inject] private HttpClient Http { get; set; } = default!;
     [Inject] private IJSRuntime JS { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
@@ -608,34 +609,27 @@
     {
         if (firstRender)
         {
-            // Initialize modal after first render so it's available in the DOM
             await JS.InvokeVoidAsync("initCategoryModal", "addCategoryModal");
         }
     }
+
 
     private async Task LoadCategories()
     {
         try
         {
-            // Build query string only including non-default filters
-            var queryParams = new List<string>();
-            if (!string.IsNullOrWhiteSpace(search))
-                queryParams.Add($"search={Uri.EscapeDataString(search)}");
+            // Apply filters only if they’re not default
+            string? searchFilter = !string.IsNullOrWhiteSpace(search) ? search : null;
+            string? typeFilter = !string.IsNullOrWhiteSpace(selectedType) && selectedType != "all" ? selectedType : null;
+            string? statusFilter = !string.IsNullOrWhiteSpace(selectedStatus) && selectedStatus != "all" ? selectedStatus : null;
 
-            if (!string.IsNullOrWhiteSpace(selectedType) && selectedType != "all")
-                queryParams.Add($"type={Uri.EscapeDataString(selectedType)}");
+            // Use the facade instead of HttpClient
+            summary = await CategoriesFacade.GetCategoriesAsync(searchFilter, typeFilter, statusFilter);
 
-            if (!string.IsNullOrWhiteSpace(selectedStatus) && selectedStatus != "all")
-                queryParams.Add($"status={Uri.EscapeDataString(selectedStatus)}");
-
-            var url = "api/categories";
-            if (queryParams.Any())
-                url += "?" + string.Join("&", queryParams);
-
-            summary = await Http.GetFromJsonAsync<CategorySummaryDto>(url);
+            // Extract category list
             categories = summary?.Categories ?? new List<CategoryDto>();
         }
-        catch (HttpRequestException ex)
+        catch (Exception ex)
         {
             Console.WriteLine($"Failed to load categories: {ex.Message}");
             summary = new CategorySummaryDto();
@@ -671,29 +665,17 @@
         {
             if (editingCategory == null)
             {
-                // Create
-                var response = await Http.PostAsJsonAsync("api/categories", categoryForm);
-                if (response.IsSuccessStatusCode)
-                {
-                    await LoadCategories();
-                    editingCategory = null;
-                }
+                // Create using facade
+                var newCategory = await CategoriesFacade.CreateCategoryAsync(categoryForm, userId: 1); // adjust userId as needed
+                await LoadCategories();
+                editingCategory = null;
             }
             else
             {
-                // Update local DTO from form then send PUT
-                editingCategory.Name = categoryForm.Name;
-                editingCategory.CategoryType = categoryForm.CategoryType;
-                editingCategory.ParentId = categoryForm.ParentId;
-                editingCategory.Description = categoryForm.Description;
-                editingCategory.Status = categoryForm.IsActive ? "Active" : "Inactive";
-
-                var response = await Http.PutAsJsonAsync($"api/categories/{editingCategory.Id}", editingCategory);
-                if (response.IsSuccessStatusCode)
-                {
-                    await LoadCategories();
-                    editingCategory = null;
-                }
+                // Update using facade
+                var updatedCategory = await CategoriesFacade.UpdateCategoryAsync(editingCategory.Id, categoryForm);
+                await LoadCategories();
+                editingCategory = null;
             }
 
             // Close modal after submit
@@ -728,4 +710,3 @@
         return parent?.Name ?? "-";
     }
 }
-

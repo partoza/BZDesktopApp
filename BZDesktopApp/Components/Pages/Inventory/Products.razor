@@ -2,6 +2,7 @@
 @using System.Globalization
 @inject NavigationManager NavigationManager
 @using BZDesktopApp.Shared.Dtos
+@using Facades;
 
 <AuthGuard>
     <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-5 mb-5">
@@ -491,6 +492,10 @@
 </AuthGuard>
 
 @code {
+    [Inject] private ProductsFacade ProductsFacade { get; set; } = default!;
+    [Inject] private CategoriesFacade CategoriesFacade { get; set; } = default!;
+    [Inject] private IJSRuntime JS { get; set; } = default!;
+
     private List<ProductDto> products = new();
     private ProductSummaryDto productSummary = new();
     private ProductForm productForm = new();
@@ -508,9 +513,6 @@
 
     private bool isSubmitting = false;
 
-    [Inject] private HttpClient Http { get; set; } = default!;
-    [Inject] private IJSRuntime JS { get; set; } = default!;
-
     protected override async Task OnInitializedAsync()
     {
         // Load products immediately
@@ -525,7 +527,7 @@
     {
         try
         {
-            var catSummary = await Http.GetFromJsonAsync<CategorySummaryDto>("api/categories");
+            var catSummary = await CategoriesFacade.GetCategoriesAsync();
             categories = catSummary?.Categories ?? new List<CategoryDto>();
         }
         catch
@@ -535,8 +537,7 @@
 
         try
         {
-            var brandList = await Http.GetFromJsonAsync<List<BrandDto>>("api/products/brands");
-            brands = brandList ?? new List<BrandDto>();
+            brands = await ProductsFacade.GetBrandsAsync();
         }
         catch
         {
@@ -551,24 +552,15 @@
     {
         try
         {
-            var queryParams = new List<string>();
-            if (!string.IsNullOrWhiteSpace(search))
-                queryParams.Add($"search={Uri.EscapeDataString(search)}");
-            if (!string.IsNullOrWhiteSpace(selectedCategory) && selectedCategory != "all")
-                queryParams.Add($"category={Uri.EscapeDataString(selectedCategory)}");
-            if (!string.IsNullOrWhiteSpace(selectedBrand) && selectedBrand != "all")
-                queryParams.Add($"brand={Uri.EscapeDataString(selectedBrand)}");
-            if (!string.IsNullOrWhiteSpace(selectedStatus) && selectedStatus != "all")
-                queryParams.Add($"status={Uri.EscapeDataString(selectedStatus)}");
+            string? searchFilter = !string.IsNullOrWhiteSpace(search) ? search : null;
+            string? categoryFilter = !string.IsNullOrWhiteSpace(selectedCategory) && selectedCategory != "all" ? selectedCategory : null;
+            string? brandFilter = !string.IsNullOrWhiteSpace(selectedBrand) && selectedBrand != "all" ? selectedBrand : null;
+            string? statusFilter = !string.IsNullOrWhiteSpace(selectedStatus) && selectedStatus != "all" ? selectedStatus : null;
 
-            var url = "api/products";
-            if (queryParams.Any())
-                url += "?" + string.Join("&", queryParams);
-
-            productSummary = await Http.GetFromJsonAsync<ProductSummaryDto>(url) ?? new ProductSummaryDto();
-            products = productSummary.Products ?? new List<ProductDto>();
+            productSummary = await ProductsFacade.GetProductsAsync(searchFilter, categoryFilter, brandFilter, statusFilter);
+            products = productSummary?.Products ?? new List<ProductDto>();
         }
-        catch (HttpRequestException ex)
+        catch (Exception ex)
         {
             Console.WriteLine($"Failed to load products: {ex.Message}");
             productSummary = new ProductSummaryDto();
@@ -607,4 +599,35 @@
         var brand = brands.FirstOrDefault(b => b.Id == brandId.Value);
         return brand?.Name ?? "-";
     }
+
+    // --- Handle Create/Update Product ---
+    private async Task HandleCreateOrUpdate()
+    {
+        isSubmitting = true;
+        try
+        {
+            if (editingProduct == null)
+            {
+                // Create product via facade
+                var newProduct = await ProductsFacade.CreateProductAsync(productForm, userId: 1); // adjust userId as needed
+                await LoadProductsAsync();
+                editingProduct = null;
+            }
+            else
+            {
+                // Update product via facade
+                // var updatedProduct = await ProductsFacade.UpdateProductAsync(editingProduct.Id, productForm);
+                // await LoadProductsAsync();
+                // editingProduct = null;
+            }
+
+            // Close modal after submit (assuming JS modal)
+            await JS.InvokeVoidAsync("closeProductModal", "addProductModal");
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
 }
+

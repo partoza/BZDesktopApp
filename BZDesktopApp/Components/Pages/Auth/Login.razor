@@ -2,9 +2,12 @@
 @using Microsoft.AspNetCore.Components.Forms
 @using BZDesktopApp.Services;
 @layout Components.Layout.AuthLayout
-@inject AuthenticationService AuthService
 @inject NavigationManager Navigation
 @implements IDisposable
+@using BZDesktopApp.Shared.Dtos
+@inject IJSRuntime JS
+@using System.Text.Json;
+@inject AuthenticationService AuthService
 
 <PageTitle>Login - BZ IT Solutions</PageTitle>
 
@@ -281,6 +284,8 @@
 </div>
 </GuestGuard>
 @code {
+    [Inject] private Facades.AuthFacade AuthFacade { get; set; } = default!;
+
     private string username = string.Empty;
     private string password = string.Empty;
     private bool showPassword = false;
@@ -325,53 +330,31 @@
 
     private async Task HandleLogin()
     {
-        // reset errors
         validationErrors.Clear();
         errorMessage = string.Empty;
 
-        // client-side validation
-        if (string.IsNullOrWhiteSpace(username))
-            validationErrors["username"] = "Username is required";
-        if (string.IsNullOrWhiteSpace(password))
-            validationErrors["password"] = "Password is required";
-
-        if (validationErrors.Count > 0)
-            return;
+        if (!ValidateInputs()) return;
 
         isLoading = true;
 
         try
         {
-            // call client-side auth service which posts to /api/auth/login
             var resp = await AuthService.LoginAsync(username, password);
 
-            // map response to server LoginResponse DTO (Token, Username, Role, FullName)
             if (resp == null)
             {
                 errorMessage = "Invalid username or password";
                 return;
             }
 
-            // store token + user
-            await AuthService.StoreAuthDataAsync(resp);
-
-            // redirect based on role (lowercase-normalize)
             var role = resp.Role?.ToLowerInvariant() ?? string.Empty;
-
-            if (role == "superadmin")
-                Navigation.NavigateTo("/admin/dashboard", true);
-            else if (role == "admin")
+            if (role == "superadmin" || role == "admin")
                 Navigation.NavigateTo("/admin/dashboard", true);
             else
                 Navigation.NavigateTo("/home", true);
         }
-        catch (System.Net.Http.HttpRequestException)
-        {
-            errorMessage = "Unable to reach server. Please check your network.";
-        }
         catch (Exception ex)
         {
-            // generic fallback - show friendly message
             errorMessage = $"Login failed: {ex.Message}";
         }
         finally

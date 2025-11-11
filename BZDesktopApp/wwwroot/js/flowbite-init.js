@@ -1,33 +1,72 @@
-(function(){
- // Flowbite attaches event listeners based on data attributes.
- // Blazor renders dynamically, so re-init after each render.
- function initFlowbite(){
- try {
- if (window.initFlowbite) {
- window.initFlowbite();
- }
- } catch {}
- }
+(function () {
+    // Expose a global for Blazor to call modals explicitly
+    window.BZ = window.BZ || {};
 
- // Expose a simple global for Blazor to call explicitly
- window.BZ = window.BZ || {};
- window.BZ.initFlowbite = initFlowbite;
+    // Show modal
+    window.BZ.showModal = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return console.warn(`Modal with id '${id}' not found.`);
 
- // Auto-init on first load
- if (document.readyState === 'loading') {
- document.addEventListener('DOMContentLoaded', initFlowbite);
- } else {
- initFlowbite();
- }
+        // Use stored reference or create a new modal
+        let modal = el._modal;
+        if (!modal) {
+            modal = new Modal(el, { backdrop: 'static' });
+            el._modal = modal;
+        }
+        modal.show();
+    };
 
- // As a fallback, observe DOM changes and re-init
- const observer = new MutationObserver((mutations) => {
- for (const m of mutations) {
- if (m.addedNodes && m.addedNodes.length) {
- initFlowbite();
- break;
- }
- }
- });
- observer.observe(document.body, { childList: true, subtree: true });
+    // Hide modal
+    window.BZ.hideModal = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return console.warn(`Modal with id '${id}' not found.`);
+
+        const modal = el._modal;
+        if (modal) modal.hide();
+    };
+
+    // Auto-init buttons with data-modal-toggle (non-Blazor rendered)
+    document.querySelectorAll('[data-modal-toggle]').forEach(btn => {
+        if (!btn._flowbiteAttached) {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-modal-target');
+                if (targetId) window.BZ.showModal(targetId);
+            });
+            btn._flowbiteAttached = true;
+        }
+    });
+
+    // Dropdown toggle for user menu
+    window.BZ.toggleDropdown = (dropdownId, toggleId) => {
+        const btn = document.getElementById(toggleId) || document.querySelector(`[data-dropdown-toggle="${dropdownId}"]`);
+        const dropdown = document.getElementById(dropdownId);
+        if (!btn || !dropdown) return;
+
+        btn.addEventListener('click', () => {
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Optional: close dropdown if clicking outside
+        document.addEventListener('click', (e) => {
+            if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    };
+
+    // Optional: re-init modals dynamically if Blazor adds new nodes
+    const observer = new MutationObserver(() => {
+        document.querySelectorAll('[data-modal-toggle]').forEach(btn => {
+            if (!btn._flowbiteAttached) {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-modal-target');
+                    if (targetId) window.BZ.showModal(targetId);
+                });
+                btn._flowbiteAttached = true;
+            }
+        });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+
 })();

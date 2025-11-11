@@ -72,6 +72,17 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.8">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.0" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
@@ -79,6 +90,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\BZDesktopApp.Shared\BZDesktopApp.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Migrations\" />
     </ItemGroup>
 
     <!-- Configure where npm runs from; defaults to project directory -->
