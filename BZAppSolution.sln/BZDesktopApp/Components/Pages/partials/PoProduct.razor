@@ -1,0 +1,42 @@
+@using System.Globalization
+@using Components.Pages.partials
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+ @foreach (var product in Products)
+ {
+ <div class="border rounded-lg p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+ <div>
+ <h3 class="font-semibold text-md">@product.Name</h3>
+ <p class="text-sm text-gray-500">Brand: @product.Brand</p>
+ <p class="text-sm text-gray-500">Stock: @product.Stock</p>
+ <p class="text-sm font-medium text-gray-800">Price: ?@product.Price.ToString("N2")</p>
+ </div>
+ <button class="mt-2 py-2 px-4 bg-primary text-white rounded-lg hover:bg-emerald-700"
+ @onclick="() => AddProduct(product)">
+ Add to PO
+ </button>
+ </div>
+ }
+</div>
+
+@code {
+ private List<PoProductItem> Products = new()
+ {
+ new() { Id =1, Name = "Nike Air Max", Brand = "Nike", Stock =20, Price =4500 },
+ new() { Id =2, Name = "Adidas Ultraboost", Brand = "Adidas", Stock =15, Price =5000 },
+ new() { Id =3, Name = "Samsung Galaxy A21", Brand = "Samsung", Stock =30, Price =8499 },
+ new() { Id =4, Name = "Sony Headphones", Brand = "Sony", Stock =12, Price =2999 },
+ new() { Id =5, Name = "Apple iPhone14", Brand = "Apple", Stock =8, Price =59999 },
+ };
+
+ [Parameter]
+ public EventCallback<PoProductItem> OnAddProduct { get; set; }
+
+ private async Task AddProduct(PoProductItem product)
+ {
+ if (OnAddProduct.HasDelegate)
+ {
+ await OnAddProduct.InvokeAsync(product);
+ }
+ }
+}

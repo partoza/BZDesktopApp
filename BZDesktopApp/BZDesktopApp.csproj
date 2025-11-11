@@ -64,6 +64,25 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Remove="Components\Pages\NewFolder1\**" />
+      <Compile Remove="Components\Pages\NewFolder2\**" />
+      <Compile Remove="Components\Pages\NewFolder\**" />
+      <Content Remove="Components\Pages\NewFolder1\**" />
+      <Content Remove="Components\Pages\NewFolder2\**" />
+      <Content Remove="Components\Pages\NewFolder\**" />
+      <EmbeddedResource Remove="Components\Pages\NewFolder1\**" />
+      <EmbeddedResource Remove="Components\Pages\NewFolder2\**" />
+      <EmbeddedResource Remove="Components\Pages\NewFolder\**" />
+      <MauiXaml Remove="Components\Pages\NewFolder1\**" />
+      <MauiXaml Remove="Components\Pages\NewFolder2\**" />
+      <MauiXaml Remove="Components\Pages\NewFolder\**" />
+      <None Remove="Components\Pages\NewFolder1\**" />
+      <None Remove="Components\Pages\NewFolder2\**" />
+      <None Remove="Components\Pages\NewFolder\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Components\Pages\partials\po-product.razor" />
       <Content Remove="package.json" />
     </ItemGroup>
 
@@ -96,5 +115,17 @@
       <Message Text="Running 'npm run build' in $(NpmWorkingDir)" Importance="high" Condition="Exists('$(NpmWorkingDir)package.json')" />
       <Exec WorkingDirectory="$(NpmWorkingDir)" Command="npm run build" Condition="Exists('$(NpmWorkingDir)package.json')" />
     </Target>
+    <ItemGroup>
+      <PRIResource Remove="Components\Pages\NewFolder2\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <PRIResource Remove="Components\Pages\NewFolder\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <PRIResource Remove="Components\Pages\NewFolder1\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Components\Pages\partials\" />
+    </ItemGroup>
 
 </Project>

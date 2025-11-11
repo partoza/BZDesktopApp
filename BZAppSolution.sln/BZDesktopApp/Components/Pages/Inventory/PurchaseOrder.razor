@@ -1,0 +1,78 @@
+@page "/purchaseOrder"
+@page "/purchase-order"
+@using System.Globalization
+@using Components.Pages.partials
+
+<div class="flex flex-col gap-6 p-4">
+ <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+ <div class="lg:col-span-2 flex flex-col gap-6">
+ <!-- Supplier Info -->
+ <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+ <h2 class="text-lg font-semibold mb-4">Supplier Information</h2>
+ <select class="w-full border rounded-lg px-3 py-2 text-sm">
+ <option selected disabled>Select Supplier</option>
+ <option>Supplier A</option>
+ <option>Supplier B</option>
+ </select>
+ </div>
+
+ <!-- Product Catalog -->
+ <div class="bg-white rounded-lg shadow-sm p-6 flex-1">
+ <h1 class="text-xl font-semibold text-primary mb-2">Purchase Order Items</h1>
+ <p class="text-sm text-gray-500 mb-4">Add products to your purchase order</p>
+
+ <!-- Product Component -->
+ <PoProduct OnAddProduct="AddToCart" />
+ </div>
+ </div>
+
+ <!-- RIGHT: PO Cart -->
+ <aside class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 flex flex-col">
+ <h3 class="font-semibold mb-2">Order Items</h3>
+
+ <div class="flex-1 overflow-y-auto space-y-2 mb-4">
+ @if (POItems.Count ==0)
+ {
+ <p class="text-gray-500 text-center py-8">Purchase Order is Empty</p>
+ }
+ else
+ {
+ @foreach (var item in POItems)
+ {
+ <div class="flex justify-between items-center border-b py-1">
+ <div>@item.Name (x1)</div>
+ <div>?@item.Price.ToString("N2")</div>
+ </div>
+ }
+ }
+ </div>
+
+ <div class="mt-auto">
+ <div class="flex justify-between text-sm mb-2">
+ <span>Subtotal:</span>
+ <span>?@Subtotal.ToString("N2")</span>
+ </div>
+ <div class="flex justify-between text-sm mb-2">
+ <span>Total Items:</span>
+ <span>@POItems.Count</span>
+ </div>
+
+ <button class="w-full py-3 bg-primary text-white rounded-lg hover:bg-emerald-700 mt-2"
+ disabled="@(!POItems.Any())">
+ Purchase Order
+ </button>
+ </div>
+ </aside>
+ </div>
+</div>
+
+@code {
+ private List<PoProductItem> POItems = new();
+
+ private void AddToCart(PoProductItem product)
+ {
+ POItems.Add(product);
+ }
+
+ private decimal Subtotal => POItems.Sum(x => x.Price);
+}
