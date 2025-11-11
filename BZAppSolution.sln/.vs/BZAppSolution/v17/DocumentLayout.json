@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZAppSolution.sln\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\r3x\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\dashboard\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\r3x\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\inventory\\purchaseorder.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\r3x\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\inventory\\products.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\r3x\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\employee\\employees.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\r3x\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\dashboard\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\r3x\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\inventory\\purchaseorder.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\r3x\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\pages\\employee\\employees.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C8B316C-3FBF-91FF-56F8-9E078FD8C901}|..\\BZDesktopApp\\BZDesktopApp.csproj|c:\\users\\r3x\\source\\repos\\bzdesktopapp\\bzdesktopapp\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -60,13 +60,14 @@
               "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\Products.razor",
               "ToolTip": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Inventory\\Products.razor",
               "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\Products.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAsAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-11T02:30:42.932Z"
+              "WhenOpened": "2025-11-11T02:30:42.932Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Employees.razor",
               "DocumentMoniker": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Employee\\Employees.razor",
               "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Employee\\Employees.razor",
@@ -78,13 +79,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AdminDashboard.razor",
               "DocumentMoniker": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Dashboard\\AdminDashboard.razor",
               "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Dashboard\\AdminDashboard.razor",
               "ToolTip": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Dashboard\\AdminDashboard.razor",
               "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Dashboard\\AdminDashboard.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-11T02:24:35.185Z",
               "EditorCaption": ""
@@ -103,15 +104,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "PurchaseOrder.razor",
               "DocumentMoniker": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Inventory\\PurchaseOrder.razor",
               "RelativeDocumentMoniker": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\PurchaseOrder.razor",
               "ToolTip": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\Components\\Pages\\Inventory\\PurchaseOrder.razor",
               "RelativeToolTip": "..\\BZDesktopApp\\Components\\Pages\\Inventory\\PurchaseOrder.razor",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAWwIsAAADzAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAWwIEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-10T15:12:16.994Z"
+              "WhenOpened": "2025-11-10T15:12:16.994Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
