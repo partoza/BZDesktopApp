@@ -89,7 +89,6 @@ splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\BZDesktopApp.styles.css
 wwwroot\BZDesktopApp.mco0lh2krp.bundle.scp.css
-package-lock.json
 Platforms\Windows\Assets\AppIcon.ico
 AboutAssets.txt
 tailwind.extension.json
@@ -100,6 +99,7 @@ wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
 wwwroot\images\background\dashboard-illustration.png
 wwwroot\images\background\login-bg.jpg
+wwwroot\images\background\product-sample.jpg
 wwwroot\images\logo\bz-logo-green.png
 wwwroot\images\logo\bz-logo-white.png
 wwwroot\index.html

@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\images\\background\\login-bg.jpg"
     },
     {
+      "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\images\\background\\product-sample.jpg",
+      "PackagePath": "staticwebassets\\images\\background\\product-sample.jpg"
+    },
+    {
       "Id": "C:\\Users\\r3x\\source\\repos\\BZDesktopApp\\BZDesktopApp\\wwwroot\\images\\logo\\bz-logo-green.png",
       "PackagePath": "staticwebassets\\images\\logo\\bz-logo-green.png"
     },

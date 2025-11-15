@@ -18,6 +18,7 @@ wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
 wwwroot\images\background\dashboard-illustration.png
 wwwroot\images\background\login-bg.jpg
+wwwroot\images\background\product-sample.jpg
 wwwroot\images\logo\bz-logo-green.png
 wwwroot\images\logo\bz-logo-white.png
 wwwroot\index.html

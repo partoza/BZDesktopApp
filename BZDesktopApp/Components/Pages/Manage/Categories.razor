@@ -3,7 +3,7 @@
 @using BZDesktopApp.Shared.Dtos
 
 <AuthGuard>
-    <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-5">
+    <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3">
         <!-- Total Categories Card -->
         <div class="bg-white rounded-xl shadow-sm p-5 border border-gray-200 hover:shadow-md transition-shadow">
             <div class="flex items-center gap-3 mb-1">
@@ -24,14 +24,14 @@
                 <p class="text-xs text-gray-500 mt-1">As of today</p>
 
                 <div class="flex items-center gap-2 mt-2">
-                    <div class="flex items-center text-green-600 bg-green-400/10 px-2 py-1 rounded text-xs font-medium">
+                    <div class="flex items-center text-green-600 px-2 py-1 rounded text-xs font-medium">
                         <span>
                             + @(summary != null && summary.TotalCount > 0
                                                         ? Math.Round((double)summary.ActiveCount / summary.TotalCount * 100, 1)
                                                         : 0)% Active
                         </span>
                     </div>
-                    <div class="flex items-center text-red-600 bg-red-400/10 px-2 py-1 text-xs font-medium">
+                    <div class="flex items-center text-red-600 px-2 py-1 text-xs font-medium">
                         <span>
                             - @(summary != null && summary.TotalCount > 0
                                                         ? Math.Round((double)summary.InactiveCount / summary.TotalCount * 100, 1)
@@ -64,10 +64,10 @@
                 <p class="text-xs text-gray-500 mt-1">Total Subcategories</p>
 
                 <div class="flex items-center gap-2 mt-2">
-                    <div class="flex items-center text-blue-600 bg-blue-400/10 px-2 py-1 rounded text-xs font-medium">
+                    <div class="flex items-center text-blue-600 px-2 py-1 rounded text-xs font-medium">
                         <span>@summary?.ProductCount Product</span>
                     </div>
-                    <div class="flex items-center text-purple-600 bg-purple-400/10 px-2 py-1 text-xs font-medium">
+                    <div class="flex items-center text-purple-600 px-2 py-1 text-xs font-medium">
                         <span>@summary?.ServiceCount Service</span>
                     </div>
                 </div>
@@ -94,10 +94,10 @@
                 <p class="text-xs text-gray-500 mt-1">Currently Active</p>
 
                 <div class="flex items-center gap-2 mt-2">
-                    <div class="flex items-center text-green-600 bg-green-400/10 px-2 py-1 rounded text-xs font-medium">
+                    <div class="flex items-center text-green-600 px-2 py-1 rounded text-xs font-medium">
                         <span>@summary?.MainActiveCount Main</span>
                     </div>
-                    <div class="flex items-center text-blue-600 bg-blue-400/10 px-2 py-1 text-xs font-medium">
+                    <div class="flex items-center text-blue-600 px-2 py-1 text-xs font-medium">
                         <span>@summary?.SubActiveCount Sub</span>
                     </div>
                 </div>
@@ -124,10 +124,10 @@
                 <p class="text-xs text-gray-500 mt-1">Currently Inactive</p>
 
                 <div class="flex items-center gap-2 mt-2">
-                    <div class="flex items-center text-red-600 bg-red-400/10 px-2 py-1 rounded text-xs font-medium">
+                    <div class="flex items-center text-red-600 px-2 py-1 rounded text-xs font-medium">
                         <span>@summary?.MainInactiveCount Main</span>
                     </div>
-                    <div class="flex items-center text-orange-600 bg-orange-400/10 px-2 py-1 text-xs font-medium">
+                    <div class="flex items-center text-orange-600 px-2 py-1 text-xs font-medium">
                         <span>@summary?.SubInactiveCount Sub</span>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
     </div>
 
     <!-- Category Table -->
-    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 mt-5">
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 mt-3">
         <div class="bg-white dark:bg-gray-800 rounded-t-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
             <!-- Header Section -->
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-6">

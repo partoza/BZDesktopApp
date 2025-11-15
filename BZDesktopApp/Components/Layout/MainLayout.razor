@@ -36,16 +36,11 @@
                             <span class="sr-only">@((string.IsNullOrEmpty(user?.Role) ? "Guest" : user!.Role))</span>
 
                             <!-- Avatar Wrapper -->
-                            <div class="w-10 h-10 rounded-full overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center justify-center">
-                                <img id="userAvatar"
-                                     class="w-10 h-10 rounded-full object-cover"
-                                     src="@GetAvatar()"
-                                     alt="user photo"
-                                     onerror="showFallbackAvatar('@user?.FullName')" />
 
-                                <span id="userInitials"
-                                      class="hidden font-medium text-white text-sm"></span>
+                            <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                             </div>
+
                         </button>
 
                         <!-- Dropdown Menu -->
@@ -88,30 +83,6 @@
         </div>
     </main>
 </div>
-
-<script>
-    function showFallbackAvatar(fullName) {
-        const avatarImg = document.getElementById('userAvatar');
-        const initialsEl = document.getElementById('userInitials');
-
-        if (avatarImg) {
-            avatarImg.style.display = "none";
-        }
-
-        if (initialsEl) {
-            const initials = fullName
-                ?.split(' ')
-                .filter(n => n.length > 0)
-                .map(n => n[0])
-                .join('')
-                .toUpperCase()
-                .slice(0, 2) || "GU"; // Defaults to "GU" = Guest User
-
-            initialsEl.textContent = initials;
-            initialsEl.classList.remove("hidden");
-        }
-    }
-</script>
 
 
 @code {

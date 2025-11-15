@@ -12,12 +12,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>veouixaygc</Fingerprint>
-      <Integrity>F20duKDDuppcGeZSU3s6ycXT9RvDZNurAg+8enb2i/A=</Integrity>
+      <Fingerprint>7b89ry89su</Fingerprint>
+      <Integrity>rer+E0Yja72hrQUnBUzRiA7vfLpUUzMxP0jHJxiv0eQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>68816</FileLength>
-      <LastWriteTime>Tue, 11 Nov 2025 02:26:30 GMT</LastWriteTime>
+      <FileLength>73806</FileLength>
+      <LastWriteTime>Wed, 12 Nov 2025 03:52:02 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AppIcon.ico'))">
@@ -57,7 +57,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>1847</FileLength>
-      <LastWriteTime>Tue, 11 Nov 2025 00:38:29 GMT</LastWriteTime>
+      <LastWriteTime>Tue, 11 Nov 2025 13:30:13 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BZDesktopApp.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\app.css'))">
@@ -137,7 +137,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>45074</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 08:36:17 GMT</LastWriteTime>
+      <LastWriteTime>Tue, 11 Nov 2025 13:28:00 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background\dashboard-illustration.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background\login-bg.jpg'))">
@@ -159,6 +159,26 @@
       <FileLength>294868</FileLength>
       <LastWriteTime>Mon, 10 Nov 2025 03:43:47 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background\login-bg.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background\product-sample.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>BZDesktopApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>images/background/product-sample.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>7880mhr6mz</Fingerprint>
+      <Integrity>Wex4Ha5A7WaYUUGmJDLY+zDvsAJqjUZXzjyxYzgIfuQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <FileLength>7481</FileLength>
+      <LastWriteTime>Tue, 11 Nov 2025 13:32:28 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background\product-sample.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo\bz-logo-green.png'))">
       <SourceType>Package</SourceType>
@@ -217,7 +237,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>1325</FileLength>
-      <LastWriteTime>Mon, 10 Nov 2025 14:53:45 GMT</LastWriteTime>
+      <LastWriteTime>Tue, 11 Nov 2025 13:28:00 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\category.js'))">
@@ -337,7 +357,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>2005</FileLength>
-      <LastWriteTime>Tue, 11 Nov 2025 00:48:01 GMT</LastWriteTime>
+      <LastWriteTime>Tue, 11 Nov 2025 16:06:21 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\supplier.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\flowbite\flowbite.min.js'))">
@@ -357,7 +377,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>135824</FileLength>
-      <LastWriteTime>Tue, 11 Nov 2025 02:41:30 GMT</LastWriteTime>
+      <LastWriteTime>Tue, 11 Nov 2025 02:44:52 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\flowbite\flowbite.min.js'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>

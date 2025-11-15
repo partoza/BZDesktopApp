@@ -81,14 +81,14 @@
  </svg>
 
  </button>
- <ul class="@(isActiveParent ? "py-2 space-y-2" : "hidden py-2 space-y-2")">
+ <ul class="@(isActiveParent ? "py-2 space-y-2" : "hidden py-2 space-y-2") cursor-pointer">
  @foreach (var child in item.Children.Where(c => c.Roles == null || c.Roles.Contains(UserRole)))
  {
  <li>
  <NavLink href="@child.Uri"
  Match="NavLinkMatch.All"
  ActiveClass="font-medium text-primary"
- class="nav-child flex items-center w-full p-2 pl-11 transition-colors duration-200 rounded-lg group hover:bg-gray-100 dark:hover:bg-gray-700">
+ class="nav-child flex items-center w-full p-2 pl-11 transition-colors duration-200 rounded-lg group hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
  @((MarkupString)(child.IconSvg ?? string.Empty))
  <span class="nav-dot w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0 bg-gray-400 dark:bg-gray-500"></span>
  <span class="ms-3">@child.Title</span>

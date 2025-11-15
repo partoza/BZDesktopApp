@@ -1,10 +1,227 @@
 ﻿@page "/salesOrder"
 @using BZDesktopApp.Components
 <AuthGuard>
-    <div class="space-y-6">
-        <div>
-            <h1 class="text-4xl font-bold text-gray-900">Sales Orders 👋</h1>
-            <p class="text-gray-600 mt-2">Placeholder page for Sales Order</p>
+    <div class="flex overflow-hidden flex-col">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 h-auto lg:h-[calc(100vh-8rem)]">
+            <div class="lg:col-span-2 flex flex-col min-h-0">
+
+                <!-- Product Catalog -->
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-3 bg-white rounded-xl shadow-sm px-6 py-3">
+                    <div>
+                        <h1 class="text-xl font-semibold text-primary">Sales Order</h1>
+                        <p class="text-sm text-gray-500">Product Catalog</p>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <form class="w-full">
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <input type="search"
+                                       class="block w-full pl-12 pr-28 py-3.5 text-sm text-gray-900 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 dark:text-white dark:placeholder-gray-400"
+                                       placeholder="Search products ..."
+                                       required />
+                                <button type="submit"
+                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-emerald-600 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-primary/20 flex items-center gap-2 cursor-pointer">
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="gap-2">
+                            <div class="relative">
+                                <select id="productBrandSelect"
+                                        class="w-full min-w-[180px] appearance-none text-gray-900 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-xl px-4 pr-10 text-sm font-medium focus:outline-none py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 cursor-pointer shadow-sm">
+                                    <option value="all">All Brands</option>
+                                    <option>NVIDIA</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="bg-white rounded-xl shadow-sm p-6 flex-1 flex flex-col min-h-0">
+                    <div id="categoryTabs" class="gap-2 mb-4 flex flex-wrap">
+                        <button data-category="" class="tab-btn px-4 py-2 rounded-lg bg-primary text-white text-sm">
+                            All Products
+                        </button>
+                        <button data-category="1" class="tab-btn px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm">
+                            Components
+                        </button>
+                        <button data-category="2" class="tab-btn px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm">
+                            Accessories
+                        </button>
+                        <button data-category="2" class="tab-btn px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm">
+                            Laptop
+                        </button>
+                        <button data-category="3" class="tab-btn px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm">
+                            CCTV
+                        </button>
+                    </div>
+
+                    <!-- Product Grid (Placeholder) -->
+                    <div id="productGridWrapper">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4 overflow-y-auto h-[500px] pr-2">
+                            @if (Products != null && Products.Any())
+                            {
+                                @foreach (var product in Products)
+                                {
+                                    var imgSrc = !string.IsNullOrEmpty(product.Image)
+                                    ? (product.Image.StartsWith("http://") || product.Image.StartsWith("https://") || product.Image.StartsWith("/"))
+                                    ? product.Image
+                                    : $"images/background/{product.Image}" // adjust as needed
+                                    : "images/default-product.png";
+
+                                    var stock = product.StockCount;
+                                    var price = product.Price;
+                                    <div class="border rounded-xl p-2 flex flex-col justify-between bg-white hover:shadow-md transition product-card h-[220px] border-gray-300"
+                                         data-product-id="@product.ProductId">
+                                        <div class="mb-2 rounded-lg bg-white h-24 w-full flex items-center justify-center">
+                                            <img src="@imgSrc" alt="@product.Name" class="max-h-full max-w-full object-contain" />
+                                        </div>
+
+                                        <div class="product-name font-semibold text-gray-800 text-sm truncate w-full">
+                                            @product.Name
+                                        </div>
+
+                                        <div class="product-stock text-xs text-gray-500" data-stock="@stock">
+                                            Stock:
+                                            @if (stock == 0)
+                                            {
+                                                <span class="px-2 text-xxs font-medium rounded-full bg-red-100 text-red-800">Out of Stock</span>
+                                            }
+                                            else if (stock <= 5)
+                                            {
+                                                <span>@stock Left</span>
+                                                <span class="px-2 py-0.5 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800">Low</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="py-0.5">@stock Left</span>
+                                            }
+                                        </div>
+
+                                        <button class="px-3 py-2 mt-2 border border-2 border-gray-300 hover:border-none hover:bg-primary hover:text-white rounded-lg text-sm flex items-center justify-center gap-2 transition cursor-pointer"
+                                                @onclick="() => AddToCart(product)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                      d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                                      clip-rule="evenodd" />
+                                            </svg>
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="col-span-full text-center text-gray-500 py-10">
+                                    No products found for this selection.
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Order Cart -->
+            <aside class="flex flex-col min-h-0 bg-white rounded-xl shadow-sm">
+                <!-- Header -->
+                <div class="px-4 pt-4">
+                    <div class="bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-lg shadow-sm p-4 text-white">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <div class="text-sm font-medium">Sales Order</div>
+                                <div class="text-xs" id="current-date">Friday, 11/11/2025</div>
+                            </div>
+                            <div class="text-sm font-medium">Main Branch</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart content -->
+                <div class="p-4 flex-1 min-h-0 flex flex-col">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-semibold text-md">Selected Products</h3>
+                        <button id="clearCartBtn"
+                                class="flex items-center gap-2 text-sm bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 7l-.867 12.142A2 2 0 0 1 16.138 21H7.862a2 2 0 0 1-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22" />
+                            </svg>
+                            Clear All
+                        </button>
+                    </div>
+
+                    <div id="cartItems" class="space-y-4 overflow-y-auto h-[260px] md:h-[320px] lg:h-[420px] pr-2">
+                        <div class="text-center py-8 text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                 class="w-12 h-12 text-gray-300 mx-auto mb-2">
+                                <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625Z" />
+                                <path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
+                            </svg>
+                            <p class="font-medium">No products in cart.</p>
+                            <p class="text-xs">Add products from the catalog</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-300 mx-3"></div>
+
+                <!-- Action Button -->
+                <div class="p-3">
+                    <button id="processPaymentBtn" type="button"
+                            class="w-full py-3 bg-primary hover:bg-emerald-600 text-white rounded-xl font-medium flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-1 transition">
+                        <span>Process Payment</span>
+                    </button>
+                </div>
+            </aside>
         </div>
     </div>
+
+    @code {
+        public class Product
+        {
+            public int ProductId { get; set; }
+            public string Name { get; set; } = string.Empty;
+            public string? Image { get; set; }
+            public decimal Price { get; set; }
+            public int StockCount { get; set; }
+        }
+
+        [Parameter]
+        public List<Product> Products { get; set; } = new List<Product>();
+
+        private void AddToCart(Product product)
+        {
+            // Handle add to cart logic here
+            Console.WriteLine($"Added {product.Name} to cart!");
+        }
+
+        protected override void OnInitialized()
+        {
+            // Example placeholder products
+            if (!Products.Any())
+            {
+                Products = new List<Product>
+        {
+        new Product { ProductId = 1, Name = "NVIDIA RTX 4060", Price = 25, StockCount = 10, Image = "product-sample.jpg" },
+        new Product { ProductId = 2, Name = "Intel Core i9 - 4400", Price = 30, StockCount = 0, Image = "product-sample.jpg" },
+        new Product { ProductId = 3, Name = "AMD Ryzen 75700", Price = 15, StockCount = 3, Image = "product-sample.jpg" },
+        new Product { ProductId = 4, Name = "MSI A15  BZUCX084", Price = 50, StockCount = 7, Image = "product-sample.jpg" },
+        new Product { ProductId = 1, Name = "Royal Kludge RK61", Price = 25, StockCount = 10, Image = "product-sample.jpg"},
+        new Product { ProductId = 2, Name = "RAKK TANAW 4K", Price = 30, StockCount = 0, Image = "product-sample.jpg" },
+        new Product { ProductId = 3, Name = "Hikvision DS-2CE16", Price = 15, StockCount = 3, Image = "product-sample.jpg" },
+        new Product { ProductId = 4, Name = "MSI MAG Forge 100R", Price = 50, StockCount = 7, Image = "product-sample.jpg" },
+        };
+            }
+        }
+    }
 </AuthGuard>
+`
